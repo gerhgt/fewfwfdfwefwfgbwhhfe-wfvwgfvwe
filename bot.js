@@ -10,8 +10,11 @@ client.on('ready', () => {
 
 client.on('message', msg => {
   if (msg.content === 'ping') {
-    msg.reply('Pong!');
-  }
+    let pingsembed = new Discord.RichEmbed()
+    .setTitle('Pong!')
+    .setDescription(`My ping is ${client.ping}`)
+    .setFooter(`Requested By : ${msg.author.tag}`)
+  };
 });
 
 
