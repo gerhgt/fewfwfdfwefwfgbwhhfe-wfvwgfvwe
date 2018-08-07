@@ -33,5 +33,3 @@
     "node": "8.4.0"
   }
 }
-
-client.login(process.env.BOT_TOKEN);
