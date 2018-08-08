@@ -1555,7 +1555,7 @@ m.sendMessage(args)
 });
   
   client.on('message', message => {
-    if (message.content.startsWith(prefix + "id")) {
+    if (message.content.startsWith(prefix + "1id")) {
 var args = message.content.split(" ").slice(1);
 let user = message.mentions.users.first();
 var men = message.mentions.users.first();
