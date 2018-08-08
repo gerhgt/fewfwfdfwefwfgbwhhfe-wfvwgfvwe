@@ -1543,7 +1543,6 @@ if(cmd === `${prefix}suggest`) {
 
 
 
-const db = fs.database();
 client.oN("message", message => {
         if (message.content === "setprefix") {
         if (message.author.id !== "274923685985386496" && !message.member.hasPermission("MANAGE_GUILD")) return message.channel.send(`U don't have permission to do that`);
