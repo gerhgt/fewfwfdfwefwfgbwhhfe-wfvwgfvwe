@@ -1400,6 +1400,8 @@ client.on('message', message => {
 ***
 :white_small_square: ( الاوامر العامة***
 **
+:large_blue_circle:   لاظهار لفلك في السيرفر
+1level
 :large_blue_circle:   لاظهار التاريخ والوقت
 1date
 :large_blue_circle:   لاظهار صورة اونر السيرفر
