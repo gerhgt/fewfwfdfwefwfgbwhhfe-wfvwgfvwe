@@ -17,7 +17,6 @@ client.on('message', msg => {
   };
 });
 
-const fs = require("fs");
 client.on('message', async message =>{
     let messageArray = message.content.split(" ");
     let cmd = messageArray[0];
