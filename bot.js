@@ -123,7 +123,7 @@ client.on('message', message => {
 1imageل
 :large_blue_circle:   لمعرفة عدد دعواتك الى السيرفر
 1invites
-:large_blue_circle:   درابط دعوة للسيرفر
+:large_blue_circle:   رابط دعوة للسيرفر
 1link
 :large_blue_circle:   لمشاهدة حالات اعضاءالسيرفر
 1ms
