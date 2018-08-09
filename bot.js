@@ -1560,7 +1560,37 @@ client.on("message", message => {
 });
   
 
+client.on('voiceStateUpdate', (codes, ReBeL) => {
+if(ReBeL.voiceChannelID !== "476998103237394432") return console.log("أيرور . ");
+ReBeL.guild.createChannel(ReBeL.user.username , 'voice').then((rebeeel) =>{
+    rebeeel.setParent("476997808117776386");
+ReBeL.guild.members.get(ReBeL.id).setVoiceChannel(rebeeel.id).then((codess) =>{
+  console.log("تــــــم .");
+  let scan = setInterval(()=>{
+if(!ReBeL.voiceChannel) {
+  rebeeel.delete();
+}
+  }, 1700);
+});
+});
+});
   
+
+
+client.on('guildMemberAdd', member => {
+   if(member.presence.status === 'offline') {
+       member.guild.owner.send(`:eyes: في واحد دخل السيرفر ومسوي نفسه غامض اوفلاين `)
+}
+});
+client.on('guildMemberRemove', member => {
+   if(member.presence.status === 'offline') {
+       member.guild.owner.send(`في واحد خرج من سيرفرك وهو مسوي نفسه غامض اوف لاين :eyes: `)
+}
+});
+
+
+
+
 client.login(process.env.BOT_TOKEN);
 
 
