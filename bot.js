@@ -1591,7 +1591,7 @@ client.on('guildMemberRemove', member => {
 
 
 client.on('message',message =>{
-    var prefix = "/";
+    var prefix = "1";
     if(message.content.startsWith(prefix + 'tinv')) {
   message.guild.fetchInvites().then(i =>{
   var invites = [];
