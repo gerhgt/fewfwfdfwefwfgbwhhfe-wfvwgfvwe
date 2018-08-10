@@ -1761,6 +1761,16 @@ if (message.content.startsWith(adminprefix + 'sett')) {
 
 
 
+client.on('message', message => {
+    var args = message.content.split(/[ ]+/)
+    if(message.content.includes('https://')){
+      if(!message.member.hasPermission('ADMINISTRATOR'))
+        message.delete()
+    return message.reply(`** يمنع نشر الروابط بهذا السيرفر  :angry: ! **`)
+    }
+});
+
+
 
 client.login(process.env.BOT_TOKEN);
 
