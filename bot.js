@@ -1685,6 +1685,46 @@ if(!xp[message.author.id]){
 });
 
 
+client.on('message', ( message ) => {
+  if(message.author.bot) return;
+
+  if(message.channel.id !== '477389707857231872') return;
+
+
+  let types = [
+    'jpg',
+    'jpeg',
+    'png'
+  ]
+
+  if (message.attachments.size <= 0) {
+    message.delete();
+    message.channel.send(`${message.author}, This channel for Pic 🖼️ Only`) // 
+    .then(msg => {
+      setTimeout(() => {
+        msg.delete();
+      }, 5000)
+  })
+  return;
+}
+
+  if(message.attachments.size >= 1) {
+    let filename = message.attachments.first().filename
+    console.log(filename);
+    if(!types.some( type => filename.endsWith(type) )) {
+      message.delete();
+      message.channel.send(`${message.author}, This channel for Pic 🖼️ Only`)
+      .then(msg => {
+        setTimeout(() => {
+          msg.delete();
+        }, 5000)
+      })
+    }
+  }
+
+});
+
+
 
 client.login(process.env.BOT_TOKEN);
 
