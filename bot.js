@@ -2065,14 +2065,13 @@ For additional help,  `)
     });
 	client.on('message', message => {
     if (message.content.startsWith("about")) {
-      message.channel.send({
- embed: new Discord.RichEmbed() 
+ let embed = new Discord.RichEmbed() 
     .setColor('RED')
     .addField('**الذاكرة المستخدمة 💾**', `${(process.memoryUsage().rss / 1000000).toFixed()}MB`, true)
          .addField('**سرعة الاتصال📡**' , `${Date.now() - message.createdTimestamp}` + ' ms')
         .addField('**وقت الاقلاع⌚**', timeCon(process.uptime()), true)
         .addField('**استخدام المعالج💿**', `${(process.cpuUsage().rss / 10000).toFixed()}%`, true)
-     })
+	message.channel.send(embed);
     }
   });
   client.on('message', message => {
