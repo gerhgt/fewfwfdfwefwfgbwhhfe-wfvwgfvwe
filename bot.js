@@ -1145,19 +1145,7 @@ const secre = [
     }
 });
 
-client.on('message', message => {
-    var args = message.content.split(/[ ]+/)
-    if(message.content.includes('00')){
-        message.delete()
-    return message.reply(`**
-مَّا يَلْفِظُ مِن قَوْلٍ إِلَّا لَدَيْهِ رَقِيبٌ عَتِيدٌ
 
-سورة ق | صدق الله العلي العظيم
-
-**`)
-   message.delete()
-    }
-});
 
 
 client.on('message', message => {
