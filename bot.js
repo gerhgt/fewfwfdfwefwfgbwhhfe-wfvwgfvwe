@@ -1768,6 +1768,20 @@ client.on('message', message => {
 الشعار
 رابط كلان البوت
 https://discord.gg/QZ8WxBx
+**
+***
+:white_small_square: ( اوامر الميوزك***
+**
+:large_blue_circle:   لتشغيل اغنية
+1play
+:large_blue_circle:   لتغير الاغنية
+1skip
+:large_blue_circle:   لايقاف الاغنية
+1pause
+:large_blue_circle:   لاستدعاء البوت
+1come
+:large_blue_circle:   لتحديد صوت البوت
+1vol (50)
 ----------
 رابط سيرفر البوت
  https://discord.gg/AqFw5hs
@@ -2020,7 +2034,7 @@ function isYoutube(str) {
     return str.toLowerCase().indexOf('youtube.com') > -1;
 }
  client.on('message', message => {
-     if (message.content === prefix +"2help") {
+     if (message.content === prefix +"hhelp") {
     const embed = new Discord.RichEmbed()
      .setColor("RANDOM")
      .addField(`Zyad,aLmutairi commands:
