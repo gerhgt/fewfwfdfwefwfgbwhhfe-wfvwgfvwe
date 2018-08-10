@@ -1376,78 +1376,7 @@ client.on('message', message => {
 });
 
 
-client.on('message', message => {
-    if (message.author.bot) return;
-     if (message.content === "1help") {
-  let embed = new Discord.RichEmbed()
-          .setAuthor(message.author.username)
-           .setThumbnail(message.author.avatarURL)
-                 .setTimestamp()
-    .setDescription(`
-***
-:white_small_square:  ( اوامر الادارة***
-**
-:red_circle:  لانشاء روم بطريقةجميلة
-1cvc
-:red_circle:  لاعطاء اي شخص باند
-1ban
-:red_circle:  لفك الباند عن شخص
-1unban
-:red_circle:    (لازم تسوي روم اسمه warns)لتحذير عضو
-1warn
-:red_circle:    لتغير بلاينق البوت
-1setgame
-:red_circle:    لتغير اسم البوت
-1setname
-:red_circle:    لتغير صورة البوت
-1setavatar
-:red_circle:    لتغير تويش البوت
-1sett
-----------
-**
-***
-:white_small_square: ( الاوامر العامة***
-**
-:large_blue_circle:   لاظهار لفلك في السيرفر
-1level
-:large_blue_circle:   لاظهار التاريخ والوقت
-1date
-:large_blue_circle:   لاظهار صورة اونر السيرفر
-1avatar
-:large_blue_circle:   لاظهار البروفايل حقك
-1profile
-:large_blue_circle:   لعرض سكنك في ماين كرافت
-1skin
-:large_blue_circle:   اذا واحد سب اكتبله هي
-00
-:large_blue_circle:   لاثبات ملكية البوت
-1ownerbot
-:large_blue_circle:    (لازم تسوي روم اسمه suggests)لاقتراح اي اقتراح 
-1suggest
-:large_blue_circle:   (لازم تسوي روم اسمه reports)للابلغ عن شخص
-1report
 
-----------
-رابط سيرفر البوت
- https://discord.gg/AqFw5hs
-----------
-رابط دعوة البوت
-https://discordapp.com/api/oauth2/authorize?client_id=460154242519400448&permissions=8&redirect_uri=https%3A%2F%2Fwww.youtube.com%2Fchannel%2FUC3gqokLQJ0OFbYAF9gv1bRw%3Fview_as%3Dsubscriber&scope=bot
-
-**
-
-`)
-.setColor('RANDOM')
-message.author.sendEmbed(embed)
-}
-});
-
-client.on('message', msg => {
-      if(!msg.channel.guild) return;
-    if(msg.content.startsWith (prefix  + 'help')) {
-    msg.reply('**📩 شيك علي الخاص**');
-  }
-});
 
 
 client.on('message', async najzx => {
@@ -1786,7 +1715,81 @@ client.on('message', message => {
 });
 
 
+client.on('message', message => {
+    if (message.author.bot) return;
+     if (message.content === "1help") {
+  let embed = new Discord.RichEmbed()
+          .setAuthor(message.author.username)
+           .setThumbnail(message.author.avatarURL)
+                 .setTimestamp()
+    .setDescription(`
+***
+:white_small_square:  ( اوامر الادارة***
+**
+:red_circle:  لانشاء روم بطريقةجميلة
+1cvc
+:red_circle:  لاعطاء اي شخص باند
+1ban
+:red_circle:  لفك الباند عن شخص
+1unban
+:red_circle:    (لازم تسوي روم اسمه warns)لتحذير عضو
+1warn
+:red_circle:    لتغير بلاينق البوت
+1setgame
+:red_circle:    لتغير اسم البوت
+1setname
+:red_circle:    لتغير صورة البوت
+1setavatar
+:red_circle:    لتغير تويش البوت
+1sett
+----------
+**
+***
+:white_small_square: ( الاوامر العامة***
+**
+:large_blue_circle:   لاظهار لفلك في السيرفر
+1level
+:large_blue_circle:   لاظهار التاريخ والوقت
+1date
+:large_blue_circle:   لاظهار صورة اونر السيرفر
+1avatar
+:large_blue_circle:   لاظهار البروفايل حقك
+1profile
+:large_blue_circle:   لعرض سكنك في ماين كرافت
+1skin
+:large_blue_circle:   اذا واحد سب اكتبله هي
+00
+:large_blue_circle:   لاثبات ملكية البوت
+1ownerbot
+:large_blue_circle:    (لازم تسوي روم اسمه suggests)لاقتراح اي اقتراح 
+1suggest
+:large_blue_circle:   (لازم تسوي روم اسمه reports)للابلغ عن شخص
+1report
+:large_blue_circle:   لاظهار شعار البوت
+الشعار
+رابط كلان البوت
+https://discord.gg/QZ8WxBx
+----------
+رابط سيرفر البوت
+ https://discord.gg/AqFw5hs
+----------
+رابط دعوة البوت
+https://discordapp.com/api/oauth2/authorize?client_id=460154242519400448&permissions=8&redirect_uri=https%3A%2F%2Fwww.youtube.com%2Fchannel%2FUC3gqokLQJ0OFbYAF9gv1bRw%3Fview_as%3Dsubscriber&scope=bot
 
+**
+
+`)
+.setColor('RANDOM')
+message.author.sendEmbed(embed)
+}
+});
+
+client.on('message', msg => {
+      if(!msg.channel.guild) return;
+    if(msg.content.startsWith (prefix  + 'help')) {
+    msg.reply('**📩 شيك علي الخاص**');
+  }
+});
 
 
 
