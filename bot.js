@@ -2070,7 +2070,7 @@ let prefix = "1";
     .setColor('RED')
     .addField('**الذاكرة المستخدمة 💾**', `${(process.memoryUsage().rss / 1000000).toFixed()}MB`, true)
         .addField('**سرعة الاتصال📡**' , `${Date.now() - message.createdTimestamp}` + ' ms')
-        .addField('**وقت الاقلاع⌚**', timeCon(process.uptime()), true)
+        .addField('**وقت الاقلاع⌚**', (process.uptime()), true)
         .addField('**استخدام المعالج💿**', `${(process.cpuUsage().rss / 10000).toFixed()}%`, true)
 	message.channel.send(embed);
     }//hلبوت يقول انه المسج فاضي 
