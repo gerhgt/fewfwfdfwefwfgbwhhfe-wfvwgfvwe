@@ -1787,7 +1787,7 @@ message.author.sendEmbed(embed)
 client.on('message', msg => {
       if(!msg.channel.guild) return;
     if(msg.content.startsWith (prefix  + 'help')) {
-    msg.reply('**📩 شيك علي الخاص**');
+    msg.reply('**📩 تم الارسال في الخاص**');
   }
 });
 
