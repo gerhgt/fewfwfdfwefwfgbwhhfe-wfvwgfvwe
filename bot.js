@@ -1934,7 +1934,7 @@ client.on('message', function(message) {
         var server = server = servers[message.guild.id];
         if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
     }
-    else if (mess.startsWith(prefix + 'تعال')) {
+    else if (mess.startsWith(prefix + 'come')) {
         if (!message.member.voiceChannel) return message.channel.send(':no_entry: || **__يجب ان تكون في روم صوتي__**');
         message.member.voiceChannel.join().then(message.channel.send(':ok:'));
     }
@@ -2022,7 +2022,7 @@ function isYoutube(str) {
     return str.toLowerCase().indexOf('youtube.com') > -1;
 }
  client.on('message', message => {
-     if (message.content === prefix +"help") {
+     if (message.content === prefix +"2help") {
     const embed = new Discord.RichEmbed()
      .setColor("RANDOM")
      .addField(`Zyad,aLmutairi commands:
@@ -2052,7 +2052,7 @@ For additional help,  `)
      }
     });
 	client.on('message', message => {
-    if (message.content.startsWith("habout")) {
+    if (message.content.startsWith("about")) {
       message.channel.send({
  embed: new Discord.RichEmbed() 
     .setColor('RED')
