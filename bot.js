@@ -25,6 +25,7 @@ client.on('message', msg => {
     .setTitle('Pong!')
     .setDescription(`My ping is ${client.ping}`)
     .setFooter(`Requested By : ${msg.author.tag}`)
+msg.channel.send(pingsembed)
   };
 });
 
@@ -134,8 +135,6 @@ client.on('message', message => {
 1imageل
 :large_blue_circle:   لمعرفة عدد دعواتك الى السيرفر
 1invites
-:large_blue_circle:   رابط دعوة للسيرفر
-1link
 :large_blue_circle:   لمشاهدة حالات اعضاءالسيرفر
 1ms
 ----------
@@ -159,7 +158,7 @@ client.on('message', message => {
 .setColor('RANDOM')
 message.author.sendEmbed(embed)
 }
-});
+}); //انا رح اخليه يبعت مسجين لما تكتب help
 
 client.on('message', msg => {
       if(!msg.channel.guild) return;
@@ -1756,8 +1755,8 @@ client.on('message', message => {
 1profile
 :large_blue_circle:   لعرض سكنك في ماين كرافت
 1skin
-:large_blue_circle:   اذا واحد سب اكتبله هي
-00
+:large_blue_circle:   رابط دعوة للسيرفر
+1link
 :large_blue_circle:   لاثبات ملكية البوت
 1ownerbot
 :large_blue_circle:    (لازم تسوي روم اسمه suggests)لاقتراح اي اقتراح 
