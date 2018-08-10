@@ -1772,6 +1772,24 @@ client.on('message', message => {
 
 
 
+client.on('message', message => {
+    if(message.content == 'الشعار') {
+        message.channel.send('تفضل');
+    }
+});
+
+
+client.on('message', message => {
+    if(message.content == 'الشعار') {
+        message.channel.send('๖ۣۜ𝕷𝕲乡');
+    }
+});
+
+
+
+
+
+
 client.login(process.env.BOT_TOKEN);
 
 
