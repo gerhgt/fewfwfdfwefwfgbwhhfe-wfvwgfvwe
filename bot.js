@@ -1740,6 +1740,8 @@ client.on('message', message => {
 1setavatar
 :red_circle:    لتغير تويش البوت
 1sett
+:red_circle:    لعرض رتب السيرفر
+1ranks
 ----------
 **
 ***
@@ -1763,6 +1765,8 @@ client.on('message', message => {
 1suggest
 :large_blue_circle:   (لازم تسوي روم اسمه reports)للابلغ عن شخص
 1report
+:large_blue_circle:   لعرض الكوينز
+1coins
 :large_blue_circle:   لاظهار شعار البوت
 الشعار
 رابط كلان البوت
@@ -2551,22 +2555,6 @@ if(cmd === `${prefix}coins`) {
 
 
 
-var AsciiTable = require('ascii-data-table').default
-client.on('message', message =>{
-
-    if(message.content == "1roles"){
-        var 
-        ros=message.guild.roles.size,
-        data = [['Rank', 'RoleName']]
-        for(let i =0;i<ros;i++){
-            if(message.guild.roles.array()[i].id !== message.guild.id){
-         data.push([i,`${message.guild.roles.filter(r => r.position == ros-i).map(r=>r.name)}`])
-        }}
-        let res = AsciiTable.table(data)
-
-        message.channel.send(`**\`\`\`xl\n${res}\`\`\`**`);
-    }
-});
 
 
 
