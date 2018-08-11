@@ -2095,17 +2095,17 @@ let prefix = "1";
 
 client.on('message', message => { 
 let prefix = '1'
-    if (message.content.startsWith(prefix + 'role')) {
+    if (message.content.startsWith(prefix + 'roles')) {
 
-        const Rank = message.guild.roles.map(e => e.toString()).join(" ");
+        const List = message.guild.roles.map(e => e.toString()).join(" ");
 
-        const RankList = new Discord.RichEmbed()
-            .setTitle('➠ Roles.') 
+        const EmojiList = new Discord.RichEmbed()
+            .setTitle('Roles ➠ ') 
             .setAuthor(message.guild.name, message.guild.iconURL) 
             .setColor('RANDOM') 
             .setDescription(List) 
             .setFooter(message.guild.name) 
-        message.channel.send(RankList) 
+        message.channel.send(EmojiList) 
     }
 });
 
