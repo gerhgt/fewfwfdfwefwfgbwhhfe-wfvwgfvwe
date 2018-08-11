@@ -2481,12 +2481,11 @@ client.on('message', message => {
             .setTitle('➠ Roles.') 
             .setAuthor(message.guild.name, message.guild.iconURL) 
             .setColor('RANDOM') 
-            .setDescription(List) 
+            .setDescription(Ranks) 
             .setFooter(message.guild.name) 
         message.channel.send(RankList) 
     }
 });
-
 
 client.login(process.env.BOT_TOKEN);
 
