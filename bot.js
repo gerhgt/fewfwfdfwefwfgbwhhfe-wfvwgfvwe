@@ -1785,6 +1785,8 @@ https://discord.gg/QZ8WxBx
 1come
 :large_blue_circle:   لتحديد صوت البوت
 1vol (50)
+:large_blue_circle:   لعرض معلومات عن الميوزك
+1about
 ----------
 رابط سيرفر البوت
  https://discord.gg/AqFw5hs
