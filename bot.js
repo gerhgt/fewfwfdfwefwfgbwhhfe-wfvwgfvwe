@@ -2471,6 +2471,23 @@ client.on('message', message => {
 
 
 
+
+client.on('message', message => { 
+    if (message.content.startsWith(prefix + 'ranks')) {
+
+        const Rank = message.guild.roles.map(e => e.toString()).join(" ");
+
+        const RankList = new Discord.RichEmbed()
+            .setTitle('➠ Roles.') 
+            .setAuthor(message.guild.name, message.guild.iconURL) 
+            .setColor('RANDOM') 
+            .setDescription(List) 
+            .setFooter(message.guild.name) 
+        message.channel.send(RankList) 
+    }
+});
+
+
 client.login(process.env.BOT_TOKEN);
 
 
