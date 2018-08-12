@@ -10,8 +10,6 @@ const ytdl = require('ytdl-core');
 
 const fs = require('fs');
 
-const Fortnite = require('fortnite');
-
 const stripIndents = require('common-tags').stripIndents;
 
 const client = new Discord.Client({disableEveryone: true});
