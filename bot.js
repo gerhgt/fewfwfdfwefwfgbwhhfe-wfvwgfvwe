@@ -1708,10 +1708,16 @@ client.on('message', message => {
 
 client.on('message', message => {
     if(message.content == 'الشعار') {
-        message.channel.send('๖ۣۜ𝕷𝕲乡');
+        message.channel.send('```في الديسكورد LG |```');
     }
 });
 
+
+client.on('message', message => {
+    if(message.content == 'الشعار') {
+        message.channel.send('```في اللعبة ๖ۣۜ𝕷𝕲乡```');
+    }
+});
 
 client.on('message', message => {
     if (message.author.bot) return;
