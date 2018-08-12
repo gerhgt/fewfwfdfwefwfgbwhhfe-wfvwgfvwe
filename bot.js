@@ -2640,7 +2640,6 @@ client.on("ready", () => {
 });
 
 
-const devs = ['299302204437823488' , '' , '' , ''];
 const adminprefix = "1";
 client.on('message', message => {
     var argresult = message.content.split(` `).slice(1).join(' ');
