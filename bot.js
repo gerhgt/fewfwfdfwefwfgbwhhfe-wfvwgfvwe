@@ -2801,13 +2801,20 @@ alpha.author.sendEmbed(alpha);
 client.on('message', message => {
     if (message.author.bot) return;
      if (message.content === prefix + "help-admin") {
-		 message.channel.send('**The Message Was Sent On Private**');
+         if(!message.guild.member(message.author).hasPermission("MANAGE_MESSAGES")) return message.reply(`
+         
+         **لست من المشرفين لن يتم ارسال الرسالة إليك**
+         
+         
+         `);
+         message.channel.send('**لقد تم ارسال رسالة المساعدة في الرسائل الخاصة**');
             
-	
-		 
+    
+         
 
 
  message.author.sendMessage(`
+ **
 ╔[❖══════════════════════════❖]╗
       Bot Prefix:**1**
 ╚[❖══════════════════════════❖]╝
@@ -2863,6 +2870,8 @@ client.on('message', message => {
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
   ❖1sr:لعرض السيرفرات يللي فيها البوت
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
+
+
 `);
 
     }
