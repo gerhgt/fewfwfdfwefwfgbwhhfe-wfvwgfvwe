@@ -64,6 +64,15 @@ client.on('message', async message =>{
   });
 });
 
+client.on('ready', function(){
+  require("./antispam.js")(client, function(message){
+     message.delete().then(yumz => {
+     message.channel.send(`stop spamming kid <@${message.author.id}>`).then(spammer => {
+     spammer.delete(2000)
+   });
+   });
+  });
+});
 
 client.on('message', message => {
     if (message.author.bot) return;
