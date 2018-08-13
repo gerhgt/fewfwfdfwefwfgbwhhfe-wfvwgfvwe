@@ -1720,6 +1720,39 @@ client.on('message', message => {
 });
 
 client.on('message', message => {
+    if(message.content == '.') {
+        message.channel.send('ليش تنقط ؟');
+    }
+});
+
+
+client.on('message', message => {
+    if(message.content == 'باك') {
+        message.channel.send('ولكم');
+    }
+});
+
+
+client.on('message', message => {
+    if(message.content == 'هلا') {
+        message.channel.send('هلا بيك');
+    }
+});
+
+
+
+client.on('message', message => {
+    if(message.content == 'back') {
+        message.channel.send('welcome');
+    }
+});
+
+client.on('message', message => {
+    if(message.content == 'مين يلعب') {
+        message.channel.send('اسأل الشباب');
+    }
+});
+client.on('message', message => {
     if (message.author.bot) return;
      if (message.content === "1help") {
   let embed = new Discord.RichEmbed()
@@ -2622,23 +2655,23 @@ var ss = 0;
 client.on('voiceStateUpdate', (o,n) => {
     if (o.voiceChannel && !n.voiceChannel) {
         ss-=1
-        n.guild.channels.get("477238035533266954").edit({
+        n.guild.channels.get("478495693116276736").edit({
             name : "Voice Online : [" + ss+ "]"
         })
     };
     if (n.voiceChannel && !o.voiceChannel) {
         ss+=1
-        n.guild.channels.get("477238035533266954").edit({
+        n.guild.channels.get("478495693116276736").edit({
             name : "Voice Online : [" + ss+ "]"
         })
     }
 })
 client.on("ready", () => {
-    client.guilds.get("477227867676082216").members.forEach(m => {
+    client.guilds.get("478495693116276736").members.forEach(m => {
         if (m.voiceChannel) {
             ss+=1
         };
-        client.channels.get("477238035533266954").edit({
+        client.channels.get("478495693116276736").edit({
             name : "Voice Online : [" + ss+ "]"
         })
     });
