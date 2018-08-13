@@ -2701,6 +2701,32 @@ if (command == "emb")    { //Jackeo  حقوقي
 
 
 
+client.on('message', message => {
+var command = message.content.spilt(" ")[0];
+var prefix = '1'; // هنا تقدر تغير البرفكس
+var args1 = message.content.spilt(" ").slice(1).join(" ");
+  if(command == prefix + 'find') {
+    let size = 0;
+    if(message.author.bot) return;
+    if(!message.guild.member) return;
+    if(!args1) return message.channel.send(`**➥ Useage:** ${prefix}find (اي حرف من الاسم الي تبيه)`);
+
+      var playersFind = new Discord.RichEmbed()
+      .setTitle(`:white_check_mark: **كود البحث عن الاعضاء**`)
+      .setThumbnail(client.user.avatarURL)
+      .setDescription(`**\n➥ البحث عن الاعضاء الموجود بداخل اسمائهم:**\n " ${args1} "\n\n**➥ عدد الاعضاء:**\n " ${message.guild.members.filter(m=>m.user.username.toUpperCase().includes(args1.toUpperCase())).size} "\n\n\`\`\`════════════════════════════════════════════════════════════════════════════════════════\n\n${message.guild.members.filter(m=>m.user.username.toUpperCase().includes(args1.toUpperCase())).map(m=>size++ + '. ' + m.user.tag).slice(1,21).join('\n') || 'لا يوجد اعضاء بهذه الاحرف'}\n\n════════════════════════════════════════════════════════════════════════════════════════\`\`\``)
+      .setColor('GRAY')
+      .setTimestamp()
+      .setFooter(message.author.tag, message.author.avatarURL)
+
+      message.channel.send(playersFind);
+      message.delete();
+  }
+});
+
+
+
+
 client.login(process.env.BOT_TOKEN);
 
 
