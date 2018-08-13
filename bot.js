@@ -2702,7 +2702,7 @@ if (command == "emb")    { //Jackeo  حقوقي
 
 
 client.on('message', message => {
-var command = message.content.spilt(" ")[0];
+var command = message.content.split(" ")[0];
 var prefix = '1'; // هنا تقدر تغير البرفكس
 var args1 = message.content.spilt(" ").slice(1).join(" ");
   if(command == prefix + 'find') {
