@@ -2673,9 +2673,8 @@ client.on("ready", () => {
         };
         client.channels.get("478495693116276736").edit({
             name : "Voice Online : [" + ss+ "]"
-        })
-    });
-
+        });
+ 
 
 client.on('message', message => {
     var argresult = message.content.split(` `).slice(1).join(' ');
