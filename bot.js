@@ -2650,31 +2650,7 @@ client.on('message', message => {
 
 
 
-var ss = 0;
 
-client.on('voiceStateUpdate', (o,n) => {
-    if (o.voiceChannel && !n.voiceChannel) {
-        ss-=1
-        n.guild.channels.get("478495693116276736").edit({
-            name : "Voice Online : [" + ss+ "]"
-        })
-    };
-    if (n.voiceChannel && !o.voiceChannel) {
-        ss+=1
-        n.guild.channels.get("478495693116276736").edit({
-            name : "Voice Online : [" + ss+ "]"
-        })
-    }
-})
-client.on("ready", () => {
-    client.guilds.get("477227867676082216").members.forEach(m => {
-        if (m.voiceChannel) {
-            ss+=1
-        };
-        client.channels.get("478495693116276736").edit({
-            name : "Voice Online : [" + ss+ "]"
-        });
- 
 
 client.on('message', message => {
     var argresult = message.content.split(` `).slice(1).join(' ');
