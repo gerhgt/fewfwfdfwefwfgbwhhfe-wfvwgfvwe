@@ -66,107 +66,6 @@ client.on('message', async message =>{
 
 
 
-client.on('message', message => {
-    if (message.author.bot) return;
-     if (message.content === "1help") {
-		 let sicon = message.author.displayAvatarURL
-  let embed = new Discord.RichEmbed()
-          .setAuthor(message.author.username)
-           .setThumbnail(sicon)
-                 .setTimestamp()
-    .setDescription(`
-***
-:white_small_square:  ( اوامر الادارة***
-**
-:red_circle:     لتقفيل الشات
-1mchannel
-:red_circle:     لفتح الشات
-1umchannel
-:red_circle:    معلومات عن السيرفر
-1server
-:red_circle:    للطرد
-1kick
-:red_circle:    لارسال رسالة الى اعضاء السيرفر بشكل مطور
-1bc1
-:red_circle:    لارسال رسالة الى اعضاء السيرفر بشكل عادي 
-1bc2
-:red_circle:    لانشاء روم صوتي
-1creatvc
-:red_circle:    لانشاء روم كتابي
-1creattc
-:red_circle:    لاخفاء الروم
-1hchannel
-:red_circle:    لفك اخفاء الروم
-1schannel
-:red_circle:    لنقل الاعضاء اليك لازم تكون بروم صوتي
-1move
-:red_circle:    لاعطاء ميوت
-1mute
-:red_circle:    لفك  الميوت
-1unmute
-:red_circle:    لاعطاء شخص ديفن
-1deafen
-:red_circle:    لفك عن شخص ديفن
-1undeafen
-:red_circle:    لتغير اسم البوت
-1nchange
-:red_circle:    لتغير صورة البوت ارسل الصورة وانسخ رابطها وحطها هي والامر
-1fchange
-:red_circle:    لمسح الشات
-1clear 
-:red_circle:    لعرض عدد اعضاء السيرفر
-1mlist
-:red_circle:    لعرض السيرفرات يللي فيها البوت
-1sr
-:red_circle:    معلومات المطورين
-1discrim
-:red_circle:    لارسال رسالة لصاحب البوت
-1sendas
-----------
-
-**
-***
-:white_small_square: ( الاوامر العامة***
-**
-:large_blue_circle:   لعرض معلومات البوت 
-1bot
-:large_blue_circle:   لاظهار عدد الاشخاص المبندين من السيرفر
-1bans
-:large_blue_circle:   لعرض صورة السيرفر
-1imageل
-:large_blue_circle:   لمعرفة عدد دعواتك الى السيرفر
-1invites
-:large_blue_circle:   لمشاهدة حالات اعضاءالسيرفر
-1ms
-----------
-
-
-**
-***
-:white_small_square: ( الالعاب***
-**
-:large_blue_circle:   لعبة الصراحة
-صراحة
-:large_blue_circle:   لعبة لو خيروك
-لو خيروك
-:large_blue_circle:   لعبة الزواج
-زواج
-:large_blue_circle:    لعبة كت كويت
-كت كويت
-**
-
-`)
-.setColor('RANDOM')
-message.author.sendEmbed(embed)
-}
-}); //انا رح اخليه يبعت مسجين لما تكتب help
-
-client.on('message', msg => {
-      if(!msg.channel.guild) return;
-    if(msg.content.startsWith (prefix  + 'help')) {
-    msg.reply('**📩 تم الارسال في الخاص**');
-  }
-});
 
 
 
@@ -1753,103 +1652,6 @@ client.on('message', message => {
         message.channel.send('اسأل الشباب');
     }
 });
-client.on('message', message => {
-    if (message.author.bot) return;
-     if (message.content === "1help") {
-  let embed = new Discord.RichEmbed()
-          .setAuthor(message.author.username)
-           .setThumbnail(message.author.avatarURL)
-                 .setTimestamp()
-    .setDescription(`
-***
-:white_small_square:  ( اوامر الادارة***
-**
-:red_circle:  لانشاء روم بطريقةجميلة
-1cvc
-:red_circle:  لاعطاء اي شخص باند
-1ban
-:red_circle:  لفك الباند عن شخص
-1unban
-:red_circle:    (لازم تسوي روم اسمه warns)لتحذير عضو
-1warn
-:red_circle:    لتغير بلاينق البوت
-1setgame
-:red_circle:    لتغير اسم البوت
-1setname
-:red_circle:    لتغير صورة البوت
-1setavatar
-:red_circle:    لتغير تويش البوت
-1sett
-:red_circle:    لعرض رتب السيرفر
-1ranks
-----------
-**
-***
-:white_small_square: ( الاوامر العامة***
-**
-:large_blue_circle:   لاظهار لفلك في السيرفر
-1level
-:large_blue_circle:   لاظهار التاريخ والوقت
-1date
-:large_blue_circle:   لاظهار صورة اونر السيرفر
-1avatar
-:large_blue_circle:   لاظهار البروفايل حقك
-1profile
-:large_blue_circle:   لعرض سكنك في ماين كرافت
-1skin
-:large_blue_circle:   رابط دعوة للسيرفر
-1link
-:large_blue_circle:   لاثبات ملكية البوت
-1ownerbot
-:large_blue_circle:    (لازم تسوي روم اسمه suggests)لاقتراح اي اقتراح 
-1suggest
-:large_blue_circle:   (لازم تسوي روم اسمه reports)للابلغ عن شخص
-1report
-:large_blue_circle:   لمسح الشات مع رقم
-1clr
-:large_blue_circle:   لعرض الكوينز
-1coins
-:large_blue_circle:   لاظهار شعار البوت
-الشعار
-رابط كلان البوت
-https://discord.gg/QZ8WxBx
-**
-***
-:white_small_square: ( اوامر الميوزك***
-**
-:large_blue_circle:   لتشغيل اغنية
-1play
-:large_blue_circle:   لتغير الاغنية
-1skip
-:large_blue_circle:   لايقاف الاغنية
-1pause
-:large_blue_circle:   لاستدعاء البوت
-1come
-:large_blue_circle:   لتحديد صوت البوت
-1vol (50)
-:large_blue_circle:   لعرض معلومات عن الميوزك
-1about
-----------
-رابط سيرفر البوت
- https://discord.gg/AqFw5hs
-----------
-رابط دعوة البوت
-https://discordapp.com/api/oauth2/authorize?client_id=460154242519400448&permissions=8&redirect_uri=https%3A%2F%2Fwww.youtube.com%2Fchannel%2FUC3gqokLQJ0OFbYAF9gv1bRw%3Fview_as%3Dsubscriber&scope=bot
-
-**
-
-`)
-.setColor('RANDOM')
-message.author.sendEmbed(embed)
-}
-});
-
-client.on('message', msg => {
-      if(!msg.channel.guild) return;
-    if(msg.content.startsWith (prefix  + 'help')) {
-    msg.reply('**📩 تم الارسال في الخاص**');
-  }
-});
 
 
 
@@ -2816,7 +2618,7 @@ client.on('message', message => {
  message.author.sendMessage(`
  **
 ╔[❖══════════════════════════❖]╗
-      Bot Prefix:**1**
+      Bot Prefix:1
 ╚[❖══════════════════════════❖]╝
 ╔[❖══════════════════════════❖]╗
   AdminCommands   اوامر الادارة
