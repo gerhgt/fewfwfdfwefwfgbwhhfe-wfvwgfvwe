@@ -2675,9 +2675,6 @@ client.on("ready", () => {
             name : "Voice Online : [" + ss+ "]"
         })
     });
-    client.user.setGame("HerpoPlex Community©", "https://twitch.tv/©");
-});
-
 
 
 client.on('message', message => {
