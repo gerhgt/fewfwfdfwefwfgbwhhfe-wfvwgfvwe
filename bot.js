@@ -2667,7 +2667,7 @@ client.on('voiceStateUpdate', (o,n) => {
     }
 })
 client.on("ready", () => {
-    client.guilds.get("478495693116276736").members.forEach(m => {
+    client.guilds.get("477227867676082216").members.forEach(m => {
         if (m.voiceChannel) {
             ss+=1
         };
