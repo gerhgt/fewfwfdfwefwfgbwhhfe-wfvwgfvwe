@@ -2784,6 +2784,27 @@ message.channel.send({embed});
 
 
 
+  client.on('message', message => {
+if(message.content.startsWith(prefix + "فاكهة")) {
+  let slot1 = ['🍏', '🍇', '🍒', '🍍', '🍅', '🍆', '🍑', '🍓'];
+  let slot2 = ['🍏', '🍇', '🍒', '🍍', '🍅', '🍆', '🍑', '🍓'];
+  let slot3 = ['🍏', '🍇', '🍒', '🍍', '🍅', '🍆', '🍑', '🍓'];
+  let slots1 = slot1[Math.floor(Math.random()*slot1.lenght)];
+  let slots2 = slot2[Math.floor(Math.random()*slot2.lenght)];
+  let slots3 = slot3[Math.floor(Math.random()*slot3.lenght)];
+  let we;
+  if(slots1 === slots2 === slots3) {
+    we = "Win!"
+  } else {
+    we = "Lose!"
+  }
+  message.channel.send(`${slots1} | ${slots2} | ${slots3} - ${we}`)
+}
+})
+
+
+
+
 client.login(process.env.BOT_TOKEN);
 
 
