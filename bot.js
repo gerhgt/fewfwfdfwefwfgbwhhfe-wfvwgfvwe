@@ -2764,36 +2764,31 @@ client.on('message', msg => {
 
 
 
+client.on('message', message => {
+    var command = message.content.split(" ")[0];
+    var prefix = '1'; // هنا تقدر تغير البرفكس
+    var args1 = message.content.split(" ").slice(1).join(" ");
+    if(command == prefix + 'find') { // الامر : $find
+        let sizePlayers = 1;
+        
+        if(message.author.bot) return;
+        if(!message.channel.guild) return;
+        if(!args1) return message.channel.send(`**➥ Useage:** ${prefix}find (اي حرف من الاسم الي تبيه)`).then(msg => msg.delete(5000));
+        
+        var playersFind = new Discord.RichEmbed()
+        .setTitle(`:white_check_mark: **كود البحث عن الاعضاء**`)
+        .setThumbnail(client.user.avatarURL)
+        .setDescription(`**\n➥ البحث عن الاعضاء الموجود بداخل اسمائهم:**\n " ${args1} "\n\n**➥ عدد الاعضاء:**\n " ${message.guild.members.filter(m=>m.user.username.toUpperCase().includes(args1.toUpperCase())).size} "\n\n\`\`\`════════════════════════════════════════════════════════════════════════════════════════\n\n${message.guild.members.filter(m=>m.user.username.toUpperCase().includes(args1.toUpperCase())).map(m=>sizePlayers++ + '. ' + m.user.tag).slice(0,20).join('\n') || 'لا يوجد اعضاء بهذه الاحرف'}\n\n════════════════════════════════════════════════════════════════════════════════════════\`\`\``)
+        .setColor('GRAY')
+        .setTimestamp()
+        .setFooter(message.author.tag, message.author.avatarURL)
+        
+        message.channel.send(playersFind);
+        message.delete();
+    }
+});
 
 
-
-const weather = require('weather-js');
- client.on('message', message => {
-     if(message.content.startsWith(prefix + "weather")) {
-         var args = message.content.split(" ").slice(1);
- weather.find({search: args.join(" "), degreeType: 'C'}, function(err, result) {
-      if (err) message.channel.send(err);
-      if (result === undefined || result.length === 0) {
-          message.channel.send('**Please enter a location!**')
-          return;
-      }
-      var current = result[0].current;
-      var location = result[0].location;
-      const embed = new Discord.RichEmbed()
-          .setDescription(`**${current.skytext}**`)
-          .setAuthor(`Weather for ${current.observationpoint}`)
-          .setThumbnail(current.imageUrl)
-          .setColor(0x00AE86)
-          .addField('Timezone',`UTC${location.timezone}`, true)
-          .addField('Degree Type',location.degreetype, true)
-          .addField('Temperature',`${current.temperature} Degrees`, true)
-          .addField('Feels Like', `${current.feelslike} Degrees`, true)
-          .addField('Winds',current.winddisplay, true)
-          .addField('Humidity', `${current.humidity}%`, true)
-          message.channel.send({embed});
-  })
-}
- });
 
 
 
