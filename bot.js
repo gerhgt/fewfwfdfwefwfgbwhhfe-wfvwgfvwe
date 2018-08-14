@@ -2795,7 +2795,7 @@ client.on('message', async message =>{
   let cmd = messageArray[0];
   let args = messageArray.slice(1);
   let sicon = message.author.displayAvatarURL;
-  if(cmd === `1myid`) {
+  if(cmd === `myid`) {
       var bots = new Discord.RichEmbed()
 
       .setDescription(`** Your id: ${message.author.id}  **`)
@@ -2857,7 +2857,7 @@ client.on('message', message => {
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
   ❖1ms:لمشاهدة حالات الاعضاء في السيرفر
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
-  ❖1myid:لاظهار الايدي حقك
+  ❖myid:لاظهار الايدي حقك
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
 شعار كلان البوت:الشعار
 رابط كلان البوت
