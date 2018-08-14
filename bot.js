@@ -2796,6 +2796,7 @@ client.on('message', async message =>{
   let args = messageArray.slice(1);
   let sicon = message.author.displayAvatarURL;
   if(cmd === `myid`) {
+	  if(!message.channel.guild) return message.reply(' ');
       var bots = new Discord.RichEmbed()
 
       .setDescription(`** Your id: ${message.author.id}  **`)
