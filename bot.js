@@ -2599,6 +2599,40 @@ alpha.author.sendEmbed(alpha);
 
 
 
+client.on('message', msg => {
+  if(msg.content === 'ماهو سيرفر كودز؟')
+  msg.reply('اكبر مخانيث عرفتهم البشرية باختصار.')
+});
+
+
+
+
+client.on('message', message => {
+    var command = message.content.split(" ")[0];
+    var prefix = '1'; // هنا تقدر تغير البرفكس
+    var args1 = message.content.split(" ").slice(1).join(" ");
+    if(command == prefix + 'find') { // الامر : $find
+        let sizePlayers = 1;
+        
+        if(message.author.bot) return;
+        if(!message.channel.guild) return;
+        if(!args1) return message.channel.send(`**➥ Useage:** ${prefix}find (اي حرف من الاسم الي تبيه)`).then(msg => msg.delete(5000));
+        
+        var playersFind = new Discord.RichEmbed()
+        .setTitle(`:white_check_mark: **كود البحث عن الاعضاء**`)
+        .setThumbnail(client.user.avatarURL)
+        .setDescription(`**\n➥ البحث عن الاعضاء الموجود بداخل اسمائهم:**\n " ${args1} "\n\n**➥ عدد الاعضاء:**\n " ${message.guild.members.filter(m=>m.user.username.toUpperCase().includes(args1.toUpperCase())).size} "\n\n\`\`\`════════════════════════════════════════════════════════════════════════════════════════\n\n${message.guild.members.filter(m=>m.user.username.toUpperCase().includes(args1.toUpperCase())).map(m=>sizePlayers++ + '. ' + m.user.tag).slice(0,20).join('\n') || 'لا يوجد اعضاء بهذه الاحرف'}\n\n════════════════════════════════════════════════════════════════════════════════════════\`\`\``)
+        .setColor('GRAY')
+        .setTimestamp()
+        .setFooter(message.author.tag, message.author.avatarURL)
+        
+        message.channel.send(playersFind);
+        message.delete();
+    }
+});
+
+
+
 
 client.on('message', message => {
     if (message.author.bot) return;
@@ -2652,7 +2686,11 @@ client.on('message', message => {
 رابط كلان البوت
 https://discord.gg/QZ8WxBx
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
-
+رابط سيرفر البوت
+https://discord.gg/m6t4Vxk
+----------
+رابط دعوة البوت
+http://i8.ae/8vOFm
 
 `)
 .setColor('RANDOM')
@@ -2666,6 +2704,9 @@ client.on('message', msg => {
     msg.reply('**📩 تم الارسال في الخاص**');
   }
 });
+
+
+
 
 
 client.on('message', message => {
@@ -2683,7 +2724,7 @@ client.on('message', message => {
       Bot Prefix:1
 ╚[❖══════════════════════════❖]╝
 ╔[❖══════════════════════════❖]╗
-  AdminCommands   اوامر الادارة
+AdminCommands    اوامر الادارة
 ╚[❖══════════════════════════❖]╝
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
   ❖1cvc:لانشاء روم بخاصيات
@@ -2736,7 +2777,13 @@ client.on('message', message => {
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
   ❖1clr:لمسح الشات مع رقم
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
-
+  ❖1find:للبحث عن عضو
+╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
+رابط سيرفر البوت
+https://discord.gg/m6t4Vxk
+----------
+رابط دعوة البوت
+http://i8.ae/8vOFm
 
 `)
 .setColor('RANDOM')
@@ -2752,41 +2799,182 @@ client.on('message', msg => {
 });
 
 
+client.on('message', message => {
+    if (message.author.bot) return;
+     if (message.content === "1help-games") {
+		 let sicon = message.author.displayAvatarURL
+  let embed = new Discord.RichEmbed()
+          .setAuthor(message.author.username)
+           .setThumbnail(sicon)
+                 .setTimestamp()
+    .setDescription(`
+	
+	
+╔[❖══════════════════════════❖]╗
+      Bot Prefix:1
+╚[❖══════════════════════════❖]╝
+╔[❖══════════════════════════❖]╗
+  GameCommands   اوامر الالعاب
+╚[❖══════════════════════════❖]╝
+╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
+  ❖لعبة الصراحة:صراحة
+╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
+  ❖لعبة لو خيروك:لو خيروك
+╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
+  ❖لعبة الزواج:زواج
+╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
+  ❖لعبة كت كويت:كت كويت
+╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
+  ❖1ranks:لعرض رتب السيرفر
 
+رابط سيرفر البوت
+https://discord.gg/m6t4Vxk
+----------
+رابط دعوة البوت
+http://i8.ae/8vOFm
 
-
+`)
+.setColor('RANDOM')
+message.author.sendEmbed(embed)
+}
+});
 
 client.on('message', msg => {
-  if(msg.content === 'ماهو سيرفر كودز؟')
-  msg.reply('اكبر مخانيث عرفتهم البشرية باختصار.')
+      if(!msg.channel.guild) return;
+    if(msg.content.startsWith (prefix  + 'help-games')) {
+    msg.reply('**📩 تم الارسال في الخاص**');
+  }
+});
+
+
+
+
+
+
+client.on('message', message => {
+    if (message.author.bot) return;
+     if (message.content === "1help-music") {
+  let embed = new Discord.RichEmbed()
+          .setAuthor(message.author.username)
+           .setThumbnail(message.author.avatarURL)
+                 .setTimestamp()
+    .setDescription(`
+
+[❖═══════════════════════════❖]╗
+      Bot Prefix:1
+╚[❖══════════════════════════❖]╝
+╔[❖══════════════════════════❖]╗
+  MusicCommand   اوامر الميوزك
+╚[❖══════════════════════════❖]╝
+╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
+  ❖1play:لتشغيل الاغنية
+╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
+  ❖1skip:لتغير الاغنية
+╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
+  ❖1pause:لايقاف الاغنية
+╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
+  ❖1about:لعرض معلومات عن سيرعة البوت
+╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
+  ❖1vol:لتحديد صوت الاغنية
+╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
+
+رابط سيرفر البوت
+https://discord.gg/m6t4Vxk
+----------
+رابط دعوة البوت
+http://i8.ae/8vOFm
+
+`)
+.setColor('RANDOM')
+message.author.sendEmbed(embed)
+}
+});
+
+client.on('message', msg => {
+      if(!msg.channel.guild) return;
+    if(msg.content.startsWith (prefix  + 'help-music')) {
+    msg.reply('**📩 تم الارسال في الخاص**');
+  }
+});
+
+
+
+
+
+
+client.on('message', message => {
+    if (message.author.bot) return;
+     if (message.content === "1help-anmi") {
+  let embed = new Discord.RichEmbed()
+          .setAuthor(message.author.username)
+           .setThumbnail(message.author.avatarURL)
+                 .setTimestamp()
+    .setDescription(`
+
+[❖═══════════════════════════❖]╗
+      Bot Prefix:1
+╚[❖══════════════════════════❖]╝
+╔[❖══════════════════════════❖]╗
+  AnmiCommand   اوامر الانمي
+╚[❖══════════════════════════❖]╝
+╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
+  ❖1hug:انمي
+╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
+  ❖1kiss:انمي
+╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
+  ❖1slap:انمي
+╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
+  ❖1pat:انمي
+╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
+  ❖1cuddle:انمي
+╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
+  ❖1poke:انمي
+╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
+  ❖1tickle:انمي
+╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
+
+رابط سيرفر البوت
+https://discord.gg/m6t4Vxk
+----------
+رابط دعوة البوت
+http://i8.ae/8vOFm
+
+`)
+.setColor('RANDOM')
+message.author.sendEmbed(embed)
+}
+});
+
+client.on('message', msg => {
+      if(!msg.channel.guild) return;
+    if(msg.content.startsWith (prefix  + 'help-anmi')) {
+    msg.reply('**📩 تم الارسال في الخاص**');
+  }
 });
 
 
 
 
 client.on('message', message => {
-    var command = message.content.split(" ")[0];
-    var prefix = '1'; // هنا تقدر تغير البرفكس
-    var args1 = message.content.split(" ").slice(1).join(" ");
-    if(command == prefix + 'find') { // الامر : $find
-        let sizePlayers = 1;
-        
-        if(message.author.bot) return;
-        if(!message.channel.guild) return;
-        if(!args1) return message.channel.send(`**➥ Useage:** ${prefix}find (اي حرف من الاسم الي تبيه)`).then(msg => msg.delete(5000));
-        
-        var playersFind = new Discord.RichEmbed()
-        .setTitle(`:white_check_mark: **كود البحث عن الاعضاء**`)
-        .setThumbnail(client.user.avatarURL)
-        .setDescription(`**\n➥ البحث عن الاعضاء الموجود بداخل اسمائهم:**\n " ${args1} "\n\n**➥ عدد الاعضاء:**\n " ${message.guild.members.filter(m=>m.user.username.toUpperCase().includes(args1.toUpperCase())).size} "\n\n\`\`\`════════════════════════════════════════════════════════════════════════════════════════\n\n${message.guild.members.filter(m=>m.user.username.toUpperCase().includes(args1.toUpperCase())).map(m=>sizePlayers++ + '. ' + m.user.tag).slice(0,20).join('\n') || 'لا يوجد اعضاء بهذه الاحرف'}\n\n════════════════════════════════════════════════════════════════════════════════════════\`\`\``)
-        .setColor('GRAY')
-        .setTimestamp()
-        .setFooter(message.author.tag, message.author.avatarURL)
-        
-        message.channel.send(playersFind);
-        message.delete();
+            if (message.content.startsWith(prefix + "help")) {
+     let embed = new Discord.RichEmbed()
+.setThumbnail(message.author.avatarURL)
+.addField('     **1help-admin** ' ,' **اوامر المشرفين** ')
+.addField('     **1help-general**  ' ,' **اوامر عامة** ')
+.addField('     **1help-music** ' , '**اوامر تشغيل الموسيقى**') 
+.addField('     **1help-games** ' , '**اوامر الالعاب**') 
+.addField('     **1help-anmi** ' ,' **لمحبين الانمي**')
+
+.setColor('#7d2dbe')
+  message.channel.sendEmbed(embed);
     }
 });
+
+
+
+
+
+
 
 
 
