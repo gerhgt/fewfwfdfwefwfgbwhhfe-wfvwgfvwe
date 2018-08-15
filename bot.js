@@ -2508,8 +2508,7 @@ var prefix = "1"; //Jackeo  حقوقي
   let command = message.content.split(" ")[0]; //Jackeo  حقوقي
   command = command.slice(prefix.length); //Jackeo  حقوقي
  //Jackeo  حقوقي  //Jackeo  حقوقي  //Jackeo  حقوقي  //Jackeo  حقوقي
-  let args = message.content.split(" ").slice(1);  //Jackeo  حقوقي
- //Jackeo  حقوقي  //Jackeo  حقوقي  //Jackeo  حقوقي  //Jackeo  حقوقي
+  let args = message.content.split(" ").slice(1); 
   if (command === "say")  {
 	      if(!message.channel.guild) return message.reply(' ');
 //Jackeo  حقوقي
@@ -2985,6 +2984,8 @@ AdminCommands    اوامر الادارة
   ❖1clr:لمسح الشات مع رقم
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
   ❖1find:للبحث عن عضو
+╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
+  ❖1say:تخلي البوت يتكلم يللي تبيه
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
 رابط سيرفر البوت
 https://discord.gg/m6t4Vxk
