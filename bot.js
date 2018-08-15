@@ -30,40 +30,7 @@ msg.channel.send(pingsembed)
   };
 });
 
-client.on('message', async message =>{
-    let messageArray = message.content.split(" ");
-    let cmd = messageArray[0];
-    let args = messageArray.slice(1);
-    let xp = require("./xp.json");
 
-  let xpAdd = Math.floor(Math.random() * 7) + 8;
-  console.log(xpAdd);
-
-  if(!xp[message.author.id]){
-    xp[message.author.id] = {
-      xp: 0,
-      level: 1
-    };
-  }
-
-
-  let curxp = xp[message.author.id].xp;
-  let curlvl = xp[message.author.id].level;
-  let nxtLvl = xp[message.author.id].level * 300;
-  xp[message.author.id].xp =  curxp + xpAdd;
-  if(nxtLvl <= xp[message.author.id].xp){
-    xp[message.author.id].level = curlvl + 1;
-    let lvlup = new Discord.RichEmbed()
-    .setTitle("Level Up!")
-    .setColor("purple")
-    .addField("New Level", curlvl + 1);
-
-    message.channel.send(lvlup).then(msg => {msg.delete(5000)});
-  }
-  fs.writeFile("./xp.json", JSON.stringify(xp), (err) => {
-    if(err) console.log(err)
-  });
-});
 
 
 
@@ -1486,35 +1453,7 @@ client.on('message',message =>{
   });
 
 
-client.on('message', message => {
-    let messageArray = message.content.split(" ");
-    let cmd = messageArray[0];
-    let args = messageArray.slice(0);
-    let prefix = '1';
-    let xp = require("./xp.json");
-    
-if(cmd === `${prefix}level`) {
-if(!xp[message.author.id]){
-    xp[message.author.id] = {
-      xp: 0,
-      level: 1
-   };
- }
-   let curxp = xp[message.author.id].xp;
-   let curlvl = xp[message.author.id].level;
-   let nxtLvlXp = curlvl * 300;
-   let difference = nxtLvlXp - curxp;
- 
-   let lvlEmbed = new Discord.RichEmbed()
-   .setAuthor(message.author.username)
-   .setColor("purple")
-   .addField("Level", curlvl, true)
-   .addField("XP", curxp, true)
-   .setFooter(`${difference} XP til level up`, message.author.displayAvatarURL);
- 
-   message.channel.send(lvlEmbed).then(msg => {msg.delete(5000)});
-}
-});
+
 
 
 client.on('message', ( message ) => {
@@ -2365,66 +2304,7 @@ client.on('message', message => {
 
 
 
-client.on('message', message => {
-    let messageArray = message.content.split(" ");
-    let cmd = messageArray[0];
-    let args = messageArray.slice(0);
-    let coins = require("./coins.json");
-    
-  if(!coins[message.author.id]){
-    coins[message.author.id] = {
-      coins: 0
-    };
-  }
 
-  let coinAmt = Math.floor(Math.random() * 15) + 1;
-  let baseAmt = Math.floor(Math.random() * 15) + 1;
-  console.log(`${coinAmt} ; ${baseAmt}`);
-
-  if(coinAmt === baseAmt){
-    coins[message.author.id] = {
-      coins: coins[message.author.id].coins + coinAmt
-    };
-  fs.writeFile("./coins.json", JSON.stringify(coins), (err) => {
-    if (err) console.log(err)
-  });
-  let coinEmbed = new Discord.RichEmbed()
-  .setAuthor(message.author.username)
-  .setColor("#5074b3")
-  .addField("💸", `${coinAmt} coins added!`);
-
-  message.channel.send(coinEmbed).then(msg => {msg.delete(5000)});
-  }
-});
-
-
-client.on('message', message => {
-    let messageArray = message.content.split(" ");
-    let cmd = messageArray[0];
-    let args = messageArray.slice(0);
-    let prefix = '1';
-    let coins = require("./coins.json");
-    
-if(cmd === `${prefix}coins`) {
-	    if(!message.channel.guild) return message.reply(' ');
-  //!coins
-  if(!coins[message.author.id]){
-    coins[message.author.id] = {
-      coins: 0
-    };
-  }
-
-  let uCoins = coins[message.author.id].coins;
-
-
-  let coinEmbed = new Discord.RichEmbed()
-  .setAuthor(message.author.username)
-  .setColor("#00FF00")
-  .addField("💸", uCoins);
-
-  message.channel.send(coinEmbed).then(msg => {msg.delete(5000)});
-}
-});
 
 
 
@@ -2872,10 +2752,6 @@ client.on('message', message => {
   GeneralCommand   اوامر عامة
 ╚[❖══════════════════════════❖]╝
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
-  ❖1level:لاظهار لفلك في السيرفر
-╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
-  ❖1date:لاظهار التاريخ والوقت
-╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
   ❖1avatar:لاظهار صورةاونر السيرفر
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
   ❖1profile&id:لاظهار البروفايل حقك
@@ -2889,8 +2765,6 @@ client.on('message', message => {
   ❖1suggest:لاقتراح اي شي
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
   ❖1report:للابلاغ عن شخص
-╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
-  ❖1coins:لاظهار الكوينز حقكتك
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
   ❖1bot:معلومات البوت
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
