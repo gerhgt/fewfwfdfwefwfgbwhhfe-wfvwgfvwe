@@ -31,7 +31,20 @@ msg.channel.send(pingsembed)
 });
 
 
-
+  client.on('message',async message => {
+  let messageArray = message.content.split(' ');
+  let mention = message.mentions.users.first();
+  if(message.content.startsWith(prefix + 'give')) {
+    if(!mention) return message.channel.send('**منشن شخص**');
+    if(isNaN(messageArray[2])) return message.channel.send('**هذه الخانة يجب ان تكون رقم وليس احرف**');
+    credits[mention.id].credits += (+messageArray[2]);
+    credits[message.author.id].credits += (-messageArray[2]);
+    fs.writeFile('./creditsCode.json' ,JSON.stringify(credits), (err) => {
+      if(err) console.error(err);
+    });
+    message.channel.send(`**:moneybag: | ${message.author.username}, has transfered ${messageArray[2]}$ to ${mention}**`)
+  }
+});
 
 const credits = JSON.parse(fs.readFileSync("./creditsCode.json", "utf8"));
 const coolDown = new Set();
