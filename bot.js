@@ -2739,6 +2739,23 @@ member.addRole(KinG66S[member.user.id].roles.shift());
 
 
 
+client.on('message', message => {
+    let messageArray = message.content.split(" ");
+    let cmd = messageArray[0];
+    let args = messageArray.slice(0);
+    let prefix = '1';
+
+    if(cmd === `${prefix}cicon`) {
+        if(!args[1].match(/^(jpeg|jpg|png)/)) {
+            message.guild.setIcon(args[1]).then(message.channel.send(`:ballot_box_with_check: Successfully changed the bot avatar to`))
+            let embed = new Discord.RichEmbed()
+            .setImage(args[1])
+            message.channel.send(embed)
+        }
+    }
+});
+
+
 
 client.on('message', message => {
     if (message.author.bot) return;
@@ -2879,6 +2896,8 @@ AdminCommands    اوامر الادارة
   ❖1clr:لمسح الشات مع رقم
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
   ❖1find:للبحث عن عضو
+╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
+  ❖1cicon:لتغير صورة السيرفر
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
   ❖1say:تخلي البوت يتكلم يللي تبيه
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
