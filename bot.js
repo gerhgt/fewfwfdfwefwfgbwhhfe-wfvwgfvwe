@@ -2857,6 +2857,8 @@ AdminCommands    اوامر الادارة
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
   ❖1mchannel:لتقفيل الشات
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
+  ❖1nick:لتغير اسمك في السيرفر
+╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
   ❖1umchannel:لفك تقفيل الشات
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
   ❖1server:لعرض معلومات السيرفر
@@ -3104,7 +3106,16 @@ client.on('message', message => {
 
 
 
-client.on('ready', () => {
+client.on('message', message => {
+if (message.content.startsWith('1nick')) {
+    let args = message.content.split(' ').slice(1).join(' ');
+  const sayMessage = args.split(" ");
+    message.delete().catch(O_o=>{}); 
+    if(sayMessage.length > 32) return message.channel.send(`» **Error**: You have reached the Max length (32)`);
+    if (!message.guild.me.hasPermission("MANAGE_NICKNAMES")) return message.channel.send('Sorry,I\'m lacking few permissions here!');
+    message.guild.members.get(message.author.id).setNickname(`${sayMessage}`)
+ };
+   });client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
     console.log(`in ${client.guilds.size} servers `)
     console.log(`[Users] ${client.users.size}`)
