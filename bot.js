@@ -3115,211 +3115,9 @@ if (message.content.startsWith('1nick')) {
     if (!message.guild.me.hasPermission("MANAGE_NICKNAMES")) return message.channel.send('Sorry,I\'m lacking few permissions here!');
     message.guild.members.get(message.author.id).setNickname(`${sayMessage}`)
  };
-   });client.on('ready', () => {
-    console.log(`Logged in as ${client.user.tag}!`);
-    console.log(`in ${client.guilds.size} servers `)
-    console.log(`[Users] ${client.users.size}`)
-});
-function commandIs(str, msg){
-    return msg.content.toLowerCase().startsWith('2' + str);
-}
-function pluck(array) {
-    return array.map(function(item) { return item['name']; });
-}
-function hasRole(mem, role) {
-    if(pluck(mem.roles).includes(role)){ا
-        return true;
-    } else {
-        return false;
-    }
- 
-  }
- 
-var servers = {};
- 
-var q1 = "2quran 1"
-var q2 = "2quran 2"
-var q3 = "2quran 3"
-var q4 = "2quran 4"
-var q5 = "2quran 5"
-var q6 = "2quran 6"
-var q7 = "2quran 7"
- 
-function play(connection, message) {
-    var server = servers[message.guild.id];
-   server.dispatcher = connection.playStream(yt(server.queue[0], { fliter: "audionly" }));
-    server.queue.shift();
-    server.dispatcher.on("end", function() {
-        if (server.queue[0]) play(connection, message);
-        else connection.disconnect();
-    });
-}
-client.on("ready", () => {
-    console.log(`Quran bot is in ${client.guilds.size} servers `)
-});
-var PREFIX = "2";
-client.on("message", message => {
-                       if (message.content === q1 ) {
-                  message.react('🔊')
-    const voiceChannel = message.member.voiceChannel;
-    if (!voiceChannel) {
-      return message.reply(`يرجى أن تكون في قناة صوتيه أولا!`);  
-    }
-    voiceChannel.join()
-      .then(connnection => {
-        let stream = yt('https://www.youtube.com/watch?v=V4b9f9BQTKI', {audioonly: true});
-        const dispatcher = connnection.playStream(stream);
-      });
-  }
-                        if (message.content === q2 ) {
-                  message.react('🔊')
-    const voiceChannel = message.member.voiceChannel;
-    if (!voiceChannel) {
-      return message.reply(`يرجى أن تكون في قناة صوتيه أولا!`);
-    }
-    voiceChannel.join()
-      .then(connnection => {
-        let stream = yt('https://youtu.be/0m02xNtR8gA', {audioonly: true});
-        const dispatcher = connnection.playStream(stream);
-      });
-  }
-                            if (message.content === q3 ) {
-                  message.react('🔊')
-    const voiceChannel = message.member.voiceChannel;
-    if (!voiceChannel) {
-      return message.reply(`يرجى أن تكون في قناة صوتيه أولا!`);
-    }
-    voiceChannel.join()
-      .then(connnection => {
-        let stream = yt('https://www.youtube.com/watch?v=4JvY-MccxNk', {audioonly: true});
-        const dispatcher = connnection.playStream(stream);
-      });
-  }
-                            if (message.content === q4 ) {
-                  message.react('🔊')
-    const voiceChannel = message.member.voiceChannel;
-    if (!voiceChannel) {
-      return message.reply(`يرجى أن تكون في قناة صوتيه أولا!`);
-    }
-    voiceChannel.join()
-      .then(connnection => {
-        let stream = yt('https://www.youtube.com/watch?v=Ktync4j_nmA', {audioonly: true});
-        const dispatcher = connnection.playStream(stream);
-        });
-  }
-                              if (message.content === q5 ) {
-                  message.react('🔊')
-    const voiceChannel = message.member.voiceChannel;
-    if (!voiceChannel) {
-      return message.reply(`يرجى أن تكون في قناة صوتيه أولا!`);
-    }
-    voiceChannel.join()
-      .then(connnection => {
-        let stream = yt('https://www.youtube.com/watch?v=JavxHrNSZlg', {audioonly: true});
-        const dispatcher = connnection.playStream(stream);
-        });
-  }
-                                  if (message.content === q6 ) {
-                  message.react('🔊')
-    const voiceChannel = message.member.voiceChannel;
-    if (!voiceChannel) {
-      return message.reply(`يرجى أن تكون في قناة صوتيه أولا!`);
-    }
-    voiceChannel.join()
-      .then(connnection => {
-        let stream = yt('https://www.youtube.com/watch?v=WYT0pQne-7w', {audioonly: true});
-        const dispatcher = connnection.playStream(stream);
-        });
-  }
-                                      if (message.content === q7 ) {
-                  message.react('🔊')
-    const voiceChannel = message.member.voiceChannel;
-    if (!voiceChannel) {
-      return message.reply(`يرجى أن تكون في قناة صوتيه أولا!`);
-    }
-    voiceChannel.join()
-      .then(connnection => {
-        let stream = yt('https://www.youtube.com/watch?v=3XV0ejeQG_M', {audioonly: true});
-        const dispatcher = connnection.playStream(stream);
-        });
-  }
-  if(message.content === "2stop" ) {
-                var servers = {};
-            if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
-  }
- if(message.content === "2help") {
-   message.channel.send(` QuranBot
-● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ●
-     🕋اوامر البوت 🕋
-اذكار: يعرض لك الاذكار
- 
-● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ●
-        **اوامر تشغيل القران**  
-:mosque: 2quran 1  |  القران الكريم كامل بصوت الشيخ عبدالباسط عبدالصمد
-:mosque: 2quran 2 | سورة البقرة كاملة - القارئ الحاج ميثم التمار (QURAN)
-:mosque: 2quran 3 | القرآن الكريم كامل بصوت الشيخ عبد الرحمن السديس وسعود الشريم
-:mosque: 2quran 4 | القرآن الكريم كامل بصوت الشيخ المعيقلي
-:mosque: 2quran 5 |  سورة البقرة بصوت وتلاوة يخشع لها الحجر بدل القلب (الشيخ اسلام صبحي
-:mosque: 2quran 6 | الشيخ ياسر الدوسري القرآن الكريم كامل
-:mosque: 2quran 7 | القرآن الكريم كاملا بصوت الشيخ بندر بليلة
-:mosque: 2stop |  لـ أيقاف تشغيل البوت
-● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ●
- `)
- }
- 
-       
-});
+   });
+  
 
- 
-
-
-const config = require('./config.json');
-
-const size    = config.colors;
-const rainbow = new Array(size);
-
-for (var i=0; i<size; i++) {
-  var red   = sin_to_hex(i, 0 * Math.PI * 2/3); // 0   deg
-  var blue  = sin_to_hex(i, 1 * Math.PI * 2/3); // 120 deg
-  var green = sin_to_hex(i, 2 * Math.PI * 2/3); // 240 deg
-
-  rainbow[i] = '#'+ red + green + blue;
-}
-
-function sin_to_hex(i, phase) {
-  var sin = Math.sin(Math.PI / size * 2 * i + phase);
-  var int = Math.floor(sin * 127) + 128;
-  var hex = int.toString(16);
-
-  return hex.length === 1 ? '0'+hex : hex;
-}
-
-let place = 0;
-
-function changeColor() {
-  for (let index = 0; index < servers.length; ++index) {		
-    client.guilds.get(servers[index]).roles.find('name', config.roleName).setColor(rainbow[place])
-		.catch(console.error);
-		
-    if(config.logging){
-      console.log(`[ColorChanger] Changed color to ${rainbow[place]} in server: ${servers[index]}`);
-    }
-    if(place == (size - 1)){
-      place = 0;
-    }else{
-      place++;
-    }
-  }
-}
-
-client.on('ready', () => {
-  console.log(`Logged in as ${client.user.username}!`);
-  if(config.speed < 60000){console.log("The minimum speed is 60.000, if this gets abused your bot might get IP-banned"); process.exit(1);}
-  setInterval(changeColor, config.speed);
-});
-
-
-client.login(config.token);
 
 
 
