@@ -3381,7 +3381,11 @@ msg.channel.send(embed).then(() => {
 }
 });
 
-
+client.on('message' , message => {
+if(message.content === 'vonline') {
+    message.channel.send(`**عدد الاشخاص الموجودين بـ  الرومات الصوتيه : ${message.guild.members.filter(g => g.voiceChannel).size}**`);
+}
+});
 
 
 
