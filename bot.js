@@ -3119,6 +3119,45 @@ if (message.content.startsWith('1nick')) {
   
 
 
+client.on('message', message => {
+  if(message.content === '1support') {
+  const embed = new Discord.RichEmbed()
+  .setTitle('Click here')
+  .setURL('https://discord.gg/GQZpx3')
+  .setColor('RANDOM')
+  message.channel.send({embed: embed});
+  }
+});
+
+
+
+
+client.on('message', async message => {
+            if(!message.channel.guild) return;
+             if (message.content.startsWith("1set")) {
+let args = message.content.split(' ').slice(1).join(' ');
+            let sigMessage = await args;
+            
+            if (sigMessage === "online") {
+                client.user.setStatus("online");
+                message.author.send("Your status was set to online.");
+            }
+            if (sigMessage === "idle") {
+                client.user.setStatus("idle");
+                message.author.send("Your status was set to idle.");
+            }
+            if (sigMessage === "invisible") {
+                client.user.setStatus("invisible");
+                message.author.send("Your status was set to invisible.");
+            }
+            if (sigMessage === "dnd") {
+                client.user.setStatus("dnd");
+                message.author.send("Your status was set to dnd.");
+            }
+            // message.author.send("." + message.content);
+        
+}
+});
 
 
 
@@ -3126,6 +3165,42 @@ if (message.content.startsWith('1nick')) {
 
 
 
+client.on('message' , message => {
+  var prefix = "1";
+  if(message.author.bot) return;
+  if(message.content.startsWith(prefix + "send")) {
+    let args = message.content.split(" ").slice(1);
+
+
+    let suggestmessage = args.join(" ").slice(22);
+    let suggestchannel = message.mentions.channels.first();
+
+    if (!suggestchannel) {
+        return message.reply("Please Mention the channel!")
+    }
+
+    if (!suggestmessage) {
+        return message.reply("Plase Give Text To send Channel!")
+    
+         
+    }
+     message.delete();
+suggestchannel.send("@everyone  `||` @here ");
+    let embed = new Discord.RichEmbed()
+        .addField("**message**", `${suggestmessage}`)
+        .setFooter(`by ${message.author.tag}`)
+        .setTimestamp()
+    suggestchannel.send({
+        embed
+    }).then(msg => {
+        msg.react("✅").then(r => msg.react("❎"))
+    });
+
+
+    message.reply(`Your message is sended.`).then(msg => msg.delete(1000));
+    return;
+}
+});
 
 
 
