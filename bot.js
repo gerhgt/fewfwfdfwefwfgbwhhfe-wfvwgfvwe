@@ -3218,7 +3218,7 @@ client.on('message' , message => {
 
 
 
-
+const fetch = require('snekfetch');
 client.on('message', message => {
 if (message.content.startsWith('selfie')) {
     fetch.get('http://www.splashbase.co/api/v1/images/random').then(photo => {
