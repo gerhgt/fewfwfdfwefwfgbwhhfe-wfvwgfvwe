@@ -576,7 +576,6 @@ client.on('message', msg => {
     if(msg.author.bot) return;
     
     if(msg.content === '1sr') {
-	        if(!message.channel.guild) return message.reply(' ');
       client.guilds.forEach(g => {
         
         let l = g.id
