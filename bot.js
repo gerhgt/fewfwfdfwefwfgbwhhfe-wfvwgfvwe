@@ -3388,7 +3388,7 @@ if(message.content === 'vonline') {
 });
 
 
-var prefix ="1"//:3 غيره بكيفك
+
 var colors = new Array(100);
 
 client.on("message", (message) => {
