@@ -3123,7 +3123,7 @@ client.on('message', message => {
   if(message.content === '1support') {
   const embed = new Discord.RichEmbed()
   .setTitle('Click here')
-  .setURL('https://discord.gg/GQZpx3')
+  .setURL('https://discord.gg/R2UAV8E')
   .setColor('RANDOM')
   message.channel.send({embed: embed});
   }
