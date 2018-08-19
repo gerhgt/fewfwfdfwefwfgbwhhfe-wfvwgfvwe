@@ -3206,6 +3206,48 @@ suggestchannel.send("@everyone  `||` @here ");
 
 
 
+client.on('message' , message => {
+  var prefix = "1";
+  if(message.author.bot) return;
+  if(message.content.startsWith(prefix + "ping2")) {
+ message.channel.send('Pong...').then((msg) => {
+      msg.edit(`\`\`\`javascript\nTime taken: ${msg.createdTimestamp - message.createdTimestamp} ms.\nDiscord API: ${Math.round(client.ping)} ms.\`\`\``);
+ })
+  }  
+ });
+
+
+
+
+client.on('message', message => {
+if (message.content.startsWith('selfie')) {
+    fetch.get('http://www.splashbase.co/api/v1/images/random').then(photo => {
+
+        const embed = new Discord.RichEmbed()
+
+    .setImage(`${photo.body.url}`);
+
+        message.channel.send({embed})
+
+    }).catch(err => {
+
+        if (err) {
+
+            message.channel.send('OOPS... something went wrong');
+
+        }
+
+    });
+
+};
+ });
+
+
+
+
+
+
+
 
 
 
