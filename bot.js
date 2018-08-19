@@ -2801,6 +2801,10 @@ client.on('message', message => {
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
   ❖myid:لاظهار الايدي حقك
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
+  ❖1support:سيرفر البوت
+╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
+  ❖1ask:(1ask hello)معلوماات عن الكلمة مثال
+╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
 شعار كلان البوت:الشعار
 رابط كلان البوت
 https://discord.gg/QZ8WxBx
@@ -2903,6 +2907,8 @@ AdminCommands    اوامر الادارة
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
   ❖1say:تخلي البوت يتكلم يللي تبيه
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
+  ❖1set:حالة البوت
+╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
 رابط سيرفر البوت
 https://discord.gg/m6t4Vxk
 ----------
@@ -2950,6 +2956,9 @@ client.on('message', message => {
   ❖لعبة كت كويت:كت كويت
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
   ❖1ranks:لعرض رتب السيرفر
+╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
+❖لعبة تهكير مزح:تهكير
+╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
 
 رابط سيرفر البوت
 https://discord.gg/m6t4Vxk
@@ -3176,7 +3185,7 @@ client.on('message' , message => {
     let suggestchannel = message.mentions.channels.first();
 
     if (!suggestchannel) {
-        return message.reply("Please Mention the channel!")
+        return message.reply("يرجى اعطاء منشن للروم باستخدام (#)")
     }
 
     if (!suggestmessage) {
@@ -3206,15 +3215,7 @@ suggestchannel.send("@everyone  `||` @here ");
 
 
 
-client.on('message' , message => {
-  var prefix = "1";
-  if(message.author.bot) return;
-  if(message.content.startsWith(prefix + "ping2")) {
- message.channel.send('Pong...').then((msg) => {
-      msg.edit(`\`\`\`javascript\nTime taken: ${msg.createdTimestamp - message.createdTimestamp} ms.\nDiscord API: ${Math.round(client.ping)} ms.\`\`\``);
- })
-  }  
- });
+
 
 
 
