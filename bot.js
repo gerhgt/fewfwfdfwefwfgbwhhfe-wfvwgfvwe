@@ -2804,6 +2804,9 @@ client.on('message', message => {
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
   ❖1ask:(1ask hello)معلوماات عن الكلمة مثال
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
+  ❖1short:لاختصار الروابط
+╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
+
 شعار كلان البوت:الشعار
 رابط كلان البوت
 https://discord.gg/QZ8WxBx
@@ -2958,8 +2961,7 @@ client.on('message', message => {
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
   ❖لعبة تهكير مزح:تهكير
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
-  ❖1speed:اسرع كتابة
-╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
+
 
 رابط سيرفر البوت
 https://discord.gg/m6t4Vxk
@@ -3325,72 +3327,29 @@ client.on ("guildMemberRemove", member => {
 
 
 
-client.on('message', message => {
-if (!points[message.author.id]) points[message.author.id] = {
-    points: 0,
-  };
-  if(!message.guild) return;
-    let id = message.author.id,prefix="1";
-    if (spee[id] && (new Date).getTime() - spee[id] < 15*1000) {
-        let r = (new Date).getTime() - spee[id];
-        r = 15*1000 - r;
-    message.channel.send(`**Sorry, Please Wait ${pretty(r, {verbose:true})}...**`).then(m => m.delete(5000));
-    return;
-    }
-    if ( message.content == prefix+'speed'){
-       
-        try{
-}catch(e){
- 
-}
- 
-    if(!message.channel.guild) return message.reply('**هذا الأمر للسيرفرات فقط**').then(m => m.delete(3000));
- 
- 
-const item = type[Math.floor(Math.random() * type.length)];
-const filter = response => {  
-    return item.answers.some(answer => answer.toLowerCase() === response.content.toLowerCase());
-};
-message.channel.send('**Game is Start now...!**').then(msg => {
- 
- const embed = new Discord.RichEmbed()
- .setColor("0054dd")
-     .setAuthor(`⏳ |You have »15« seconds to type the word`)
-          .setImage(`${item.type}`)
- .setFooter(`${message.author.tag}`, message.author.avatarURL)
- 
- 
-         
-msg.channel.send(embed).then(() => {
-        message.channel.awaitMessages(filter, { maxMatches: 1, time: 15000, errors: ['time'] })
-        .then((collected) => {
-                  const sh = new Discord.RichEmbed()
-  .setColor("04791c")
-  .setDescription('**✅ |Good Job +1P**')
-   .setFooter(`${collected.first().author}`)
-  message.channel.sendEmbed(sh);
-            let won = collected.first().author; // في هذا السطر يقوم الكود بسحب الأي دي الذي قام بالأجابة اولاً
-            points[won.id].points++;
-          })
-          .catch(collected => { // في حال لم يقم أحد بالإجابة
-            message.channel.send(`🔚 |**Time Is End**`);
-          })
-        })
-    })
-    spee[id] = (new Date).getTime()
+
+
+
+
+
+
+
+  client.on('message', message => { 
+    var prefix = "1";
+ let args = message.content.split(' ').slice(1);
+    if(message.content.startsWith(prefix + 'short')) {
+    if(!message.channel.guild) return;  
+
+        googl.setKey('AIzaSyC2Z2mZ_nZTcSvh3QvIyrmOIFP6Ra6co6w');
+        googl.getKey();
+        googl.shorten(args.join(' ')).then(shorturl => {
+            message.channel.send(''+shorturl)
+        }).catch(e=>{
+            console.log(e.message);
+            message.channel.send('خطأ!');
+        });
 }
 });
-
-client.on('message' , message => {
-if(message.content === 'vonline') {
-    message.channel.send(`**عدد الاشخاص الموجودين بـ  الرومات الصوتيه : ${message.guild.members.filter(g => g.voiceChannel).size}**`);
-}
-});
-
-
-
-
-
 
 
 client.login(process.env.BOT_TOKEN);
