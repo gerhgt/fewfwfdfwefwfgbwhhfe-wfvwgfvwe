@@ -3418,19 +3418,17 @@ message.channel.send({embed:embed});
 });
 
 
-
 client.on('message', message => {
-            if (message.content.startsWith(prefix + "botinfo")) {
+            if (message.content.startsWith("1help")) {
      let embed = new Discord.RichEmbed()
-.addField(' عدد السيرفرات التي بها',`[${client.guilds.size}]  `)
-.addField(' عدد الاعضاء ',` [${client.users.size}] `)
-.addField('الغرف ',`[${client.channels.size}]`) 
-.addField(' البنق ',`[${Date.now() - message.createdTimestamp}]`) 
-.addField('`Bot Created By D7oM.#7693`')
-.setColor('#7d2dbe')
+.setThumbnail(message.author.avatarURL)
+.addField('     Help ' ,' تم ارسال الاوامر الي الخاص ✉  ')
+.setColor('#B101FC')
   message.channel.sendEmbed(embed);
     }
 });
+
+
 
 
 
