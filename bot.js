@@ -2904,10 +2904,7 @@ AdminCommands    اوامر الادارة
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
   ❖1find:للبحث عن عضو
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
-  ❖1cicon:لتغير صورة السيرفر
-╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
-  ❖1say:تخلي البوت يتكلم يللي تبيه
-╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
+
 
 رابط سيرفر البوت
 https://discord.gg/m6t4Vxk
@@ -3081,7 +3078,7 @@ message.author.sendEmbed(embed)
 
 client.on('message', msg => {
       if(!msg.channel.guild) return;
-    if(msg.content.startsWith (prefix  + 'help-anmi')) {
+    if(msg.content.startsWith (prefix  + 'help-anmin')) {
     msg.reply('**📩 تم الارسال في الخاص**');
   }
 });
@@ -3098,7 +3095,8 @@ client.on('message', message => {
 .addField('     **1help-music** ' , '**اوامر تشغيل الموسيقى**') 
 .addField('     **1help-games** ' , '**اوامر الالعاب**') 
 .addField('     **1help-anmi** ' ,' **لمحبين الانمي**')
-
+.addField('     **2help** ' ,' **اوامر اضافية**')
+     
 .setColor('#7d2dbe')
   message.channel.sendEmbed(embed);
     }
@@ -3415,7 +3413,7 @@ message.channel.send({embed:embed});
 
 
 client.on('message', message => {
-            if (message.content.startsWith("1help")) {
+            if (message.content.startsWith("2help")) {
      let embed = new Discord.RichEmbed()
 .setThumbnail(message.author.avatarURL)
 .addField('     Help ' ,' تم ارسال الاوامر الي الخاص ✉  ')
@@ -3423,6 +3421,28 @@ client.on('message', message => {
   message.channel.sendEmbed(embed);
     }
 });
+
+
+
+client.on('message' , message => {
+if (message.content === '$help') {
+         let embed = new Discord.RichEmbed()
+
+       .setThumbnail(message.author.avatarURL)    
+       .addField("**🌐 الأوامر الاضافية**","** **")
+       .addField("**1set**","**لتغير حالة البوت**")
+       .addField("**1say**","**تخلي البوت يتكلم يللي تبيه**")
+       .addField("**$ping**","**سرعة اتصال البوت**")
+       .addField("**1rank**","**رتب السيرفر**")
+       .addField("**$members**","**حالات الاعضاء**")
+       .addField("**#id**","**معلوماتك **")
+       .addField("**1cicon**","**لتغير صورة السيرفر**")
+.setColor('RANDOM')
+  message.author.sendEmbed(embed);
+    }
+});
+
+
 
 
 
