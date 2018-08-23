@@ -3487,16 +3487,7 @@ client.on("message", msg => {
 
 
 
-client.on('presenceUpdate', (oldMember, newMember) => {
-     
-    if (newMember.presence.game != null){
-        if (newMember.presence.game.streaming){
-            var channel = client.channels.get("482068197722423326")
-                    channel.send(`**${newMember.user.tag} is now streaming at** ${newMember.presence.game.url} `);
-                
-        }
-    }
-});
+
 
 
 
