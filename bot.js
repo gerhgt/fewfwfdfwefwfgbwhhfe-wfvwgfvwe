@@ -3883,10 +3883,10 @@ Dat = currentTime.getDate()
                m.edit({embed: new Discord.RichEmbed().setTitle(`** ..يتم الدخول للحساب** `).setColor(0xFF0000)})
              }, 40500)//jackeo جاكيو
                 setTimeout(function() {
-               m.edit({embed: new Discord.RichEmbed().setTitle(`** ..يتم حفض بينات الحساب** `).setColor(0xFF0000)})
+               m.edit({embed: new Discord.RichEmbed().setTitle(`** ..يتم حفظ بيانات الحساب** `).setColor(0xFF0000)})
              }, 45500)//jackeo جاكيو
                 setTimeout(function() {
-               m.edit({embed: new Discord.RichEmbed().setTitle(`** ..يتم رفع البينات** `).setColor(0xFF0000)})
+               m.edit({embed: new Discord.RichEmbed().setTitle(`** ..يتم رفع البيانات** `).setColor(0xFF0000)})
              }, 50500)//jackeo جاكيو
               setTimeout(function() {
                m.delete()//jackeo جاكيو
@@ -3902,10 +3902,10 @@ Dat = currentTime.getDate()
 
 
 client.on('message',async msg => {
-     if(msg.channel.type === "ccs") return;
+     if(msg.channel.type === "dm") return;
   if(msg.author.bot) return;
   var p = "*";
-  if(msg.content.startsWith(p + "setstats")) {
+  if(msg.content.startsWith(p + "ccs")) {
   if(!msg.guild.member(msg.author).hasPermissions('MANAGE_CHANNELS')) return msg.reply('❌ **go play minecraft**');
   if(!msg.guild.member(client.user).hasPermissions(['MANAGE_CHANNELS'])) return msg.reply('❌ **البوت لا يمتلك صلاحية**');
   var ggg= msg.guild.createChannel('SERVER STATS', 'category').then(kk => {
@@ -4027,11 +4027,56 @@ function لول(o,n,channel,role){
 
 
 
+client.on('ready', () => {
+  console.log(`Logged in as ${client.user.tag}!`);
+});
+
+client.on('message', msg => {
+  if (msg.content === '!ping') {
+    msg.channel.send('Pong!');
+  }
+});
+
+
+
+
+
+client.on('message', message => {
+       if(message.content.startsWith(`${prefix}دعوة`)){
+           if(!message.channel.guild) return message.channel.send("This Command is Just For Servers!")
+           var embed = new Discord.RichEmbed()
+           .setTitle("Invite LG Bot")
+           .setURL("https://discordapp.com/oauth2/authorize?client_id=" + `${client.user.id}` + "&permissions=2146958839&scope=bot")
+           .setTimestamp()
+           .setColor("RANDOM")
+           message.channel.send({embed})
+       }
+   });
+
+
+
 
 
 
 
 client.login(process.env.BOT_TOKEN);
+
+
+
+
+client.on('ready', () => {
+  console.log(`Logged in as ${client.user.tag}!`);
+});
+
+client.on('message', msg => {
+  if (msg.content === '!ping') {
+    msg.channel.send('Pong!');
+  }
+});
+
+
+
+
 
 
 
