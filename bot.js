@@ -4032,8 +4032,8 @@ client.on('message', message => {
 
 
 
-  client.on('message', warn => {
-  var prefix = ".";
+  client.on('message', warn => 
+  var prefix = "1";
   let log = warn.guild.channels.find('name', "log")
   let all = warn.guild.channels.find('name', "✳⫷public-chat⫸✳")
   let user = warn.mentions.members.first();
