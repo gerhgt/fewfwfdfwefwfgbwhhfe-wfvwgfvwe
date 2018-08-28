@@ -3901,6 +3901,27 @@ Dat = currentTime.getDate()
 
 
 
+client.on('message', async msg => {
+     client.snek = require('snekfetch');
+    var p = "1"
+  if(msg.content.startsWith(p + "cm")) {
+   let args = msg.content.split(' ').slice(1).join(' ');
+
+ if(args.length < 1) return args.missing(msg, 'No text added', this.help);
+  msg.channel.startTyping();
+  const searchMessage = await msg.channel.send('🖌️Painting...');
+  const { body } = await client.snek.get(`https://nekobot.xyz/api/imagegen?type=changemymind&text=${encodeURIComponent(args)}`);
+  msg.channel.send({file: { attachment:body.message, name: 'changemymind.png'}}).then(()=> { searchMessage.delete(); msg.channel.stopTyping(); });
+};
+});
+
+
+
+
+
+
+
+
 
 client.login(process.env.BOT_TOKEN);
 
