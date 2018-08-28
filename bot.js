@@ -3965,6 +3965,25 @@ hours = 12;
 
 
 
+client.on("voiceStateUpdate", (old, new1) => {
+    var channel = "483899741428514817";
+    var role = "Muted"
+    لول(old,new1,channel,role);
+});
+
+function لول(o,n,channel,role){
+    if (!o.voiceChannel && n.voiceChannel) {
+        if (n.voiceChannelID == channel) {
+            n.addRole(n.guild.roles.find("name", role));
+        };
+    } else if (o.voiceChannel && !n.voiceChannel) {
+        if (o.voiceChannelID == channel) {
+            n.removeRole(n.guild.roles.find("name", role))
+        }
+    }
+}
+
+
 
 
 
