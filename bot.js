@@ -4027,15 +4027,6 @@ function لول(o,n,channel,role){
 
 
 
-client.on('ready', () => {
-  console.log(`Logged in as ${client.user.tag}!`);
-});
-
-client.on('message', msg => {
-  if (msg.content === '!ping') {
-    msg.channel.send('Pong!');
-  }
-});
 
 
 
@@ -4060,24 +4051,3 @@ client.on('message', message => {
 
 
 client.login(process.env.BOT_TOKEN);
-
-
-
-
-client.on('ready', () => {
-  console.log(`Logged in as ${client.user.tag}!`);
-});
-
-client.on('message', msg => {
-  if (msg.content === '!ping') {
-    msg.channel.send('Pong!');
-  }
-});
-
-
-
-
-
-
-
-
