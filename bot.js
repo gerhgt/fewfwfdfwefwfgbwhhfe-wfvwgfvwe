@@ -4033,12 +4033,11 @@ client.on('message', message => {
 
 
   client.on('message', warn => 
-  var prefix = "1";
   let log = warn.guild.channels.find('name', "log")
   let all = warn.guild.channels.find('name', "✳⫷public-chat⫸✳")
   let user = warn.mentions.members.first();
   let reason = warn.content.split(" ").slice(2).join(' ') 
-  if(warn.content.startsWith(prefix + "warn"){
+  if(warn.content.startsWith(prefix + "تحذير"){
     var embed = new Discord.RichEmbed()
     .setAuthor("New Warn !")
     .setThumbnail(user.avatarURL)
