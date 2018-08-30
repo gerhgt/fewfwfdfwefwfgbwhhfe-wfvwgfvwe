@@ -4100,7 +4100,6 @@ hero.on('guildMemberAdd',async member => {
 
 
 
-if(!prefix) var prefix = "1" ; // البرفكس 
 
 var stopReacord = true;
 var reactionRoles = [];
