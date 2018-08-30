@@ -4030,8 +4030,8 @@ client.on('message', message => {
 
 
 
-
-client.on('guildMemberAdd',async member => {
+var hero= client;
+hero.on('guildMemberAdd',async member => {
   const Canvas = require('canvas');
   const jimp = require('jimp');
   const w = ['./welcome_4.png'];
