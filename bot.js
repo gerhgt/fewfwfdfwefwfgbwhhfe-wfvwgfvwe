@@ -4097,67 +4097,380 @@ hero.on('guildMemberAdd',async member => {
 
 
 
-
-
-
-
-var stopReacord = true;
-var reactionRoles = [];
-var definedReactionRole = null;
-
-client.on("message", async message => {
-    const args = message.content.slice(prefix.length).trim().split(/ +/g);
-    const command = args.shift().toLowerCase();
-    if(message.author.bot) return;
-    if(message.content.indexOf(prefix) !== 0) return;
-    if (command == "autoc") {
-      if(!message.channel.guild) return message.reply(`**this ~~command~~ __for servers only__**`);
-      if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("sorry you can't do this");
-      if(!args[0] || args[1]) return message.channel.send(`\`\`\`${prefix}autoC <role-name>\`\`\``);
-      var role = message.guild.roles.find( role => { return role.name == args[0] });
-      if(!role) return message.channel.send(`no role with name ${definedRoleName} found, make sure you entered correct name`);
-      if(definedReactionRole != null  || !stopReacord) return message.channel.send("another reaction role request is running");
-      message.channel.send(`now go and add reaction in the message you want for role ${role.name}`);
-      definedReactionRole = role;
-      stopReacord = false;
-    }     
-})
-client.on('raw', raw => {
-  if (!['MESSAGE_REACTION_ADD', 'MESSAGE_REACTION_REMOVE'].includes(raw.t)) return;
-  var channel = client.channels.get(raw.d.channel_id);
-  if (channel.messages.has(raw.d.message_id)) return;
-  channel.fetchMessage(raw.d.message_id).then(message => {
-    var reaction = message.reactions.get( (raw.d.emoji.id ? `${raw.d.emoji.name}:${raw.d.emoji.id}` : raw.d.emoji.name) );
-    if (raw.t === 'MESSAGE_REACTION_ADD') return client.emit('messageReactionAdd', reaction, client.users.get(raw.d.user_id));
-    if (raw.t === 'MESSAGE_REACTION_REMOVE') return client.emit('messageReactionRemove', reaction, client.users.get(raw.d.user_id));
-  });
-});
-client.on('messageReactionAdd', (reaction, user) => {
-    if(user.id == client.user.id) return;
-    if(!stopReacord) {
-      var done = false;
-      reactionRoles[reaction.message.id] = { role: definedReactionRole, message_id: reaction.message.id, emoji: reaction.emoji};
-      stopReacord =  true;
-      definedReactionRole = null;
-      reaction.message.react(reaction.emoji.name)
-      .catch(err => {done = true; reaction.message.channel.send(`sorry i can't use this emoji but the reaction role done! anyone react will get the role!`)})
-      if(done) reaction.remove(user); 
-    } else {
-      var request = reactionRoles[reaction.message.id];
-      if(!request) return;
-      if(request.emoji.name != reaction.emoji.name) return reaction.remove(user);
-      reaction.message.guild.members.get(user.id).addRole(request.role);
+client.on('message', function(message) {
+    if (message.content ===  '*ccolors'){
+              if (!message.member.hasPermission("MANAGE_ROLES"))  return;
+                     
+                         if(message.guild.roles.find("name","5")) return message.reply("You're Already Have Colors ! :art:");
+                           if(message.guild.roles.find("name","10")) return message.reply("You're Already Have Colors ! :art:");
+                             if(message.guild.roles.find("name","15")) return message.reply("You're Already Have Colors ! :art:");
+                               if(message.guild.roles.find("name","20")) return message.reply("You're Already Have Colors ! :art:");
+                                 if(message.guild.roles.find("name","25")) return message.reply("You're Already Have Colors ! :art:");
+                                  if(message.guild.roles.find("name","30")) return message.reply("You're Already Have Colors ! :art:");
+        if(!message.channel.guild) return message.reply('** This command only for servers **');
+       
+     
+                setInterval(function(){})
+                  let count = 0;
+                  let ecount = 0;
+        for(let x = 1; x < 31; x++){
+            message.guild.createRole({name:x,
+            color: "RANDOM"})
+            }
+           
+          message.channel.send(":white_check_mark: | Working On Colors")
+   
+ 
     }
-}) 
-client.on('messageReactionRemove', (reaction, user) => {
-  if(user.id == client.user.id) return;
-  if(!stopReacord) return;
-  let request = reactionRoles[reaction.message.id];
-  if(!request) return;
-  reaction.message.guild.members.get(user.id).removeRole(request.role);
 });
+ 
+client.on('message', message => {
+   if (message.content.startsWith("*colors")) {
+       var no = "لا توجد الاوان حاول انشاء الالوان بستخدام `*ccolors`"
+     if(!message.guild.roles.find("name","1")) return message.reply(no);
+     if(!message.guild.roles.find("name","2")) return message.reply(no);
+     if(!message.guild.roles.find("name","3")) return message.reply(no);
+     if(!message.guild.roles.find("name","4")) return message.reply(no);
+     if(!message.guild.roles.find("name","5")) return message.reply(no);
+     if(!message.guild.roles.find("name","6")) return message.reply(no);
+     if(!message.guild.roles.find("name","7")) return message.reply(no);
+     if(!message.guild.roles.find("name","8")) return message.reply(no);
+     if(!message.guild.roles.find("name","9")) return message.reply(no);
+     if(!message.guild.roles.find("name","10")) return message.reply(no);
+     if(!message.guild.roles.find("name","11")) return message.reply(no);
+     if(!message.guild.roles.find("name","12")) return message.reply(no);
+     if(!message.guild.roles.find("name","13")) return message.reply(no);
+     if(!message.guild.roles.find("name","14")) return message.reply(no);
+     if(!message.guild.roles.find("name","15")) return message.reply(no);
+     if(!message.guild.roles.find("name","16")) return message.reply(no);
+     if(!message.guild.roles.find("name","17")) return message.reply(no);
+     if(!message.guild.roles.find("name","18")) return message.reply(no);
+     if(!message.guild.roles.find("name","19")) return message.reply(no);
+     if(!message.guild.roles.find("name","20")) return message.reply(no);
+     if(!message.guild.roles.find("name","21")) return message.reply(no);
+     if(!message.guild.roles.find("name","22")) return message.reply(no);
+     if(!message.guild.roles.find("name","23")) return message.reply(no);
+     if(!message.guild.roles.find("name","24")) return message.reply(no);
+     if(!message.guild.roles.find("name","25")) return message.reply(no);
+      if(!message.guild.roles.find("name","26")) return message.reply(no);
+       if(!message.guild.roles.find("name","27")) return message.reply(no);
+        if(!message.guild.roles.find("name","28")) return message.reply(no);
+         if(!message.guild.roles.find("name","29")) return message.reply(no);
+           if(!message.guild.roles.find("name","30")) return message.reply(no);
+if(!message.channel.guild) return;
+const w = [];
+var Canvas = require('canvas')
+var jimp = require('jimp')
+     let Image = Canvas.Image,
+            canvas = new Canvas(500, 200),
+            ctx = canvas.getContext('2d');
+        ctx.patternQuality = 'bilinear';
+        ctx.filter = 'bilinear';
+        ctx.antialias = 'subpixel';
+ 
+        fs.readFile(`${w[Math.floor(Math.random() * w.length)]}`, function (err, Background) {
+            if (err) return console.log(err);
+            let BG = Canvas.Image;
+            let ground = new Image;
+            ground.src = Background;
+            ctx.drawImage(ground, 0, 0, 500, 200);
+ 
+})
+ 
+ 
+                let url = message.author.displayAvatarURL.endsWith(".webp") ? message.author.displayAvatarURL.slice(20, 20) + ".png" : message.author.displayAvatarURL;
+                jimp.read(url, (err, ava) => {
+                    if (err) return console.log(err);
+                    ava.getBuffer(jimp.MIME_PNG, (err, buf) => {
+                        if (err) return console.log(err);
+ 
+                        let Avatar = Canvas.Image;
+                        let ava = new Avatar;
+                        ava.src = buf;
+                        ctx.drawImage(ava, -100 , -100, 70, 70);
+                                   
+ctx.fillStyle = `${message.guild.roles.find("name","1").hexColor}`;
+  ctx.fillRect(52, 68, 30, 30);
+ 
+ctx.fillStyle = `${message.guild.roles.find("name","2").hexColor}`;
+  ctx.fillRect(88, 68, 30, 30);
+ 
+  ctx.fillStyle = `${message.guild.roles.find("name","3").hexColor}`;
+  ctx.fillRect(124, 68, 30, 30);
+ 
+ctx.fillStyle = `${message.guild.roles.find("name","4").hexColor}`;
+  ctx.fillRect(160, 68, 30, 30);
+ 
+  ctx.fillStyle = `${message.guild.roles.find("name","5").hexColor}`;
+  ctx.fillRect(196, 68, 30, 30);
+ 
+ctx.fillStyle = `${message.guild.roles.find("name","6").hexColor}`;
+  ctx.fillRect(232, 68, 30, 30);
+ 
+ctx.fillStyle = `${message.guild.roles.find("name","7").hexColor}`;
+  ctx.fillRect(268, 68, 30, 30);
+ 
+  ctx.fillStyle = `${message.guild.roles.find("name","8").hexColor}`;
+  ctx.fillRect(304, 68, 30, 30);
+ 
+ctx.fillStyle = `${message.guild.roles.find("name","9").hexColor}`;
+  ctx.fillRect(340, 68, 30, 30);
+ 
+  ctx.fillStyle = `${message.guild.roles.find("name","10").hexColor}`;
+  ctx.fillRect(376, 68, 30, 30);
+ 
+  ctx.fillStyle = `${message.guild.roles.find("name","11").hexColor}`;
+  ctx.fillRect(412, 68, 30, 30);
+ 
+ctx.fillStyle = `${message.guild.roles.find("name","12").hexColor}`;
+  ctx.fillRect(52, 105, 30, 30);
+ 
+  ctx.fillStyle = `${message.guild.roles.find("name","13").hexColor}`;
+  ctx.fillRect(88, 105, 30, 30);
+ 
+ctx.fillStyle = `${message.guild.roles.find("name","14").hexColor}`;
+  ctx.fillRect(124, 105, 30, 30);
+ 
+  ctx.fillStyle = `${message.guild.roles.find("name","15").hexColor}`;
+  ctx.fillRect(160, 105, 30, 30);
+ 
+  ctx.fillStyle = `${message.guild.roles.find("name","16").hexColor}`;
+  ctx.fillRect(196, 105, 30, 30);
+ 
+ctx.fillStyle = `${message.guild.roles.find("name","17").hexColor}`;
+  ctx.fillRect(232, 105, 30, 30);
+ 
+  ctx.fillStyle = `${message.guild.roles.find("name","18").hexColor}`;
+  ctx.fillRect(268, 105, 30, 30);
+ 
+ctx.fillStyle = `${message.guild.roles.find("name","19").hexColor}`;
+  ctx.fillRect(304, 105, 30, 30);
+ 
+  ctx.fillStyle = `${message.guild.roles.find("name","20").hexColor}`;
+  ctx.fillRect(340, 105, 30, 30);
+ 
+  ctx.fillStyle = `${message.guild.roles.find("name","21").hexColor}`;
+  ctx.fillRect(376, 105, 30, 30);
+ 
+ctx.fillStyle = `${message.guild.roles.find("name","22").hexColor}`;
+  ctx.fillRect(412, 105, 30, 30);
+ 
+  ctx.fillStyle = `${message.guild.roles.find("name","23").hexColor}`;
+  ctx.fillRect(52, 142, 30, 30);
+ 
+ctx.fillStyle = `${message.guild.roles.find("name","24").hexColor}`;
+  ctx.fillRect(88, 142, 30, 30);
+ 
+  ctx.fillStyle = `${message.guild.roles.find("name","25").hexColor}`;
+  ctx.fillRect(124, 142, 30, 30);
+   
+   ctx.fillStyle = `${message.guild.roles.find("name","26").hexColor}`;
+  ctx.fillRect(160, 142, 30, 30);
+ 
+  ctx.fillStyle = `${message.guild.roles.find("name","27").hexColor}`;
+  ctx.fillRect(196, 142, 30, 30);
+ 
+   ctx.fillStyle = `${message.guild.roles.find("name","28").hexColor}`;
+  ctx.fillRect(232, 142, 30, 30);
+ 
+   ctx.fillStyle = `${message.guild.roles.find("name","29").hexColor}`;
+   ctx.fillRect(268, 142, 30, 30);
+   
+    ctx.fillStyle = `${message.guild.roles.find("name","30").hexColor}`;
+   ctx.fillRect(304, 142, 30, 30);
+ 
+ ctx.font = '15px Bold';
+ctx.fontSize = '15px';
+ctx.fillStyle = "#ffffff";
+ctx.textAlign = "center";
+ctx.fillText("1", 67.5  , 88 );
+ 
+ ctx.font = '15px Bold';
+ctx.fontSize = '15px';
+ctx.fillStyle = "#ffffff";
+ctx.textAlign = "center";
+ctx.fillText("2", 103.5  , 88 );
+ 
+ ctx.font = '15px Bold';
+ctx.fontSize = '15px';
+ctx.fillStyle = "#ffffff";
+ctx.textAlign = "center";
+ctx.fillText("3", 139.5  , 88 );
+ 
+ ctx.font = '15px Bold';
+ctx.fontSize = '15px';
+ctx.fillStyle = "#ffffff";
+ctx.textAlign = "center";
+ctx.fillText("4", 175.5  , 88 );
+ 
+ ctx.font = '15px Bold';
+ctx.fontSize = '15px';
+ctx.fillStyle = "#ffffff";
+ctx.textAlign = "center";
+ctx.fillText("5", 211.5  , 88 );
+ 
+ ctx.font = '15px Bold';
+ctx.fontSize = '15px';
+ctx.fillStyle = "#ffffff";
+ctx.textAlign = "center";
+ctx.fillText("6", 247.5  , 88 );
+ 
+ ctx.font = '15px Bold';
+ctx.fontSize = '15px';
+ctx.fillStyle = "#ffffff";
+ctx.textAlign = "center";
+ctx.fillText("7", 283.5  , 88 );
+ 
+ ctx.font = '15px Bold';
+ctx.fontSize = '15px';
+ctx.fillStyle = "#ffffff";
+ctx.textAlign = "center";
+ctx.fillText("8", 319.5  , 88 );
+ 
+ ctx.font = '15px Bold';
+ctx.fontSize = '15px';
+ctx.fillStyle = "#ffffff";
+ctx.textAlign = "center";
+ctx.fillText("9", 355.5  , 88 );
+ 
+ ctx.font = '15px Bold';
+ctx.fontSize = '15px';
+ctx.fillStyle = "#ffffff";
+ctx.textAlign = "center";
+ctx.fillText("10", 391.5  , 88 );
+ 
+ ctx.font = '15px Bold';
+ctx.fontSize = '15px';
+ctx.fillStyle = "#ffffff";
+ctx.textAlign = "center";
+ctx.fillText("11", 427.5  , 88 );
+ 
+   ctx.font = '15px Bold';
+ctx.fontSize = '15px';
+ctx.fillStyle = "#ffffff";
+ctx.textAlign = "center";
+ctx.fillText("12", 67.5  , 125 );
+ 
+ ctx.font = '15px Bold';
+ctx.fontSize = '15px';
+ctx.fillStyle = "#ffffff";
+ctx.textAlign = "center";
+ctx.fillText("13", 103.5  , 125 );
+ 
+ ctx.font = '15px Bold';
+ctx.fontSize = '15px';
+ctx.fillStyle = "#ffffff";
+ctx.textAlign = "center";
+ctx.fillText("14", 139.5  , 125 );
+ 
+ ctx.font = '15px Bold';
+ctx.fontSize = '15px';
+ctx.fillStyle = "#ffffff";
+ctx.textAlign = "center";
+ctx.fillText("15", 175.5  , 125 );
+ 
+ ctx.font = '15px Bold';
+ctx.fontSize = '15px';
+ctx.fillStyle = "#ffffff";
+ctx.textAlign = "center";
+ctx.fillText("16", 211.5  , 125 );
+ 
+ ctx.font = '15px Bold';
+ctx.fontSize = '15px';
+ctx.fillStyle = "#ffffff";
+ctx.textAlign = "center";
+ctx.fillText("17", 247.5  , 125 );
+ 
+ ctx.font = '15px Bold';
+ctx.fontSize = '15px';
+ctx.fillStyle = "#ffffff";
+ctx.textAlign = "center";
+ctx.fillText("18", 283.5  , 125 );
+ 
+ ctx.font = '15px Bold';
+ctx.fontSize = '15px';
+ctx.fillStyle = "#ffffff";
+ctx.textAlign = "center";
+ctx.fillText("19", 319.5  , 125 );
+ 
+ ctx.font = '15px Bold';
+ctx.fontSize = '15px';
+ctx.fillStyle = "#ffffff";
+ctx.textAlign = "center";
+ctx.fillText("20", 355.5  , 125 );
+ 
+ ctx.font = '15px Bold';
+ctx.fontSize = '15px';
+ctx.fillStyle = "#ffffff";
+ctx.textAlign = "center";
+ctx.fillText("21", 391.5  , 125 );
+ 
+ ctx.font = '15px Bold';
+ctx.fontSize = '15px';
+ctx.fillStyle = "#ffffff";
+ctx.textAlign = "center";
+ctx.fillText("22", 427.5  , 125 );
+ 
+   ctx.font = '15px Bold';
+ctx.fontSize = '15px';
+ctx.fillStyle = "#ffffff";
+ctx.textAlign = "center";
+ctx.fillText("23", 67.5  , 162 );
+ 
+ ctx.font = '15px Bold';
+ctx.fontSize = '15px';
+ctx.fillStyle = "#ffffff";
+ctx.textAlign = "center";
+ctx.fillText("24", 103.5  , 162 );
+ 
+ ctx.font = '15px Bold';
+ctx.fontSize = '15px';
+ctx.fillStyle = "#ffffff";
+ctx.textAlign = "center";
+ctx.fillText("25", 139.5  , 162 );  
+ 
+ctx.font = '15px Bold';
+ctx.fontSize = '15px';
+ctx.fillStyle = "#ffffff";
+ctx.textAlign = "center";
+ctx.fillText("26", 175 , 162);  
+ 
+ctx.font = '15px Bold';
+ctx.fontSize = '15px';
+ctx.fillStyle = "#ffffff";
+ctx.textAlign = "center";
+ctx.fillText("27",  213, 162);  
+ 
+ctx.font = '15px Bold';
+ctx.fontSize = '15px';
+ctx.fillStyle = "#ffffff";
+ctx.textAlign = "center";
+ctx.fillText("28",  247.5, 162);  
+ 
+ctx.font = '15px Bold';
+ctx.fontSize = '15px';
+ctx.fillStyle = "#ffffff";
+ctx.textAlign = "center";
+ctx.fillText("29", 283.5, 162);
+ 
+ctx.font = '15px Bold';
+ctx.fontSize = '15px';
+ctx.fillStyle = "#ffffff";
+ctx.textAlign = "center";
+ctx.fillText("30", 319.5, 162);
+ 
+ 
+                                           
+message.channel.sendFile(canvas.toBuffer())
+ 
+           
+        })
+    })
+ 
+}
+ 
+})
 
-client.login("NDYwMTU0MjQyNTE5NDAwNDQ4.DkjS2g.RNf1k6CoUDF3ThHy4b1YWVepXQg");
 
 
 
@@ -4165,13 +4478,5 @@ client.login("NDYwMTU0MjQyNTE5NDAwNDQ4.DkjS2g.RNf1k6CoUDF3ThHy4b1YWVepXQg");
 
 
 
-
-  
-
-
-
-
-
-
-
+ 
 client.login(process.env.BOT_TOKEN);
