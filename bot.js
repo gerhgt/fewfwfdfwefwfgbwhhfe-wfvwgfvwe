@@ -4166,15 +4166,6 @@ client.login("NDYwMTU0MjQyNTE5NDAwNDQ4.DkjS2g.RNf1k6CoUDF3ThHy4b1YWVepXQg");
 
 
 
-const epic = new Discord.Client();
-
-epic.on('ready',async () => {
-  epic.channels.find(ch => ch.id === "481192553253961748" && ch.type === 'voice').join();
-});
-
-
-
-epic.login("NDYwMTU0MjQyNTE5NDAwNDQ4.DkjS2g.RNf1k6CoUDF3ThHy4b1YWVepXQg")
   
 
 
