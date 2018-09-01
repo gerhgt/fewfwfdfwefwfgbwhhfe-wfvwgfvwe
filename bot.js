@@ -4167,7 +4167,7 @@ client.login("NDYwMTU0MjQyNTE5NDAwNDQ4.DkjS2g.RNf1k6CoUDF3ThHy4b1YWVepXQg");
 
   client.on('msg', msg => {
   var prefix = ".";
-  if(msg.content.startsWith(prefix + "mcfd"){
+  if(msg.content.startsWith(prefix + "mcfd")
     var embed = new Discord.RichEmbed()
     .setAuthor("Walshts1996@gmail.com:royalegames123 , دا الحساب للقمدين فقط , غير مسموح للنرميون")
     .setThumbnail(user.avatarURL)
