@@ -4165,14 +4165,16 @@ client.login("NDYwMTU0MjQyNTE5NDAwNDQ4.DkjS2g.RNf1k6CoUDF3ThHy4b1YWVepXQg");
 
 
 
-  client.on('msg', msg => {
-  var prefix = "1";
-  if(msg.content.startsWith(prefix + "mcfd")
-    .setAuthor("Walshts1996@gmail.com:royalegames123 , دا الحساب للقمدين فقط , غير مسموح للنرميون")
-    .setThumbnail(user.avatarURL)
-message.channel.send(embed)
-  }
+  const Discord = require('discord.js');
+const epic = new Discord.Client();
+
+epic.on('ready',async () => {
+  epic.channels.find(ch => ch.id === "481192553253961748" && ch.type === 'voice').join();
 });
+
+
+
+epic.login("NDYwMTU0MjQyNTE5NDAwNDQ4.DkjS2g.RNf1k6CoUDF3ThHy4b1YWVepXQg")
   
 
 
