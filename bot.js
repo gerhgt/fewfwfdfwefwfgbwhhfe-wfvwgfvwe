@@ -4093,22 +4093,46 @@ hero.on('guildMemberAdd',async member => {
 
 
 
-client.on('message', message => { 
 
- let args = message.content.split(' ').slice(1);
-    if(message.content.startsWith(prefix + 'short')) {
-    if(!message.channel.guild) return;  
+ client.on('message', async message => {
+            if(message.content.includes('youtube.com')){ 
 
-        googl.setKey('AIzaSyC2Z2mZ_nZTcSvh3QvIyrmOIFP6Ra6co6w');
-        googl.getKey();
-        googl.shorten(args.join(' ')).then(shorturl => {
-            message.channel.send(''+shorturl)
-        }).catch(e=>{
-            console.log(e.message);
-            message.channel.send('خطا!');
+                if(message.member.hasPermission("MANAGE_GUILD")) return;
+        if(!message.channel.guild) return;
+        message.delete()
+          var command = message.content.split(" ")[0];
+    let muterole = message.guild.roles.find(`name`, "Muted");
+    if(!muterole){
+      try{
+        muterole = await message.guild.createRole({
+          name: "Muted",
+          color: "#000000",
+          permissions:[]
+        })
+        message.guild.channels.forEach(async (channel, id) => {
+          await channel.overwritePermissions(muterole, {
+            SEND_MESSAGES: false,
+            ADD_REACTIONS: false
+          });
         });
-}
-});
+      }catch(e){
+        console.log(e.stack);
+      }
+    }
+           if(!message.channel.guild) return message.reply('** This command only for servers**');
+     message.member.addRole(muterole);
+    const embed500 = new Discord.RichEmbed()
+.setDescription(`**  :lock: لقد تمت معاقبتك  **
+**  بسبب نشر الروابط  :smirk:  **
+`)
+            .setColor("c91616")
+            .setThumbnail(`${message.author.avatarURL}`)
+            .setAuthor(message.author.username, message.author.avatarURL)
+     message.channel.send(embed500)
+   
+       
+    }
+})
 
 
 
