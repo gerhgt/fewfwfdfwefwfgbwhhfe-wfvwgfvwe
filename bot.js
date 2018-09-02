@@ -4094,46 +4094,43 @@ hero.on('guildMemberAdd',async member => {
 
 
 
- client.on('message', async message => {
-            if(message.content.includes('youtube.com')){ 
-
-                if(message.member.hasPermission("MANAGE_GUILD")) return;
-        if(!message.channel.guild) return;
-        message.delete()
-          var command = message.content.split(" ")[0];
-    let muterole = message.guild.roles.find(`name`, "Muted");
-    if(!muterole){
-      try{
-        muterole = await message.guild.createRole({
-          name: "Muted",
-          color: "#000000",
-          permissions:[]
-        })
-        message.guild.channels.forEach(async (channel, id) => {
-          await channel.overwritePermissions(muterole, {
-            SEND_MESSAGES: false,
-            ADD_REACTIONS: false
-          });
-        });
-      }catch(e){
-        console.log(e.stack);
-      }
-    }
-           if(!message.channel.guild) return message.reply('** This command only for servers**');
-     message.member.addRole(muterole);
-    const embed500 = new Discord.RichEmbed()
-.setDescription(`**  :lock: لقد تمت معاقبتك  **
-**  بسبب نشر الروابط  :smirk:  **
-`)
-            .setColor("c91616")
-            .setThumbnail(`${message.author.avatarURL}`)
-            .setAuthor(message.author.username, message.author.avatarURL)
-     message.channel.send(embed500)
-   
-       
-    }
-})
-
+client.on('message',async msg => {
+     if(msg.channel.type === "dm") return;
+  if(msg.author.bot) return;
+   var everyone = msg.guild.defaultRole;
+  var p = "1";
+  if(msg.content.startsWith(p + "setr")) {
+  if(!msg.guild.member(msg.author).hasPermissions('MANAGE_CHANNELS')) return msg.reply('❌ **go play minecraft**');
+  if(!msg.guild.member(client.user).hasPermissions(['MANAGE_CHANNELS'])) return msg.reply('❌ **البوت لا يمتلك صلاحية**');
+  var ggg= msg.guild.createChannel('SERVER STATS', 'category').then(kk => {
+           var ccc =msg.guild.createChannel('SERVER STATS', 'voice').then(al => {
+                var aa =msg.guild.createChannel('SERVER STATS', 'voice').then(alp => {
+                   var aaa =msg.guild.createChannel('SERVER STATS', 'voice').then(alph => {
+                       var a =msg.guild.createChannel('SERVER STATS', 'voice').then(yo => {
+       al.setParent(kk);
+       alp.setParent(kk);
+       alph.setParent(kk);
+       yo.setParent(kk);
+     al.overwritePermissions(everyone, { CONNECT: false });
+      alp.overwritePermissions(everyone, { CONNECT: false });
+       alph.overwritePermissions(everyone, { CONNECT: false });
+        yo.overwritePermissions(everyone, { CONNECT: false });
+  setInterval(() => {
+     al.setName('Members: ' + msg.guild.members.filter(m => !(m.user.bot)).size, 'voice');
+      alp.setName('Bots: ' + msg.guild.members.filter(m => m.user.bot).size, 'voice');
+        alph.setName('Text channels: ' + msg.guild.channels.filter(c => c.type == 'text').size, 'voice');
+         yo.setName('Voice channels: ' + (msg.guild.channels.filter(c => c.type == 'voice').size - 3), 'voice');
+ },1000);
+                       })
+                   })
+    
+                })
+           })
+  })
+           
+  }
+ 
+});
 
 
 
