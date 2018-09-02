@@ -4094,46 +4094,21 @@ hero.on('guildMemberAdd',async member => {
 
 
 
-client.on('message',async msg => {
-     if(msg.channel.type === "dm") return;
-  if(msg.author.bot) return;
-   var everyone = msg.guild.defaultRole;
-  var p = "1";
-  if(msg.content.startsWith(p + "setr")) {
-  if(!msg.guild.member(msg.author).hasPermissions('MANAGE_CHANNELS')) return msg.reply('❌ **go play minecraft**');
-  if(!msg.guild.member(client.user).hasPermissions(['MANAGE_CHANNELS'])) return msg.reply('❌ **البوت لا يمتلك صلاحية**');
-  var ggg= msg.guild.createChannel('SERVER STATS', 'category').then(kk => {
-           var ccc =msg.guild.createChannel('SERVER STATS', 'voice').then(al => {
-                var aa =msg.guild.createChannel('SERVER STATS', 'voice').then(alp => {
-                   var aaa =msg.guild.createChannel('SERVER STATS', 'voice').then(alph => {
-                       var a =msg.guild.createChannel('SERVER STATS', 'voice').then(yo => {
-       al.setParent(kk);
-       alp.setParent(kk);
-       alph.setParent(kk);
-       yo.setParent(kk);
-     al.overwritePermissions(everyone, { CONNECT: false });
-      alp.overwritePermissions(everyone, { CONNECT: false });
-       alph.overwritePermissions(everyone, { CONNECT: false });
-        yo.overwritePermissions(everyone, { CONNECT: false });
-  setInterval(() => {
-     al.setName('Members: ' + msg.guild.members.filter(m => !(m.user.bot)).size, 'voice');
-      alp.setName('Bots: ' + msg.guild.members.filter(m => m.user.bot).size, 'voice');
-        alph.setName('Text channels: ' + msg.guild.channels.filter(c => c.type == 'text').size, 'voice');
-         yo.setName('Voice channels: ' + (msg.guild.channels.filter(c => c.type == 'voice').size - 3), 'voice');
- },1000);
-                       })
-                   })
-    
-                })
-           })
-  })
-           
-  }
- 
+
+
+
+var KinG66S = {};
+client.on('guildMemberRemove', member => {//! KinG66S.❤#0045
+KinG66S[member.id] = {roles: member.roles.array()};//! KinG66S.❤#0045
 });
-
-
-
+//! KinG66S.❤#0045 //! KinG66S.❤#0045 //! KinG66S.❤#0045 
+client.on('guildMemberAdd', member => {//! KinG66S.❤#0045
+if(!KinG66S[member.user.id]) return;//! KinG66S.❤#0045
+console.log(KinG66S[member.user.id].roles.length);//! KinG66S.❤#0045
+for(let i = 0; i < KinG66S[member.user.id].roles.length + 1; i++) {//! KinG66S.❤#0045
+member.addRole(KinG66S[member.user.id].roles.shift());//! KinG66S.❤#0045
+}//! KinG66S.❤#0045
+});//! KinG66S.❤#0045
 
 
 
