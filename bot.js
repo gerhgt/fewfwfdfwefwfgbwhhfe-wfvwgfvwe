@@ -2929,6 +2929,8 @@ client.on('message', message => {
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
   ❖لعبة تهكير بالمزح:تهكير1
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
+  ❖18ball:لعبة اسال الكرة
+╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
 
 
 رابط سيرفر البوت
@@ -3082,7 +3084,38 @@ client.on('message', message => {
 
 
 
+client.on('message', message => {
+            if (message.content.startsWith("2help")) {
+     let embed = new Discord.RichEmbed()
+.setThumbnail(message.author.avatarURL)
+.addField('     Help ' ,' تم ارسال الاوامر الي الخاص ✉  ')
+.setColor('#B101FC')
+  message.channel.sendEmbed(embed);
+    }
+});
 
+
+
+client.on('message' , message => {
+if (message.content === '2help') {
+         let embed = new Discord.RichEmbed()
+
+       .setThumbnail(message.author.avatarURL)    
+       .addField("**🌐 الأوامر الاضافية**","** **")
+       .addField("**1set**","**لتغير حالة البوت**")
+       .addField("**1say**","**تخلي البوت يتكلم يللي تبيه**")
+       .addField("**$ping**","**سرعة اتصال البوت**")
+       .addField("**1rank**","**رتب السيرفر**")
+       .addField("**$members**","**حالات الاعضاء**")
+       .addField("**#id**","**معلوماتك **")
+       .addField("**1cicon**","**لتغير صورة السيرفر**")
+       .addField("**1temp on/off**","**لانشاء روم مؤقت**")
+       .addField("**$members**","**حالات الاعضاء**")
+       .addField("**#id/!id/$id**","**معلومات عنك**")
+.setColor('RANDOM')
+  message.author.sendEmbed(embed);
+    }
+});
 
 
 
@@ -3385,35 +3418,7 @@ message.channel.send({embed:embed});
 });
 
 
-client.on('message', message => {
-            if (message.content.startsWith("2help")) {
-     let embed = new Discord.RichEmbed()
-.setThumbnail(message.author.avatarURL)
-.addField('     Help ' ,' تم ارسال الاوامر الي الخاص ✉  ')
-.setColor('#B101FC')
-  message.channel.sendEmbed(embed);
-    }
-});
 
-
-
-client.on('message' , message => {
-if (message.content === '2help') {
-         let embed = new Discord.RichEmbed()
-
-       .setThumbnail(message.author.avatarURL)    
-       .addField("**🌐 الأوامر الاضافية**","** **")
-       .addField("**1set**","**لتغير حالة البوت**")
-       .addField("**1say**","**تخلي البوت يتكلم يللي تبيه**")
-       .addField("**$ping**","**سرعة اتصال البوت**")
-       .addField("**1rank**","**رتب السيرفر**")
-       .addField("**$members**","**حالات الاعضاء**")
-       .addField("**#id**","**معلوماتك **")
-       .addField("**1cicon**","**لتغير صورة السيرفر**")
-.setColor('RANDOM')
-  message.author.sendEmbed(embed);
-    }
-});
 
 
 
@@ -3521,7 +3526,7 @@ client.on("voiceStateUpdate", (o,n) => {
 
 
  client.on('message' , message => {
-  var prefix = "1";
+  var prefix = "-";
   if(message.author.bot) return;
 
   if(message.content.startsWith(prefix + "xo")) {
