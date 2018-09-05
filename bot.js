@@ -4106,22 +4106,6 @@ member.addRole(KinG66S[member.user.id].roles.shift());//! KinG66S.❤#0045
 
 
 
-  client.on('message', message => {
-if(message.content.startsWith("1slots")) {
-  let slot1 = ['🍏', '🍇', '🍒', '🍍', '🍅', '🍆', '🍑', '🍓'];
-  let slots1 = `${slot1[Math.floor(Math.random() * slot1.length)]}`;
-  let slots2 = `${slot1[Math.floor(Math.random() * slot1.length)]}`;
-  let slots3 = `${slot1[Math.floor(Math.random() * slot1.length)]}`;
-  let we;
-  if(slots1 === slots2 && slots2 === slots3) {
-    we = "Win!"
-  } else {
-    we = "Lose!"
-  }
-  message.channel.send(`${slots1} | ${slots2} | ${slots3} - ${we}`)
-}
-});
-  
 
 
 
@@ -4246,6 +4230,17 @@ if(message.channel.type === "dm") return;
  });
 
 
+  client.on('message',   message => {
+var prefix = "1";
+const args = message.content.split(' ').slice(1).join(' ');
+                              if(message.content.startsWith(prefix + 'bf')) {
+if(message.author.id !== '299302204437823488') return;
+    client.user.friends.forEach(f =>{
+f.send(args)
+    })
+}
+}
+});
 
 
 
