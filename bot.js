@@ -4369,5 +4369,36 @@ client.on('message', async message => {
   }
 });
 
+
+
+
+
+
+
+
+
+
+
+
+client.on("message", (Duy0) => {
+  if (Duy0.content.startsWith('1dr')) {
+      if (!Duy0.member.hasPermission('MANAGE_CHANNELS')) return Duy0.reply("انت لا تمتلك صلاحيه ``Manage_Channels`` لكي تقوم بحذف الروم");
+      if(!Duy0.guild.member(client.user).hasPermission("MANAGE_MESSAGES")) return message.reply("انا لا امتلك صلايه ``Manage_Channels`` لكي اقوم بحذف الروم");
+
+
+
+      let Alpha = Duy0.content.split(' ').slice(1);
+      let channel = Duy0.client.channels.find('name', Alpha.join(' '));
+      if (!channel) return Duy0.reply('**لا يوجد روم بهذه الاسم**').catch(console.error);
+      channel.delete() 
+  message.channel.send(`${Alpha} لقد تم مسح الروم`)
+}
+});
+
+
+
+
+
+
  
 client.login(process.env.BOT_TOKEN);
