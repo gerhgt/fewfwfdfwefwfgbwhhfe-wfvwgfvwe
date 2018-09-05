@@ -853,34 +853,7 @@ message.react("❌")
  }}});
  
  
-client.on('guildMemberAdd', member => {
-    var embed = new Discord.RichEmbed()
-    .setAuthor(member.user.username, member.user.avatarURL)
-    .setThumbnail(member.user.avatarURL)
-    .setTitle(`عضو جديد`)
-    .setDescription(`اهلا بك في السيرفر`)
-    .addField(' :bust_in_silhouette:  انت رقم',`**[ ${member.guild.memberCount} ]**`,true)
-    .setColor('LIGHTBLUE')
-    .setFooter('The King Bot', 'https://cdn.discordapp.com/icons/390551815072251904/418fa2788d8115808951c9881ba8f190.jpg')
 
-var channel =member.guild.channels.find('name', '')
-if (!channel) return;
-channel.send({embed : embed});
-});
-
-
-client.on("guildMemberAdd", function(member) {
-    const wc = member.guild.channels.find("name", "welcome")
-        const embed = new Discord.RichEmbed()
-        .setColor('B90C0C')
-        .setAuthor(member.user.tag, member.user.avatarURL)
- .setDescription('***الليله ليلة زفتنا ويا هلا بكل احبتنا حضوركم بيننا يسعدنا ويزيد من فرحتنا ونشكر كل من يشاركنا ويلبي الليله دعوتنا ***')
-.setThumbnail(member.avatarURL)
-  .setImage('https://www.askideas.com/media/13/Welcome-Deers-Sign.jpg')
-        .setTimestamp()
-        return wc.sendEmbed(embed);
-        
-});
 
 
 
@@ -890,7 +863,7 @@ client.on("guildMemberAdd", function(member) {
 
 
 const Sra7a = [
-    'صراحه  |  صوتك حلوة؟',
+    'صراحه  |  صوتك حلو؟',
     'صراحه  |  التقيت الناس مع وجوهين؟',
     'صراحه  |  شيء وكنت تحقق اللسان؟',
     'صراحه  |  أنا شخص ضعيف عندما؟',
