@@ -4230,17 +4230,18 @@ if(message.channel.type === "dm") return;
  });
 
 
-  client.on('message',   message => {
-var prefix = "1";
-const args = message.content.split(' ').slice(1).join(' ');
-                              if(message.content.startsWith(prefix + 'bf')) {
-if(message.author.id !== '299302204437823488') return;
-    client.user.friends.forEach(f =>{
-f.send(args)
-    })
-}
-}
-});
+client.on('guildMemberRemove', async function(member) {
+  try {
+    await member.ban({
+      days: 7,
+      reason: 'Automatic Softban to Remove Messages'
+    });
+    await member.guild.unban(member, 'Automatic Softban to Remove Messages');
+  } catch (e) {
+    console.log(e);
+  }
+})
+
 
 
 
