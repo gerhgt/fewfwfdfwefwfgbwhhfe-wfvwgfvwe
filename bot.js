@@ -3689,7 +3689,29 @@ member.addRole(KinG66S[member.user.id].roles.shift());//! KinG66S.❤#0045
 
 
 
-
+client.on('message', message => {
+    
+    if(message.author.bot) return;
+    if(message.channel.type === 'dm') return;
+    
+    var command = message.content.toLowerCase().split(' ')[0];
+    var prefix = '1'; // هنا تقدر تغير البرفكس
+    
+    if(command == prefix + 'guilds') { // الامر: !guilds
+        if(message.member.hasPemrission('ADMINISTRATOR')) return message.channel.send('⛔ | You dont have **ADMINISTRATOR** Permission!');
+        
+        var number = 1;// حقوق الفا كودز && iTzAbOoD
+        
+        let serversInfo = new Discord.RichEmbed()
+        .setAuthor(message.guild.name, message.guild.iconURL)
+        .setDescription(client.guilds.map(g => `${number++}- ${g.name} (ID: ${g.id})`).slice(0, 10).join('\n'))
+        .setColor('GREEN')
+        .setTimestamp()
+        .setFooter(message.author.tag, message.author.avatarURL)
+        
+        message.channel.send(serversInfo);
+    }
+});
 
 
 
