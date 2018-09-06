@@ -4041,7 +4041,23 @@ message.channel.sendEmbed(cat);
 
 
 
-
+client.on('message', message => {
+    if(!message.channel.guild) return;
+var prefix = "*";
+if(message.content.startsWith(prefix + 'channel')) {
+    let channel = message.channel
+    var embed = new Discord.RichEmbed()
+      .setTitle("Channel Info")
+      .setColor("#9932CC")
+      .setDescription(`Info about <#${channel.id}>\nChannel ID: ${channel.id}`)
+      .addField("Created At", `${channel.createdAt}`)
+      .addField("Channel Type", `${channel.type}`)
+      .addField("Extra Information", `Channel is NSFW => ${channel.nsfw}\nChannel Topic=> ${channel.topic}\nChannel Parent => ${channel.parent}\nChannel Position => ${channel.position}`)
+ 
+     message.channel.send({ embed: embed });
+  }
+ 
+    });
 
 
 client.on('message', message => {
