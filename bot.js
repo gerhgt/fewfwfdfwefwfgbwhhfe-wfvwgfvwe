@@ -3978,10 +3978,165 @@ client.on("message", (Duy0) => {
 }
 });
 
+client.on('message', msg => {
+  if (msg.content === 'fuck you') {
+   msg.delete(30)
+    msg.reply('لاتسب ثاني :angry: ');
+  }
+});
+
+
+client.on('message', msg => {
+  if (msg.content === 'fuck u') {
+   msg.delete(30)
+    msg.reply('لاتسب ثاني :angry: ');
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'fuck') {
+   msg.delete(30)
+    msg.reply('لاتسب ثاني :angry: ');
+  }
+});
+
+
+
+client.on('message', msg => {
+  if (msg.content === 'fac') {
+   msg.delete(30)
+    msg.reply('لاتسب ثاني :angry: ');
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'f u c k') {
+   msg.delete(30)
+    msg.reply('لاتسب ثاني :angry: ');
+  }
+});
+
+
+
+client.on('message', msg => {
+  if (msg.content === 'كل زق ') {
+   msg.delete(30)
+    msg.reply('لاتسب ثاني :angry: ');
+  }
+});
+
+
+client.on('message', msg => {
+  if (msg.content === 'يا زق') {
+   msg.delete(30)
+    msg.reply('لاتسب ثاني :angry: ');
+  }
+});
 
 
 
 
+
+client.on('message', msg => {
+  if (msg.content === 'يا حمار') {
+   msg.delete(30)
+    msg.reply('لاتسب ثاني :angry: ');
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'حمار') {
+   msg.delete(30)
+    msg.reply('لاتسب ثاني :angry: ');
+  }
+});
+
+
+client.on('message', msg => {
+  if (msg.content === 'كلب') {
+   msg.delete(30)
+    msg.reply('لاتسب ثاني :angry: ');
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'كس امك') {
+   msg.delete(30)
+    msg.reply('لاتسب ثاني :angry: ');
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'ايري') {
+   msg.delete(30)
+    msg.reply('لاتسب ثاني :angry: ');
+  }
+});
+
+
+client.on('message', msg => {
+  if (msg.content === 'زبي') {
+   msg.delete(30)
+    msg.reply('لاتسب ثاني :angry: ');
+  }
+});
+
+
+client.on('message', msg => {
+  if (msg.content === 'كس اختك') {
+   msg.delete(30)
+    msg.reply('لاتسب ثاني :angry: ');
+  }
+});
+
+
+
+client.on('message', msg => {
+  if (msg.content === 'طيز') {
+   msg.delete(30)
+    msg.reply('لاتسب ثاني :angry: ');
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'تلعب بطيزي') {
+   msg.delete(30)
+    msg.reply('لاتسب ثاني :angry: ');
+  }
+});
+
+
+client.on('message', msg => {
+  if (msg.content === 'خرى عليك') {
+   msg.delete(30)
+    msg.reply('لاتسب ثاني :angry: ');
+  }
+});
+
+
+client.on('message', msg => {
+  if (msg.content === 'وخرى') {
+   msg.delete(30)
+    msg.reply('لاتسب ثاني :angry: ');
+  }
+});
+
+
+
+client.on('message', msg => {
+  if (msg.content === 'جحش') {
+   msg.delete(30)
+    msg.reply('لاتسب ثاني :angry: ');
+  }
+});
+
+
+client.on('message', msg => {
+  if (msg.content === 'ابن جحش') {
+   msg.delete(30)
+    msg.reply('لاتسب ثاني :angry: ');
+  }
+});
 
 
 
