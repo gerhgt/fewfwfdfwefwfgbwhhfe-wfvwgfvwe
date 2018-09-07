@@ -4223,36 +4223,33 @@ message.channel.sendEmbed(cat);
 });
 
 
-
-client.on('message', async message => {
-    let date = moment().format('Do MMMM YYYY , hh:mm');
-    let User = message.mentions.users.first();
-    let Reason = message.content.split(" ").slice(3).join(" ");
-    let messageArray = message.content.split(" ");
-    let time = messageArray[2];
-    if(message.content.startsWith("1bwtime")) {
-       if(!message.guild.member(message.author).hasPermission("BAN_MEMBERS")) return message.channel.send("**لاتمتلك صلاحيات**");
-       if(!User) message.channel.send("**منشن شخص**");
-       if(User.id === client.user.id) return message.channel.send("**لاتستطيع حظري**");
-       if(User.id === message.guild.owner.id) return message.channel.send("**لا استطيع ان احظر الادارة**");
-       if(!time) return message.channel.send("**ضع الوقت الذي تريده**");
-       if(!time.match(/[1-7][s,m,h,d,w]/g)) return message.channel.send('**ضع وقت حقيقي**');
-       if(!Reason) message.channel.send("**ضع سبب**");
-       let banEmbed = new Discord.RichEmbed()
-       .setAuthor(`You have been banned from ${message.guild.name} !`)
-       .setThumbnail(message.guild.iconURL || message.guild.avatarURL)
-       .addField('- تم حظره من قبل: ',message.author.tag,true)
-       .addField('- السبب:',Reason,true)
-       .addField('- الوقت الذي تبند فيه:',date,true)
-       .addField('- وقت الحظر:',time,true)
-       .setFooter(message.author.tag,message.author.avatarURL);
-       User.sendMessage({embed: banEmbed}).then(() => message.guild.member(User).ban({reason: Reason}))
-       .then(() => message.channel.send(`**:white_check_mark: ${User} banned from the server ! :airplane: **`)).then(() => { setTimeout(() => {
-           message.guild.unban(User);
-       }, message(time));
-    });
-   }
-});
+client.on('message',message =>{
+    var prefix = "1";
+    if(message.content.startsWith(prefix + 'topinv')) {
+  message.guild.fetchInvites().then(i =>{
+  var invites = [];
+   
+  i.forEach(inv =>{
+    var [invs,i]=[{},null];
+     
+    if(inv.maxUses){
+        invs[inv.code] =+ inv.uses+"/"+inv.maxUses;
+    }else{
+        invs[inv.code] =+ inv.uses;
+    }
+        invites.push(`invite: ${inv.url} inviter: ${inv.inviter} \`${invs[inv.code]}\`;`);
+   
+  });
+  var embed = new Discord.RichEmbed()
+  .setColor("#000000")
+  .setDescription(`${invites.join(`\n`)+'\n\n**By:** '+message.author}`)
+  .setThumbnail("صوره بوتك هنا")
+           message.channel.send({ embed: embed });
+   
+  });
+   
+    }
+  });
 
 
 
