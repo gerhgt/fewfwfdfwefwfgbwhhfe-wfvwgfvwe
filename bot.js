@@ -4663,6 +4663,7 @@ if (message.content === '2help') {
        .addField("**$members**","**حالات الاعضاء**")
        .addField("**#id/!id/$id**","**معلومات عنك**")
        .addField("**1dr**","**(لحذف روم(فقط اكتب الامر واسم الروم**")
+       .addField("**1channel**","**لعرض معلومات الروم اكتب الامر واسم الروم بالظبط**")
 .setColor('RANDOM')
   message.author.sendEmbed(embed);
     }
