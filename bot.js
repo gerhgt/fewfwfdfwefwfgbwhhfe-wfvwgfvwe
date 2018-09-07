@@ -4163,7 +4163,15 @@ client.on('message', msg => {
 
 
 
-  
+  client.on('message', message =>{
+    if(message.content === '#ping'){
+let start = Date.now(); message.channel.send('pong').then(message => { 
+message.edit(`\`\`\`js
+Time taken: ${Date.now() - start} ms
+Discord API: ${client.ping.toFixed(0)} ms\`\`\``);
+    });
+    }
+});
 
 
 
@@ -4664,6 +4672,7 @@ if (message.content === '2help') {
        .addField("**#id/!id/$id**","**معلومات عنك**")
        .addField("**1dr**","**(لحذف روم(فقط اكتب الامر واسم الروم**")
        .addField("**1channel**","**لعرض معلومات الروم اكتب الامر واسم الروم بالظبط**")
+       .addField("**#ping**","**البينق**")
 .setColor('RANDOM')
   message.author.sendEmbed(embed);
     }
