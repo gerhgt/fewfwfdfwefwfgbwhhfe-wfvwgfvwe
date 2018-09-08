@@ -4175,56 +4175,6 @@ Discord API: ${client.ping.toFixed(0)} ms\`\`\``);
 
 
 
-client.on("message", message => {
-if(message.channel.id != "477237137058562048") return;
-if(message.author.id == "299302204437823488") return;
-message.delete();
-})
-
-
-
-
-
-
-
-client.on("message", message => {
-if(message.channel.id != "484003004090155018") return;
-if(message.author.id == "299302204437823488") return;
-message.delete();
-})
-
-
-
-
-
-
-
-
-client.on("message", message => {
-if(message.channel.id != "481181771971559427") return;
-if(message.author.id == "299302204437823488") return;
-message.delete();
-})
-
-
-
-
-client.on("message", message => {
-if(message.channel.id != "481812712712699905") return;
-if(message.author.id == "299302204437823488") return;
-message.delete();
-})
-
-
-
-
-
-client.on("message", message => {
-if(message.channel.id != "487714611819184179") return;
-if(message.author.id == "299302204437823488") return;
-message.delete();
-})
-
 
 var cats = [
 
