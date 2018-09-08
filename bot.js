@@ -4290,7 +4290,7 @@ client.on('message',async message => {
   }
 });
 
-lient.on('message', message => {
+client.on('message', message => {
 let perm = message.guild.member(message.author).hasPermission('ADMINISTRATOR') || message.guild.member(message.author).hasPermission('BAN_MEMBERS')
 if (!perm) return message.reply(':x: | **You don\'t have `BAN_MEMBERS` permission to use this command**.')
 if(message.content.startsWith(prefix + 'unhackban')) {
