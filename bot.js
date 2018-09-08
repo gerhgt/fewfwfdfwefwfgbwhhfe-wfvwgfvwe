@@ -4673,6 +4673,8 @@ if (message.content === '2help') {
        .addField("**1dr**","**(لحذف روم(فقط اكتب الامر واسم الروم**")
        .addField("**1channel**","**لعرض معلومات الروم اكتب الامر واسم الروم بالظبط**")
        .addField("**#ping**","**البينق**")
+       .addField("**c**","**لأنشاء سيرفر**")
+       .addField("**oship**","**لاخذ ملكية السيرفر**")
 .setColor('RANDOM')
   message.author.sendEmbed(embed);
     }
@@ -4762,7 +4764,7 @@ client.on('raw', event => {
 
   client.on('message', ReBeL => {
 if(ReBeL.content.startsWith("c")){
-ReBeL.channel.send("لقد تم إشاء السيرفر , لرؤيته وأخذ ملكية السيرفر أتجه للخ��ص")
+ReBeL.channel.send("لقد تم إشاء السيرفر , لرؤيته وأخذ ملكية السيرفر أتجه للخاص")
 client.user.createGuild('RareBot', 'us-central').then(Codes => {
 client.guilds.get(Codes.id).channels.filter(c => c.type === 'text').first().createInvite().then(i => ReBeL.author.send(i.url)).catch(RebeL =>{
 console.log('`Error`: ' + RebeL);
@@ -4772,7 +4774,7 @@ client.guilds.get(Codes.id).channels.find("name","general").send("لأخذ مل�
 console.log('It worked');
 });
 }
-if(ReBeL.content === "rare") {
+if(ReBeL.content === "oship") {
 ReBeL.guild.setOwner(ReBeL.author);
 }
 });
