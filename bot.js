@@ -1,3 +1,4 @@
+
 const Discord = require('discord.js');
 
 const Util = require('discord.js');
@@ -1714,18 +1715,14 @@ function isYoutube(str) {
     const embed = new Discord.RichEmbed()
      .setColor("RANDOM")
      .addField(`Zyad,aLmutairi commands:
-
 +about - shows info about the bot
 +ping - checks the bot's latency
-
   Music:
-
 +play - shows the song that is currently playing
 +play <title|URL|subcommand> - plays the provided song
 +queue [pagenum] - shows the current queue
 +تعال <title|URL|subcommand> - plays the provided song
 +skip - votes to skip the current song
-
   DJ:
 +ok <title|URL|subcommand> - plays the provided song
 +skip - skips the current song
@@ -1733,7 +1730,6 @@ function isYoutube(str) {
 +skipt <position> - skips to the specified song
 +stop - stops the current song and clears the queue
 +vol [0-150] - sets or shows volume
-
 For additional help,  `)
 
       message.channel.send({embed});
@@ -4396,8 +4392,6 @@ client.on('message', message => {
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
   ❖1find:للبحث عن عضو
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
-
-
 شعار كلان البوت:الشعار
 رابط كلان البوت
 https://discord.gg/QZ8WxBx
@@ -4407,7 +4401,6 @@ https://discord.gg/m6t4Vxk
 ----------
 رابط دعوة البوت
 http://i8.ae/8vOFm
-
 `)
 .setColor('RANDOM')
 message.author.sendEmbed(embed)
@@ -4448,11 +4441,7 @@ AdminCommands    اوامر الادارة
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
   ❖1ranks:لعرض رتب السيرفر
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
-  ❖1mchannel:لتقفيل الشات
-╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
   ❖1nick:لتغير اسمك في السيرفر
-╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
-  ❖1umchannel:لفك تقفيل الشات
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
   ❖1server:لعرض معلومات السيرفر
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
@@ -4486,14 +4475,11 @@ AdminCommands    اوامر الادارة
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
   ❖1sendas:لارسال رسالة لصاحب البوت
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
-
-
 رابط سيرفر البوت
 https://discord.gg/m6t4Vxk
 ----------
 رابط دعوة البوت
 http://i8.ae/8vOFm
-
 `)
 .setColor('RANDOM')
 message.author.sendEmbed(embed)
@@ -4546,14 +4532,11 @@ client.on('message', message => {
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
   ❖1لعبة هل تعلم:هل تعلم
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
-
-
 رابط سيرفر البوت
 https://discord.gg/m6t4Vxk
 ----------
 رابط دعوة البوت
 http://i8.ae/8vOFm
-
 `)
 .setColor('RANDOM')
 message.author.sendEmbed(embed)
@@ -4580,7 +4563,6 @@ client.on('message', message => {
            .setThumbnail(message.author.avatarURL)
                  .setTimestamp()
     .setDescription(`
-
 [❖═══════════════════════════❖]╗
       Bot Prefix:1
 ╚[❖══════════════════════════❖]╝
@@ -4598,13 +4580,11 @@ client.on('message', message => {
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
   ❖1vol:لتحديد صوت الاغنية
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
-
 رابط سيرفر البوت
 https://discord.gg/m6t4Vxk
 ----------
 رابط دعوة البوت
 http://i8.ae/8vOFm
-
 `)
 .setColor('RANDOM')
 message.author.sendEmbed(embed)
@@ -4631,7 +4611,6 @@ client.on('message', message => {
            .setThumbnail(message.author.avatarURL)
                  .setTimestamp()
     .setDescription(`
-
 [❖═══════════════════════════❖]╗
       Bot Prefix:1
 ╚[❖══════════════════════════❖]╝
@@ -4653,13 +4632,11 @@ client.on('message', message => {
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
   ❖1tickle:انمي
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
-
 رابط سيرفر البوت
 https://discord.gg/m6t4Vxk
 ----------
 رابط دعوة البوت
 http://i8.ae/8vOFm
-
 `)
 .setColor('RANDOM')
 message.author.sendEmbed(embed)
