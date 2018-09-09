@@ -3969,18 +3969,18 @@ client.on("message", async () => {
 })
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+client.on('message', message => {
+  if(message.content === 'عقاب') {
+    if(!message.channel.guild) return message.reply('**الامر هاذا فقد للسيرفرات**');
+    var edits = ['اضرب نفسك كف قوي لنسمع صوت الضربة' , 'اعطي لاي صديق عندي دولارين' , 'مسامحك' , 'قول اسم امك' , 'قبل   المايك' , ' روح ل روم وسب سبات قوية' , 'من افضل صديق عندك ']
+    var embed = new Discord.RichEmbed()
+ .setDescription(`${edits[Math.floor(Math.random() * edits.length)]}`)
+ .setThumbnail(message.author.avatarURL)
+ .setFooter('By D7oM.')
+ .setColor('RANDOM')
+message.channel.send(embed);
+}
+});
 
 
 
@@ -4184,6 +4184,8 @@ client.on('message', message => {
   ❖18ball:لعبة اسال الكرة
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
   ❖1لعبة هل تعلم:هل تعلم
+╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
+  ❖لعبة عقوبات:عقاب
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
 رابط سيرفر البوت
 https://discord.gg/R5dxEbv
@@ -4526,21 +4528,6 @@ eyad.channel.sendEmbed(Embed11).then(eyad => {eyad.delete(20000)})
 
 
 
-client.on('message', ra3d => {
-var prefix = "1";
-                        let args = ra3d.content.split(" ").slice(1).join(" ")
-if(ra3d.content.startsWith(prefix + 'color')) {
-    if(!args) return ra3d.channel.send('`يرجي اختيار كم لون `');
-             if (!ra3d.member.hasPermission('MANAGE_ROLES')) return ra3d.channel.sendMessage('`**⚠ | `[MANAGE_ROLES]` لا يوجد لديك صلاحية**'); 
-              ra3d.channel.send(`**✅ |Created __${args}__ Colors**`);
-                  setInterval(function(){})
-                    let count = 0;
-                    let ecount = 0;
-          for(let x = 1; x < `${parseInt(args)+1}`; x++){
-            ra3d.guild.createRole({name:x,
-              color: 'RANDOM'})
-              }
-            }
-       });
+
 
 client.login(process.env.BOT_TOKEN);
