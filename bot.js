@@ -501,7 +501,7 @@ client.on("message", message => { //clear
   
   
   client.on('message', message => { //invite
-    if (message.content.startsWith('رابط)) {
+    if (message.content.startsWith('رابط')) {
 	        if(!message.channel.guild) return message.reply(' ');
      if(!message.channel.guild) return;
 if (message.author.bot) return;
