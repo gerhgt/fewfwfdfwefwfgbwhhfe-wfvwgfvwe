@@ -1,4 +1,20 @@
+Skip to content
+ 
+Search or jump to…
 
+Pull requests
+Issues
+Marketplace
+Explore
+ @gerhgt Sign out
+0
+0 2 gerhgt/fewfwfdfwefwfgbwhhfe-wfvwgfvwe
+ Code  Issues 1  Pull requests 0  Projects 0  Wiki  Insights  Settings
+fewfwfdfwefwfgbwhhfe-wfvwgfvwe/bot.js
+5832632  9 minutes ago
+@gerhgt gerhgt Update bot.js
+     
+4846 lines (3914 sloc)  175 KB
 const Discord = require('discord.js');
 
 const Util = require('discord.js');
@@ -114,6 +130,7 @@ var prefix = "1";
 
 client.on('message', function(msg) {
     if(msg.content.startsWith (prefix  + 'server')) {
+	        if(!message.channel.guild) return message.reply(' ');
       let embed = new Discord.RichEmbed()
       .setColor('RANDOM')
       .setThumbnail(msg.guild.iconURL)
@@ -134,26 +151,6 @@ client.on('message', function(msg) {
  
 
 
-client.on('message', message => {
-if (message.content.startsWith(prefix+"createvc")) {
-	    if(!message.channel.guild) return message.reply(' ');
-    var args = message.content.split(" ").slice(1);
-    var argrst = args.join(' ');
-                message.guild.createChannel(`${argrst}`,'voice')
-         
-        }
-});
-
-
-
-
-client.on('message', message => {
-if (message.content.startsWith(prefix+"createtc")) {    if(!message.channel.guild) return message.reply(' ');
-    var args = message.content.split(" ").slice(1);
-    var argrst = args.join(' ');
-                message.guild.createChannel(`${argrst}`, 'text')
-      }
-});
 
 client.on("message", message => {
 
@@ -4449,10 +4446,6 @@ AdminCommands    اوامر الادارة
   ❖1bc1:لارسال رسالة للجميع
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
   ❖1bc2:لارسال رسالة للجميع بغير شكل
-╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
-  ❖1creatvc:لانشاء روم صوتي
-╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
-  ❖1creattc:لانشاء روم كتابي
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
   ❖1hchannel:لاخفاء الروم
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
