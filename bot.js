@@ -4785,7 +4785,6 @@ if (message.content === '2help') {
        .addField("**1say**","**تخلي البوت يتكلم يللي تبيه**")
        .addField("**$ping**","**سرعة اتصال البوت**")
        .addField("**1rank**","**رتب السيرفر**")
-       .addField("**$members**","**حالات الاعضاء**")
        .addField("**#id**","**معلوماتك **")
        .addField("**1cicon**","**لتغير صورة السيرفر**")
        .addField("**1temp on/off**","**لانشاء روم مؤقت**")
