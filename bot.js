@@ -508,67 +508,7 @@ client.on('message', message =>{
 
 
 
-const ms = require("ms"); //npm i ms
-let warns = JSON.parse(fs.readFileSync("./warnings.json", "utf8"));
 
-client.on('message', message =>{
-    let messageArray = message.content.split(" ");
-    let cmd = messageArray[0];
-    let args = messageArray.slice(1);
-    let prefix = '1';
-     
-    if(cmd === `${prefix}warn`) {
-	        if(!message.channel.guild) return message.reply(' ');
-
-  //!warn @daeshan <reason>
-  if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.reply("U don't have enough permissions to warn Users!");
-  let wUser = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0])
-  if(!wUser) return message.reply("yo i can't find this User");
-  if(wUser.hasPermission("ADMINISTRATOR")) return message.reply("This User is very cool why warn him? >.>");
-  let reason = args.join(" ").slice(22);
-
-  if(!warns[wUser.id]) warns[wUser.id] = {
-    warns: 0
-  };
-
-  warns[wUser.id].warns++;
-
-  fs.writeFile("./warnings.json", JSON.stringify(warns), (err) => {
-    if (err) console.log(err)
-  });
-
-  let warnEmbed = new Discord.RichEmbed()
-  .setDescription("Warns")
-  .setAuthor(message.author.username)
-  .setColor("#fc6400")
-  .addField("Warned User", `<@${wUser.id}>`)
-  .addField("Warned In", message.channel)
-  .addField("Number of Warnings", warns[wUser.id].warns)
-  .addField("Reason", reason);
-
-
-  message.channel.send(warnEmbed);
-
-  if(warns[wUser.id].warns == 2){
-    let muterole = message.guild.roles.find(`name`, "muted");
-    if(!muterole) return message.reply("You should make A **muted** role, to mute this User!!");
-
-    let mutetime = "12h";
-    await wUser.addRole(mutedrole.id);
-    message.channel.send(`<@${wUser.id}> Just muted for sometime!`);
-
-    setTimeout(function(){
-      wUser.removeRole(muterole.id)
-      message.reply(`<@${wUser.id}> Just unmuted!`)
-    }, ms(mutetime))
-  }
-  if(warns[wUser.id].warns == 3){
-    message.guild.member(wUser).ban(reason);
-    message.reply(`<@${wUser.id}> Just banned for 3 warns!!`)
-  }
-
-}
-});
 
 
 client.on('message', msg => {
@@ -4502,13 +4442,9 @@ client.on('message', message => {
 AdminCommands    اوامر الادارة
 ╚[❖══════════════════════════❖]╝
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
-  ❖1cvc:لانشاء روم بخاصيات
-╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
   ❖1ban:لاعطاء باند
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
   ❖1unban:لفك الباند
-╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
-  ❖1warn:لتحذير عضو
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
   ❖1ranks:لعرض رتب السيرفر
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
