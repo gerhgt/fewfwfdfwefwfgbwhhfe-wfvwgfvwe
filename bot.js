@@ -554,7 +554,7 @@ client.on('message', message =>{
     if(!muterole) return message.reply("You should make A **muted** role, to mute this User!!");
 
     let mutetime = "12h";
-    await(wUser.addRole(mutedrole.id));
+    await wUser.addRole(mutedrole.id);
     message.channel.send(`<@${wUser.id}> Just muted for sometime!`);
 
     setTimeout(function(){
