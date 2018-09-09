@@ -1,20 +1,4 @@
-Skip to content
- 
-Search or jump to…
 
-Pull requests
-Issues
-Marketplace
-Explore
- @gerhgt Sign out
-0
-0 2 gerhgt/fewfwfdfwefwfgbwhhfe-wfvwgfvwe
- Code  Issues 1  Pull requests 0  Projects 0  Wiki  Insights  Settings
-fewfwfdfwefwfgbwhhfe-wfvwgfvwe/bot.js
-5832632  9 minutes ago
-@gerhgt gerhgt Update bot.js
-     
-4846 lines (3914 sloc)  175 KB
 const Discord = require('discord.js');
 
 const Util = require('discord.js');
