@@ -22,6 +22,17 @@ client.on('ready', () => {
 
 
 
+client.on('ebnklb',function(ebnklb) {
+    
+    if(ebnklb.content.startsWith("<@460154242519400448>")) {
+        ebnklb.channel.send('Hey Im **Robot!**  A Nice Bot Developed By:`D7oM.#7693`')
+        ebnklb.channel.send('My Prefix `1`')
+
+    }
+});
+
+
+
   client.on('message',async message => {
     if(message.content.startsWith('r')) {
         if(message.author.id !== "299302204437823488") return message.reply('You aren\'t the bot owner.');
