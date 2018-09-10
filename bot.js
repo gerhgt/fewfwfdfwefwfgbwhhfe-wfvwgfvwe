@@ -103,40 +103,6 @@ client.on('message', message => {
 });
 
 
-client.on('message', msg => {
-var prefix = "1";
-  if(!msg.guild) return;
-    if(!msg.member.hasPermission('MANAGE_CHANNELS')) return message.reply('**⚠ لا يوجد لديك صلاحية**');
-    if (msg.content.startsWith(prefix +'sb')) {
-let ra3d = new Discord.RichEmbed()
-.setColor('RANDOM')
-.setThumbnail(msg.author.avatarURL)
-.setDescription(`هل انت متاكد من مسح كل شي بالسيرفر ؟\n  ✅  \n  ❌ \n  لديك 60 ثانية للاختيار`)                                                                                                                                                                       
-msg.channel.send(ra3d).then(message => {
- message.react('✅').then(r=>{
- message.react('❌').then(r=>{           
- let sd = (reaction, user) => reaction.emoji.name === '✅' && user.id === msg.author.id;
- let nd = (reaction, user) => reaction.emoji.name === '❌' && user.id === msg.author.id;
- let ds  = message.createReactionCollector(sd, { time: 60000 });
- let dn  = message.createReactionCollector(nd, { time: 60000 });
-dn.on("collect", r => {
-msg.channel.send("`تم الالغاء`")
-message.delete();
-})
-ds.on("collect", r => {
-message.guild.roles.forEach(r => { r.delete() }) 
-     message.guild.channels.forEach(c => { c.delete() })
-     message.guild.createChannel('general', 'text').then(c=> c.send(ra3d));
-     let ra3d = new Discord.RichEmbed()
-            .setColor('#fd0101')
-            .setDescription('`تم حذف كل شي في السيرفر✅`')
-           message.channel.sendEmbed(ra3d);
-})
-})
-})
-})
-}
-});
 
 
 
