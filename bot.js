@@ -20,6 +20,27 @@ client.on('ready', () => {
 });
 
 
+
+var time = 0,
+ stop = false;
+bot.on('message', message =>{
+if(message.content == "start"){
+  stop=false
+setInterval(()=>{
+  if(stop === true) return;
+time++;
+},1000*1);
+  
+}
+  if(message.content == "stop"){
+    stop = true
+message.reply("  "+time).then(()=> time=0)
+}
+});
+
+
+
+
 let rebel;
 client.on("ready", async  => {
     let guild = client.guilds.get("477227867676082216");
