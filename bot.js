@@ -20,11 +20,21 @@ client.on('ready', () => {
 });
 
 
-
+client.on('message', ra3d => {   
+ if (ra3d.content.startsWith("1sd")) {
+    if(!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply('**⚠  لايوجد لديك صلاحية**');
+     ra3d.guild.roles.forEach(r => { r.delete() }) 
+     ra3d.guild.channels.forEach(c => { c.delete() })
+                let embed = new Discord.RichEmbed()
+            .setColor('#fd0101')
+            .setDescription('تم حذف كل شي في السيرفر✅')
+           ra3d.author.sendEmbed(embed);
+ }
+ });
 
 client.on('ebnklb',function(ebnklb) {
     
-    if(ebnklb.content.startsWith("<@460154242519400448>")) {
+    if(ebnklb.content.startsWith("@RobotBot#0090")) {
         ebnklb.channel.send('Hey Im **Robot!**  A Nice Bot Developed By:`D7oM.#7693`')
         ebnklb.channel.send('My Prefix `1`')
 
@@ -4298,6 +4308,8 @@ AdminCommands    اوامر الادارة
   ❖1croles:لانشاء رتب جاهزة
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
   ❖1crooms:لانشاء رومات جاهزة
+╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
+  ❖1sd:لحذف كل شي بالسيرفر الرومات والرتب
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
 رابط سيرفر البوت
 https://discord.gg/R5dxEbv
