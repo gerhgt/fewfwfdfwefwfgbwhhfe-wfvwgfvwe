@@ -4203,8 +4203,6 @@ AdminCommands    اوامر الادارة
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
   ❖1user <mentoin>:(معلومات عنك (او معلومات عن اي عضو 
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
-  ❖1droles:لحذف الرتب يللي فيها ارقام
-╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
 
 رابط سيرفر البوت
 https://discord.gg/R5dxEbv
@@ -4602,14 +4600,7 @@ eyad.channel.sendEmbed(Embed11).then(eyad => {eyad.delete(20000)})
     }
 })
 
-  client.on('message' , ReBeL => {
-var prefix = "1";
-if(ReBeL.author.bot) return;
-if(ReBeL.channel.type == 'dm') return;
-if(ReBeL.content.startsWith(prefix + "droles")) {
-ReBeL.guild.roles.filter(rebel => isNaN(rebel)).forEach(codes => codes.delete())
-}
-});
+
   
 
 
