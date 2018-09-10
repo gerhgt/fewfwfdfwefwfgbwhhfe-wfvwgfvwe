@@ -44,6 +44,22 @@ client.on('ready', () => {
 
 
 
+client.on('message', message => {
+    var prefix = "1"
+    if (message.content === prefix + "date") {
+        var currentTime = new Date(),
+            السنة = currentTime.getFullYear(),
+            الشهر = currentTime.getMonth() + 1,
+            اليوم = currentTime.getDate();
+        message.channel.sendMessage( "التاريخ : " + اليوم + "-" + الشهر + "-" +السنة)
+    }
+});
+
+
+
+
+
+
 
   client.on('voiceStateUpdate', (codes, ReBeL) => {
 if(ReBeL.voiceChannelID !== "488505486208008193") return 
@@ -209,20 +225,6 @@ client.on('message', function(msg) {
   });
   
  
-client.on('message', message => {
-if (message.content.startsWith("1add.r")) {
-             if(!message.channel.guild) return message.reply('**Commands in the server**');
-        if (!message.member.hasPermission('MANAGE_ROLES')) return message.reply('⚠ **You do not have permissions**');
-        let args = message.content.split(" ").slice(1);
-            message.guild.createRole({
-                name : args.join(' '),
-                color : "RANDOM", 
-            }).then(function(role){
-                message.member.addRole(role)
-            })
-
-}
-});
 
 
 client.on("message", message => {
