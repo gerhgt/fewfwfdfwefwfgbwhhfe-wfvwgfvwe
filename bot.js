@@ -22,22 +22,24 @@ client.on('ready', () => {
 
 
 
-  client.on('ready', function(){
-    var ms = 1000 ;
-    var setGame = [`1h `,` 1he`,`1hel`,`1help`];
-    var i = -1;
-    var j = 0;
-    setInterval(function (){
-        if( i == -1 ){
-            j = 1;
-        }
-        if( i == (setGame.length)-1 ){
-            j = -1;
-        }
-        i = i+j;
-        client.user.setGame(setGame[i],`http://www.twitch.tv/idk`);
-    }, ms);1000
-
+  client.on('message',async message => {
+    if(message.content.startsWith('r')) {
+        if(message.author.id !== "323885452207587329") return message.reply('You aren\'t the bot owner.');
+        message.channel.send('**Restarting.**').then(msg => {
+            setTimeout(() => {
+               msg.edit('**Restarting..**');
+            },1000);
+            setTimeout(() => {
+               msg.edit('**Restarting...**');
+            },2000);
+        });
+        console.log(`${message.author.tag} [ ${message.author.id} ] has restarted the bot.`);
+        console.log(`Restarting..`);
+        setTimeout(() => {
+            client.destroy();
+            client.login('توكن البوت');
+        },3000);
+    }
 });
 
 
