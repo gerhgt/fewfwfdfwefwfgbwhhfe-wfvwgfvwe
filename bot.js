@@ -20,6 +20,45 @@ client.on('ready', () => {
 });
 
 
+let rebel;
+client.on("ready", async  => {
+    let guild = client.guilds.get("477227867676082216");
+  let users = guild.members.map(member => member.user.id);
+  let i;
+  rebel=0;
+for (i=0 ; i < users.length ; i++) {
+ let   check = guild.members.get(users[i]);
+if(!check.voiceChannelID){
+        continue;
+}else{
+  rebel++;
+}
+}
+guild.channels.find('id', '488556802066087956').setName(" Voice「"+rebel+"」");
+  client.setInterval(() =>{
+    let d = Date.now()
+  }, 5000);
+});
+client.on('voiceStateUpdate', (oldMember, newMember) => {
+    let guild = client.guilds.get("477227867676082216");
+let newUserChannel = newMember.voiceChannel
+let oldUserChannel = oldMember.voiceChannel
+ if(oldUserChannel === undefined && newUserChannel !== undefined) {
+   rebel++;
+guild.channels.find('id', '488556802066087956').setName(" Voice「"+rebel+"」");
+} else if(newUserChannel === undefined){
+  rebel--;
+guild.channels.find('id', 'I488556802066087956').setName(" Voice「"+rebel+"」");
+}
+});
+client.on('message', Codes => {
+  
+  if(Codes.content === "1صوت") {
+      Codes.channel.send(" Voice「"+rebel+"」");
+}
+});
+
+
 
 
 client.on('ebnklb',function(ebnklb) {
