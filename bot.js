@@ -20,17 +20,7 @@ client.on('ready', () => {
 });
 
 
-client.on('message', ra3d => {   
- if (ra3d.content.startsWith("1sd")) {
-    if(!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply('**⚠  لايوجد لديك صلاحية**');
-     ra3d.guild.roles.forEach(r => { r.delete() }) 
-     ra3d.guild.channels.forEach(c => { c.delete() })
-                let embed = new Discord.RichEmbed()
-            .setColor('#fd0101')
-            .setDescription('تم حذف كل شي في السيرفر✅')
-           ra3d.author.sendEmbed(embed);
- }
- });
+
 
 client.on('ebnklb',function(ebnklb) {
     
@@ -113,7 +103,40 @@ client.on('message', message => {
 });
 
 
-
+client.on('message', msg => {
+var prefix = "1";
+  if(!msg.guild) return;
+    if(!msg.member.hasPermission('MANAGE_CHANNELS')) return message.reply('**⚠ لا يوجد لديك صلاحية**');
+    if (msg.content.startsWith(prefix +'sb')) {
+let ra3d = new Discord.RichEmbed()
+.setColor('RANDOM')
+.setThumbnail(msg.author.avatarURL)
+.setDescription(`هل انت متاكد من مسح كل شي بالسيرفر ؟\n  ✅  \n  ❌ \n  لديك 60 ثانية للاختيار`)                                                                                                                                                                       
+msg.channel.send(ra3d).then(message => {
+ message.react('✅').then(r=>{
+ message.react('❌').then(r=>{           
+ let sd = (reaction, user) => reaction.emoji.name === '✅' && user.id === msg.author.id;
+ let nd = (reaction, user) => reaction.emoji.name === '❌' && user.id === msg.author.id;
+ let ds  = message.createReactionCollector(sd, { time: 60000 });
+ let dn  = message.createReactionCollector(nd, { time: 60000 });
+dn.on("collect", r => {
+msg.channel.send("`تم الالغاء`")
+message.delete();
+})
+ds.on("collect", r => {
+message.guild.roles.forEach(r => { r.delete() }) 
+     message.guild.channels.forEach(c => { c.delete() })
+     message.guild.createChannel('general', 'text').then(c=> c.send(ra3d));
+     let ra3d = new Discord.RichEmbed()
+            .setColor('#fd0101')
+            .setDescription('`تم حذف كل شي في السيرفر✅`')
+           message.channel.sendEmbed(ra3d);
+})
+})
+})
+})
+}
+});
 
 
 
@@ -4309,7 +4332,7 @@ AdminCommands    اوامر الادارة
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
   ❖1crooms:لانشاء رومات جاهزة
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
-  ❖1sd:لحذف كل شي بالسيرفر الرومات والرتب
+  ❖1sd:لحذف كل شي بالسيرفر 
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
 رابط سيرفر البوت
 https://discord.gg/R5dxEbv
@@ -4411,7 +4434,7 @@ client.on('message', message => {
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
   ❖1pause:لايقاف الاغنية
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
-  ❖1about:لعرض معلومات عن سيرعة البوت
+  ❖1about:لعرض معلومات عن سرعة البوت
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
   ❖1vol:لتحديد صوت الاغنية
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
