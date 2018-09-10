@@ -23,7 +23,7 @@ client.on('ready', () => {
 
 var time = 0,
  stop = false;
-clientt.on('message', message =>{
+client.on('message', message =>{
 if(message.content == "start"){
   stop=false
 setInterval(()=>{
