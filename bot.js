@@ -23,6 +23,26 @@ client.on('ready', () => {
 
 
 
+  client.on('voiceStateUpdate', (codes, ReBeL) => {
+if(ReBeL.voiceChannelID !== "488505486208008193") return 
+ReBeL.guild.createChannel(ReBeL.user.username , 'voice').then((rebeeel) =>{
+    rebeeel.setParent("488505199397306378");
+ReBeL.guild.members.get(ReBeL.id).setVoiceChannel(rebeeel.id).then((codess) =>{
+  let scan = setInterval(()=>{
+if(!ReBeL.voiceChannel) {
+  rebeeel.delete();
+}
+  }, 1700);
+});
+});
+});
+
+
+
+
+
+
+
   client.on('message', message => {
           
 
