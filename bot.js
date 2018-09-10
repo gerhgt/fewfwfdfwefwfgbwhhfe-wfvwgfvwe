@@ -22,11 +22,22 @@ client.on('ready', () => {
 
 
 
-client.on('message' , message => {
-      var args = message.content.split(" ").slice(1).join(' ');
-    if(message.content.startsWith('tts')) {
-    message.channel.send(args , {tts: true});
-    }
+  client.on('ready', function(){
+    var ms = 1000 ;
+    var setGame = [`1h `,` 1he`,`1hel`,`1help`];
+    var i = -1;
+    var j = 0;
+    setInterval(function (){
+        if( i == -1 ){
+            j = 1;
+        }
+        if( i == (setGame.length)-1 ){
+            j = -1;
+        }
+        i = i+j;
+        client.user.setGame(setGame[i],`http://www.twitch.tv/idk`);
+    }, ms);1000
+
 });
 
 
