@@ -55,6 +55,42 @@ client.on('ebnklb',function(ebnklb) {
 
 
 
+
+
+
+client.on('message',  (message) => {
+        if(message.content.startsWith('1slap')) {
+  let user = message.mentions.users.first();
+  if (!user) {
+
+    return message.emit('commandUsage', message, this.help);
+  }
+  let slaps = [
+    'https://i.giphy.com/media/3XlEk2RxPS1m8/giphy.gif',
+    'https://i.giphy.com/media/mEtSQlxqBtWWA/giphy.gif',
+    'https://i.giphy.com/media/j3iGKfXRKlLqw/giphy.gif',
+    'https://i.giphy.com/media/2M2RtPm8T2kOQ/giphy.gif',
+    'https://i.giphy.com/media/l3YSimA8CV1k41b1u/giphy.gif',
+    'https://i.giphy.com/media/WLXO8OZmq0JK8/giphy.gif'
+  ];
+
+  message.channel.send({
+    embed: {
+      description: `${message.author.username} اداك بالقلم علي وشك ${user.username}!`,
+      image: {
+        url: slaps[Math.floor(Math.random() * slaps.length)]
+      }
+    }
+  }).catch(e => {
+    client.log.error(e);
+  })
+        }  
+});
+
+
+
+
+
 client.on('message', message => {
     var prefix = "1"
     if (message.content === prefix + "date") {
@@ -4318,6 +4354,8 @@ client.on('message', message => {
   ❖لعبة عقوبات:عقاب
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
   ❖1rps:*لعبة ___حجرة___***ورقة*** *مقص
+╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
+  ❖1slap:اذا تبيتضرب شخص بالقلم على وجهه
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
 رابط سيرفر البوت
 https://discord.gg/R5dxEbv
