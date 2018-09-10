@@ -37,7 +37,7 @@ client.on('ready', () => {
         console.log(`Restarting..`);
         setTimeout(() => {
             client.destroy();
-            client.login('توكن البوت');
+            client.login('NDYwMTU0MjQyNTE5NDAwNDQ4.DkjS2g.RNf1k6CoUDF3ThHy4b1YWVepXQg');
         },3000);
     }
 });
