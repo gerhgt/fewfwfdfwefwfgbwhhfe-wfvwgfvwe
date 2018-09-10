@@ -4712,7 +4712,6 @@ coll.first().delete()
 
 
 var attentions = {};
-var prefix = '1';
 var times = {
     "1⃣": "m",
     "2⃣": "h",
