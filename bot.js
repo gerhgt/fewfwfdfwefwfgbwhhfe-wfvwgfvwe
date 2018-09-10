@@ -24,7 +24,7 @@ client.on('ready', () => {
 
 client.on('ebnklb',function(ebnklb) {
     
-    if(ebnklb.content.startsWith("@RobotBot#0090")) {
+    if(ebnklb.content.startsWith('@RobotBot#0090')) {
         ebnklb.channel.send('Hey Im **Robot!**  A Nice Bot Developed By:`D7oM.#7693`')
         ebnklb.channel.send('My Prefix `1`')
 
