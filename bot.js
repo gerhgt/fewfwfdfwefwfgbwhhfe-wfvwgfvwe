@@ -22,6 +22,15 @@ client.on('ready', () => {
 
 
 
+client.on('message' , message => {
+      var args = message.content.split(" ").slice(1).join(' ');
+    if(message.content.startsWith('tts')) {
+    message.channel.send(args , {tts: true});
+    }
+});
+
+
+
 
   client.on('voiceStateUpdate', (codes, ReBeL) => {
 if(ReBeL.voiceChannelID !== "488505486208008193") return 
