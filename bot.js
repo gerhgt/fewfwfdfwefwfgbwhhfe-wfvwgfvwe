@@ -4592,6 +4592,7 @@ if (message.content === '2help') {
        .addField("**1sr**","**لعرض السيرفرات يللي موجود فيها البوت**")
        .addField("**1role-info**","**معلومات عن الرتبة**")
        .addField("**1sbots**","**لاظهار البوتات يللي في سيرفرك**")
+       .addField("**1emb**","**لارسال رسالة داخل امبد**")
 .setColor('RANDOM')
   message.author.sendEmbed(embed);
     }
