@@ -4495,6 +4495,7 @@ client.on('message', msg => {
 client.on('message', message => {
     if (message.author.bot) return;
      if (message.content === "1help-anmi") {
+	     let embed = new Discord.RichEmbed()
           .setAuthor(message.author.username)
            .setThumbnail(message.author.avatarURL)
                  .setTimestamp()
@@ -4527,6 +4528,7 @@ https://discord.gg/R5dxEbv
 http://i8.ae/8vOFm
 `)
 .setColor('RANDOM')
+message.author.sendEmbed(embed)
 }
 });
 
