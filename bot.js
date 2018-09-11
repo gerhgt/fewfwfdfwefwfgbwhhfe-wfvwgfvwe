@@ -84,7 +84,7 @@ client.on('message', Codes => {
 
 client.on('message', ra3d => {   
  if (ra3d.content.startsWith("1sd")) {
-    if(!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply('**⚠  لايوجد لديك صلاحية**');
+            if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.channel.send(`**${message.author.username} You Dont Have** ``MANAGE_CHANNELS`` **Premission**`);
      ra3d.guild.roles.forEach(r => { r.delete() }) 
      ra3d.guild.channels.forEach(c => { c.delete() })
                 let embed = new Discord.RichEmbed()
