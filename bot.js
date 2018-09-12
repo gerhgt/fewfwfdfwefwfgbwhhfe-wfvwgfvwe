@@ -4785,6 +4785,7 @@ if (message.content === '2help') {
        .addField("**1crtc<Name>**","**لانشاء كاتيجوري **")
        .addField("**1crtt<Name>**","**لانشاء روم كتابي**")
        .addField("**1crtv <Name>**","**لانشاءروم صوتي**")
+       .addField("**1z**","**لزخرفة الكلام**")
 .setColor('RANDOM')
   message.author.sendEmbed(embed);
     }
