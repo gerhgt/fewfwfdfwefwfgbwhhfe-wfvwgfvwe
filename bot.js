@@ -31,6 +31,25 @@ member.addRole(member.guild.roles.find('name', Members));
 });
 
 
+client.on('message', message => {
+var prefix = "#";
+                        let args = message.content.split(" ").slice(1).join(" ")
+if(message.content.startsWith(prefix + 'cc')) {
+    if(!args) return message.channel.send('`يرجي اختيار كم لون `');
+             if (!message.member.hasPermission('MANAGE_ROLES')) return message.channel.sendMessage('`**⚠ | `[MANAGE_ROLES]` لا يوجد لديك صلاحية**'); 
+              message.channel.send(`**✅ |Created __${args}__ Colors**`);
+                  setInterval(function(){})
+                    let count = 0;
+                    let ecount = 0;
+          for(let x = 1; x < `${parseInt(args)+1}`; x++){
+            message.guild.createRole({name:x,
+              color: 'RANDOM'})
+              }
+            }
+       });
+
+
+
 client.on('guildMemberAdd', member => {
     member.guild.channels.get('489485312217579520').setName(`Total Users: ${member.guild.memberCount}`);
     let humans = member.guild.memberCount - member.guild.members.filter(m => m.user.bot).size
