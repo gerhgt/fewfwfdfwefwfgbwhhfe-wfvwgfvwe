@@ -33,6 +33,108 @@ member.addRole(member.guild.roles.find('name', Members));
 
 
 
+client.on('message', msg => {
+var prefix = "1";
+  if(!msg.guild) return;
+    if (msg.content.startsWith(prefix +'crtc')) {
+     let args = msg.content.split(" ").slice(1);
+    if(!msg.channel.guild) return msg.channel.send('**هذا الأمر فقط للسيرفرات**').then(m => m.delete(5000));
+let ra3d = new Discord.RichEmbed()
+.setThumbnail(msg.author.avatarURL)
+.setDescription(`اذا كنت تريد انشاء المسند اضغط على الرياكشن📝`)                                                                                                                                                                       
+.setFooter('لديك دقيقه للاختيار')
+msg.channel.send(ra3d).then(message => {
+    
+    
+ message.react('📝').then(r=>{
+                              
+    
+ let Category = (reaction, user) => reaction.emoji.name === '📝' && user.id === msg.author.id;
+
+ let cy  = message.createReactionCollector(Category, { time: 60000 });
+
+cy.on("collect", r => {
+msg.guild.createChannel(args.join(' '), 'category');
+    msg.channel.send(`☑ تم انشاء المستند بنجاح : \`${args}\``)
+    msg.delete();
+})
+})
+})
+}
+});
+
+
+
+
+client.on('message', msg => {
+var prefix = "1";
+  if(!msg.guild) return;
+    if (msg.content.startsWith(prefix +'crtt')) {
+     let args = msg.content.split(" ").slice(1);
+    if(!msg.channel.guild) return msg.channel.send('**هذا الأمر فقط للسيرفرات**').then(m => m.delete(5000));
+let ra3d = new Discord.RichEmbed()
+.setThumbnail(msg.author.avatarURL)
+.setDescription(`ان كنت تريد انشاء شات كتابي اضغط علي الايموجي✏`)                                                                                                                                                                       
+.setFooter('لديك دقيقه للاختيار')
+msg.channel.send(ra3d).then(message => {
+    
+    
+ message.react('✏').then(r=>{
+                              
+    
+ let Text = (reaction, user) => reaction.emoji.name === '✏' && user.id === msg.author.id;
+
+ let tt  = message.createReactionCollector(Text, { time: 60000 });
+
+tt.on("collect", r => {
+msg.guild.createChannel(args.join(' '), 'text');
+    msg.channel.send(`☑ تم انشاء شات كتابي بنجاح : \`${args}\``)
+    msg.delete();
+})
+})
+})
+}
+});
+
+
+
+client.on('message', msg => {
+var prefix = "1";
+  if(!msg.guild) return;
+    if (msg.content.startsWith(prefix +'crtv')) {
+     let args = msg.content.split(" ").slice(1);
+    if(!msg.channel.guild) return msg.channel.send('**هذا الأمر فقط للسيرفرات**').then(m => m.delete(5000));
+let ra3d = new Discord.RichEmbed()
+.setThumbnail(msg.author.avatarURL)
+.setDescription(`ان كنت تريد انشاء روم صوتي اضغط علي الايموجي🎤`)                                                                                                                                                                       
+.setFooter('لديك دقيقه للاختيار')
+msg.channel.send(ra3d).then(message => {
+    
+    
+ message.react('🎤').then(r=>{
+                              
+    
+ let Voice = (reaction, user) => reaction.emoji.name === '🎤' && user.id === msg.author.id;
+
+ let ve  = message.createReactionCollector(Voice, { time: 60000 });
+
+ve.on("collect", r => {
+msg.guild.createChannel(args.join(' '), 'voice');
+    msg.channel.send(`☑ تم انشاء روم صوتي بنجاح : \`${args}\``)
+    msg.delete();
+})
+})
+})
+}
+});
+
+
+
+
+
+
+
+
 client.on('message', message => {
     if (message.author.bot) return;
     if (message.content.indexOf('1un') === 0) {
