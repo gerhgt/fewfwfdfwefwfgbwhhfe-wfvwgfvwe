@@ -31,6 +31,25 @@ member.addRole(member.guild.roles.find('name', Members));
 });
 
 
+
+
+client.on('message', message => {
+    if (message.author.bot) return;
+    if (message.content.indexOf('1un') === 0) {
+        var text = message.content.substring(1);
+        var reversed = '';
+        var i = text.length;
+        while (i > 0) {
+            reversed += text.substring(i - 1, i);
+            i--;
+        }
+        message.reply(reversed);
+    }
+});
+
+
+
+
 client.on('message', message => {
 var prefix = "1";
                         let args = message.content.split(" ").slice(1).join(" ")
