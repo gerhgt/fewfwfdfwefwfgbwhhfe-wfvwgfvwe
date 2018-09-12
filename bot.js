@@ -4616,13 +4616,6 @@ client.on('message', message => {
     }
 });
 
-
-
-
-
-
-
-
 client.on('message', message => {
             if (message.content.startsWith("2help")) {
      let embed = new Discord.RichEmbed()
@@ -4658,6 +4651,7 @@ if (message.content === '2help') {
        .addField("**1sbots**","**لاظهار البوتات يللي في سيرفرك**")
        .addField("**1emb**","**لارسال رسالة داخل امبد**")
        .addField("**1cc**","**لصنع الوان بالعدد يللي تبيه**")
+       .addField("**1un**","**لعكس الكلمة يللي تبيها**")
 .setColor('RANDOM')
   message.author.sendEmbed(embed);
     }
