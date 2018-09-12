@@ -32,7 +32,7 @@ member.addRole(member.guild.roles.find('name', Members));
 
 
 client.on('message', message => {
-var prefix = "#";
+var prefix = "1";
                         let args = message.content.split(" ").slice(1).join(" ")
 if(message.content.startsWith(prefix + 'cc')) {
     if(!args) return message.channel.send('`يرجي اختيار كم لون `');
@@ -4638,6 +4638,7 @@ if (message.content === '2help') {
        .addField("**1role-info**","**معلومات عن الرتبة**")
        .addField("**1sbots**","**لاظهار البوتات يللي في سيرفرك**")
        .addField("**1emb**","**لارسال رسالة داخل امبد**")
+       .addField("**1cc**","**لصنع الوان بالعدد يللي تبيه**")
 .setColor('RANDOM')
   message.author.sendEmbed(embed);
     }
