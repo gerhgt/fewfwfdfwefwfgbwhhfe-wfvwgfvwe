@@ -19,6 +19,53 @@ client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
 
+
+
+
+client.on("message", function(message) {
+   if(message.content.startsWith(prefix + "1rsp")) {
+    let messageArgs = message.content.split(" ").slice(1).join(" ");
+    let messageRPS = message.content.split(" ").slice(2).join(" ");
+    let arrayRPS = ['**# - Rock**','**# - Paper**','**# - Scissors**'];
+    let result = `${arrayRPS[Math.floor(Math.random() * arrayRPS.length)]}`;
+    var RpsEmbed = new Discord.RichEmbed()
+    .setAuthor(message.author.username)
+    .setThumbnail(message.author.avatarURL)
+    .addField("Rock","🇷",true)
+    .addField("Paper","🇵",true)
+    .addField("Scissors","🇸",true)
+    message.channel.send(RpsEmbed).then(msg => {
+        msg.react(' 🇷')
+        msg.react("🇸")
+        msg.react("🇵")
+.then(() => msg.react('🇷'))
+.then(() =>msg.react('🇸'))
+.then(() => msg.react('🇵'))
+let reaction1Filter = (reaction, user) => reaction.emoji.name === '🇷' && user.id === message.author.id;
+let reaction2Filter = (reaction, user) => reaction.emoji.name === '🇸' && user.id === message.author.id;
+let reaction3Filter = (reaction, user) => reaction.emoji.name === '🇵' && user.id === message.author.id;
+let reaction1 = msg.createReactionCollector(reaction1Filter, { time: 12000 });
+let reaction2 = msg.createReactionCollector(reaction2Filter, { time: 12000 });
+let reaction3 = msg.createReactionCollector(reaction3Filter, { time: 12000 });
+reaction1.on("collect", r => {
+        message.channel.send(result)
+})
+reaction2.on("collect", r => {
+        message.channel.send(result)
+})
+reaction3.on("collect", r => {
+        message.channel.send(result)
+})
+
+    })
+}
+});
+
+
+
+
+
+
 client.on('ready', () => {
     console.log(`[Start] ${new Date()}`);
     console.log(`[INFO] ${client.user.username}`)
@@ -4589,6 +4636,8 @@ client.on('message', message => {
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
   ❖1rps: لعبة حجرة ورقة مقص
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
+  ❖1rsp:لعبة حجرة ورقة مقص بس بالريكاشن
+╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
   ❖1slap:اذا تبي تضرب شخص بالقلم على وجهه
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
 رابط سيرفر البوت
@@ -4754,6 +4803,9 @@ if (message.content === '2help') {
        .addField("**1emb**","**لارسال رسالة داخل امبد**")
        .addField("**1cc**","**لصنع الوان بالعدد يللي تبيه**")
        .addField("**1un**","**لعكس الكلمة يللي تبيها**")
+       .addField("**1crtc<Name>**","**لانشاء كاتيجوري **")
+       .addField("**1crtt<Name>**","**لانشاء روم كتابي**")
+       .addField("**1crtv <Name>**","**لانشاءروم صوتي**")
 .setColor('RANDOM')
   message.author.sendEmbed(embed);
     }
