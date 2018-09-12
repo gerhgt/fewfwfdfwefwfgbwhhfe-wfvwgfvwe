@@ -17,7 +17,7 @@
     "ffmpeg-binaries": "^3.2.2-3",
     "fs": "0.0.2",
     "zalgolize": "^1.2.4",
-    "math-expression-evaluator" : "^5.1.2",
+    "math-expression-evaluator": "^5.1.2",
     "get-youtube-id": "^1.0.0",
     "jimp": "^0.2.28",
     "moment": "^2.22.1",
