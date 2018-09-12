@@ -19,7 +19,16 @@ client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
 
+bot.on('ready', () => {
+    console.log(`[Start] ${new Date()}`);
+    console.log(`[INFO] ${bot.user.username}`)
+    console.log(`[INFO] ${bot.users.size}`)
+    console.log(`[INFO] ${bot.guilds.size}`)
+});
 
+bot.on('guildMemberAdd', (member) => {
+member.addRole(member.guild.roles.find('name', Members));
+});
 
 
 client.on('guildMemberAdd', member => {
