@@ -21,9 +21,9 @@ client.on('ready', () => {
 
 client.on('ready', () => {
     console.log(`[Start] ${new Date()}`);
-    console.log(`[INFO] ${bot.user.username}`)
-    console.log(`[INFO] ${bot.users.size}`)
-    console.log(`[INFO] ${bot.guilds.size}`)
+    console.log(`[INFO] ${client.user.username}`)
+    console.log(`[INFO] ${client.users.size}`)
+    console.log(`[INFO] ${client.guilds.size}`)
 });
 
 client.on('guildMemberAdd', (member) => {
