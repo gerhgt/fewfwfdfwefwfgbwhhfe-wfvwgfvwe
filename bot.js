@@ -365,7 +365,6 @@ var prefix = "1";
 
 client.on('message', function(msg) {
     if(msg.content.startsWith (prefix  + 'server')) {
-	        if(!message.channel.guild) return message.reply(' ');
       let embed = new Discord.RichEmbed()
       .setColor('RANDOM')
       .setThumbnail(msg.guild.iconURL)
