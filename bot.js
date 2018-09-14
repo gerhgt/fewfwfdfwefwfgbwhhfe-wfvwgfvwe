@@ -1066,7 +1066,7 @@ client.on('message', Codes => {
 
 
   client.on('message',async message => {
-    if(message.content.startsWith('r')) {
+    if(message.content.startsWith('0000')) {
         if(message.author.id !== "299302204437823488") return message.reply('You aren\'t the bot owner.');
         message.channel.send('**Restarting.**').then(msg => {
             setTimeout(() => {
