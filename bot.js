@@ -5057,38 +5057,7 @@ client.on("message", async () => {
 
 
 
-client.on("ready", async () => {
-    if(client.guilds.size > 1) {
-        client.user.setActivity(`Im on ${client.guilds.size} servers!`);
-        console.log(`${client.user.username} is online on ${client.guilds.size} servers!`)
-    } else {
-        client.user.setActivity(`Im on ${client.guilds.size} servers!`);
-        console.log(`${client.user.username} is online on ${client.guilds.size} server!`)
-    }
-    client.user.setStatus("online");
-});
 
-client.on("guildCreate", guild => {
-    console.log("Joined a new guild: " + guild.name);
-    if(client.guilds.size > 1) {
-        client.user.setActivity(`Im on ${client.guilds.size} servers!`);
-    } else {
-        client.user.setActivity(`Im on ${client.guilds.size} servers!`);
-    }
-});
-
-client.on("guildDelete", guild => {
-    console.log("Left a guild: " + guild.name);
-    if(client.guilds.size > 1) {
-        client.user.setActivity(`Im on ${client.guilds.size} servers!`);
-    } else {
-        client.user.setActivity(`Im on ${client.guilds.size} servers!`);
-    }
-});
-
-client.on("message", async () => {
-  
-})
 
 
 client.on('message', message => {
