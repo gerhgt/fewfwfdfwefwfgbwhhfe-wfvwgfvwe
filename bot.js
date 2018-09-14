@@ -21,57 +21,6 @@ client.on('ready', () => {
 
 
 
-const Epic = new Discord.Client(); 
- Epic.on('ready', () => { 
-    Epic.user.setStatus("online") 
-});
-
-
-let points = JSON.parse(fs.readFileSync('./PL/plPTS.json', 'utf8')); 
-Epic.on('message', message => {
-if (!points[message.author.id]) points[message.author.id] = { 
-    points: 0, 
-  }; 
-if (message.content.startsWith(prefix + 'pl')) { 
-    if(!message.channel.guild) return message.reply('**:x: هذا الأمر للسيرفرات فقط**').then(m => m.delete(3000)); // ! EpicHema ★#6090
-const type = require('./PL/pl.json');
-const item = type[Math.floor(Math.random() * type.length)]; 
-const filter = response => { 
-    return item.answers.some(answer => answer.toLowerCase() === response.content.toLowerCase()); 
-}; 
-message.channel.send('**لديك 15 ثانيه لتعرف اسم أي برنامج .**').then(msg => { 
-msg.channel.sendFile(`${item.image}`).then(() => {
-        message.channel.awaitMessages(filter, { maxMatches: 1, time: 15000, errors: ['time'] }) 
-        .then((collected) => {
-        message.channel.send(`${collected.first().author} ✅ **إجابة صحيحة .**`); 
-        console.log(`[Typing] ${collected.first().author} typed the word.`); // ! EpicHema ★#6090
-            let userData = points[message.author.id]; // ! EpicHema ★#6090
-            userData.points++; 
-          })
-          .catch(collected => { 
-            message.channel.send(`**تم الانتهاء من الوقت  حظ اوفر المره القادمه :stopwatch: الاجابه هي : __${item.answers}__ **`); // ! EpicHema ★#6090
-            console.log('[Typing] Error: No one type the word.'); // ! EpicHema ★#6090
-          }) // ! EpicHema ★#6090
-        }) // ! EpicHema ★#6090
-    }) // ! EpicHema ★#6090
-} // ! EpicHema ★#6090
-}); // ! EpicHema ★#6090
- // ! EpicHema ★#6090 // ! EpicHema ★#6090 // ! EpicHema ★#6090 // ! EpicHema ★#6090
-Epic.on('message', message => { // ! EpicHema ★#6090
-if (message.content.startsWith(prefix + 'points')) { // ! EpicHema ★#6090
-    if(!message.channel.guild) return message.reply('**هذا الأمر للسيرفرات فقط**').then(m => m.delete(3000)); // ! EpicHema ★#6090
-    let userData = points[message.author.id]; // ! EpicHema ★#6090
-    let embed = new Discord.RichEmbed() // ! EpicHema ★#6090
-    .setAuthor(`${message.author.tag}`, message.author.avatarURL) // ! EpicHema ★#6090
-    .setColor('#000000') // ! EpicHema ★#6090
-    .setDescription(`نقاطك: \`${userData.points}\``) // ! EpicHema ★#6090
-    message.channel.sendEmbed(embed) // ! EpicHema ★#6090
-  } // ! EpicHema ★#6090 // ! EpicHema ★#6090 // ! EpicHema ★#6090
-  fs.writeFile("./PL/plPTS.json", JSON.stringify(points), (err) => { // ! EpicHema ★#6090
-    if (err) console.error(err)
-  }) 
-}); 
-Epic.login("NDYwMTU0MjQyNTE5NDAwNDQ4.DkjS2g.RNf1k6CoUDF3ThHy4b1YWVepXQg"); // ! EpicHema ★#6090
 
 
 
