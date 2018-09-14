@@ -728,9 +728,7 @@ client.on('ready', () => {
     console.log(`[INFO] ${client.guilds.size}`)
 });
 
-client.on('guildMemberAdd', (member) => {
-member.addRole(member.guild.roles.find('name', Members));
-});
+
 
 
 
