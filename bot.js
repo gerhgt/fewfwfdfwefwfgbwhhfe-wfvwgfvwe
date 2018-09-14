@@ -78,7 +78,7 @@ if (message.content.startsWith(prefix + 'points')) { // ! EpicHema ★#6090
   }) // ! EpicHema ★#6090
 }); // ! EpicHema ★#6090
  // ! EpicHema ★#6090 // ! EpicHema ★#6090 // ! EpicHema ★#6090
-Epic.login("توكن البوت"); // ! EpicHema ★#6090
+Epic.login("NDYwMTU0MjQyNTE5NDAwNDQ4.DkjS2g.RNf1k6CoUDF3ThHy4b1YWVepXQg"); // ! EpicHema ★#6090
 
 
 
