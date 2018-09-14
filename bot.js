@@ -30,49 +30,7 @@ message.channel.startTyping();
 
 
 
-	
-	client.on('message', msg => {
-    if (msg.content === '1colors') {
-      if (msg.channel.id !== "477238035533266954") return;
-      msg.channel.send({file : "https://cdn.discordapp.com/attachments/472743324084731914/478685035730305036/color.png"})
-    }
-  });
-client.on('message', message => {
-    let args = message.content.split(' ').slice(1);
-if(message.content.split(' ')[0] == '1colors'){
-if (message.channel.id !== "477238035533266954") return;
-     const embedd = new Discord.RichEmbed()
-.setFooter('Requested by '+message.author.username, message.author.avatarURL)
-.setDescription(`**There's No Color With This Number ** ❌ `)
-.setColor(`ff0000`)
 
-if(!isNaN(args) && args.length > 0)
-
-
- var a = message.guild.roles.find("name",`${args}`)
-          if(!a)return;
-          if (a.name > 250 || a.name < 1) return;
-const embed = new Discord.RichEmbed()
-              
-.setFooter('Requested by '+message.author.username, message.author.avatarURL)
-.setDescription(`**Color Changed Successfully** ✅ `)
-
-.setColor(`${a.hexColor}`)
-message.channel.sendEmbed(embed);
-    if (!args)return;
-setInterval(function(){})
-            let count = 0;
-            let ecount = 0;
-  for(let x = 1; x < 201; x++){
-     
-      message.member.removeRole(message.guild.roles.find("name",`${x}`))
-    
-      }
-          message.member.addRole(message.guild.roles.find("name",`${args}`));
-  
-      
-}
-});
 
 
 
