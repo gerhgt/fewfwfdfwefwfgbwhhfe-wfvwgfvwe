@@ -1360,52 +1360,12 @@ client.on('message', message => {
 }
 });
 
-client.on('guildCreate', guild => {
-  client.channels.get("478904551261339674")
-const embed = new Discord.RichEmbed()
-   .setAuthor(`Joined New Server ✅`)
-   .setDescription(`
-Server name: __${guild.name}__
-Server owner: __${guild.owner}__`)
-         .setColor("#09fa2a")
-         .setFooter('DK BOT' , client.user.avatarURL)
-           client.channels.get("478904551261339674").send({embed});
-}
-
-);
-
-         
-client.on('guildDelete', guild => {
-  client.channels.get("478904551261339674")
-const embed = new Discord.RichEmbed()
-   .setAuthor(`Left From Server ❌`)
-   .setDescription(`
-Server name: __${guild.name}__
-Server owner: __${guild.owner}__`)
-         .setColor("#ff0000")
-         .setFooter('DK BOT' , client.user.avatarURL)
-           client.channels.get("478904551261339674").send({embed});
-}
-
-);
 
 
 
 
-client.on('guildCreate', guild => {
-  client.channels.get("478904551261339674").send(`:white_check_mark: **تم اضافة البوت في سيرفر جديد مبروكك
-Server name: __${guild.name}__
-Server owner: __${guild.owner}__
-Server id: __${guild.id}__ 
-Server Count: __${guild.memberCount}__**`)
-});
-client.on('guildDelete', guild => {
-  client.channels.get("478904551261339674").send(`:negative_squared_cross_mark: **لقد تم طردي من السيرفر
-Server name: __${guild.name}__
-Server owner: __${guild.owner}__
-Server id: __${guild.id}__ 
-Server Count: __${guild.memberCount}__**`)
-});
+
+
 
 client.on('message', message =>{
     let messageArray = message.content.split(" ");
