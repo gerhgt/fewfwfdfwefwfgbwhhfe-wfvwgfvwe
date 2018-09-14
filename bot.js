@@ -22,7 +22,6 @@ client.on('ready', () => {
 
 
 const Epic = new Discord.Client(); // ! EpicHema ★#6090
-const prefix = "1"; // ! EpicHema ★#6090
  Epic.on('ready', () => { // ! EpicHema ★#6090
     Epic.user.setStatus("online") // ! EpicHema ★#6090
 });
