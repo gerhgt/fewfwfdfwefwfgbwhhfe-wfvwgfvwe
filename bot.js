@@ -20,6 +20,71 @@ client.on('ready', () => {
 });
 
 
+
+const Epic = new Discord.Client(); // ! EpicHema ★#6090
+const prefix = "1"; // ! EpicHema ★#6090
+ Epic.on('ready', () => { // ! EpicHema ★#6090
+    Epic.user.setStatus("online") // ! EpicHema ★#6090
+});
+
+// جميع الحقوق لسيرفر كودز
+// من صنع : ! EpicHema ★#6090
+
+
+
+
+let points = JSON.parse(fs.readFileSync('./PL/plPTS.json', 'utf8')); // ! EpicHema ★#6090
+Epic.on('message', message => { // ! EpicHema ★#6090
+if (!points[message.author.id]) points[message.author.id] = { // ! EpicHema ★#6090
+    points: 0, // ! EpicHema ★#6090
+  }; // ! EpicHema ★#6090
+if (message.content.startsWith(prefix + 'pl')) { // ! EpicHema ★#6090
+    if(!message.channel.guild) return message.reply('**:x: هذا الأمر للسيرفرات فقط**').then(m => m.delete(3000)); // ! EpicHema ★#6090
+const type = require('./PL/pl.json'); // ! EpicHema ★#6090
+const item = type[Math.floor(Math.random() * type.length)]; // ! EpicHema ★#6090
+const filter = response => { // ! EpicHema ★#6090
+    return item.answers.some(answer => answer.toLowerCase() === response.content.toLowerCase()); // ! EpicHema ★#6090
+}; // ! EpicHema ★#6090
+message.channel.send('**لديك 15 ثانيه لتعرف اسم أي برنامج .**').then(msg => { // ! EpicHema ★#6090
+ // ! EpicHema ★#6090 // ! EpicHema ★#6090 // ! EpicHema ★#6090 // ! EpicHema ★#6090
+msg.channel.sendFile(`${item.image}`).then(() => { // ! EpicHema ★#6090
+        message.channel.awaitMessages(filter, { maxMatches: 1, time: 15000, errors: ['time'] }) // ! EpicHema ★#6090
+        .then((collected) => { // ! EpicHema ★#6090
+        message.channel.send(`${collected.first().author} ✅ **إجابة صحيحة .**`); // ! EpicHema ★#6090
+        console.log(`[Typing] ${collected.first().author} typed the word.`); // ! EpicHema ★#6090
+            let userData = points[message.author.id]; // ! EpicHema ★#6090
+            userData.points++; // ! EpicHema ★#6090
+          }) // ! EpicHema ★#6090
+          .catch(collected => { // ! EpicHema ★#6090
+            message.channel.send(`**تم الانتهاء من الوقت  حظ اوفر المره القادمه :stopwatch: الاجابه هي : __${item.answers}__ **`); // ! EpicHema ★#6090
+            console.log('[Typing] Error: No one type the word.'); // ! EpicHema ★#6090
+          }) // ! EpicHema ★#6090
+        }) // ! EpicHema ★#6090
+    }) // ! EpicHema ★#6090
+} // ! EpicHema ★#6090
+}); // ! EpicHema ★#6090
+ // ! EpicHema ★#6090 // ! EpicHema ★#6090 // ! EpicHema ★#6090 // ! EpicHema ★#6090
+Epic.on('message', message => { // ! EpicHema ★#6090
+if (message.content.startsWith(prefix + 'points')) { // ! EpicHema ★#6090
+    if(!message.channel.guild) return message.reply('**هذا الأمر للسيرفرات فقط**').then(m => m.delete(3000)); // ! EpicHema ★#6090
+    let userData = points[message.author.id]; // ! EpicHema ★#6090
+    let embed = new Discord.RichEmbed() // ! EpicHema ★#6090
+    .setAuthor(`${message.author.tag}`, message.author.avatarURL) // ! EpicHema ★#6090
+    .setColor('#000000') // ! EpicHema ★#6090
+    .setDescription(`نقاطك: \`${userData.points}\``) // ! EpicHema ★#6090
+    message.channel.sendEmbed(embed) // ! EpicHema ★#6090
+  } // ! EpicHema ★#6090 // ! EpicHema ★#6090 // ! EpicHema ★#6090
+  fs.writeFile("./PL/plPTS.json", JSON.stringify(points), (err) => { // ! EpicHema ★#6090
+    if (err) console.error(err) // ! EpicHema ★#6090
+  }) // ! EpicHema ★#6090
+}); // ! EpicHema ★#6090
+ // ! EpicHema ★#6090 // ! EpicHema ★#6090 // ! EpicHema ★#6090
+Epic.login("توكن البوت"); // ! EpicHema ★#6090
+
+
+
+
+
 client.on('message', message =>{
     if (message.author.bot) return;
     if(message.content == "type"){
