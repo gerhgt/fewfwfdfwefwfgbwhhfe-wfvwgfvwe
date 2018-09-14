@@ -908,20 +908,6 @@ if(message.content.startsWith(prefix + 'cc')) {
 
 
 
-client.on('guildMemberAdd', member => {
-    member.guild.channels.get('489485312217579520').setName(`Total Users: ${member.guild.memberCount}`);
-    let humans = member.guild.memberCount - member.guild.members.filter(m => m.user.bot).size
-    member.guild.channels.get('489485332547502104').setName(`Total Humans: ${humans}`);
-    let bots = member.guild.members.filter(m => m.user.bot).size
-    member.guild.channels.get('489485348079009792').setName(`Total Bots: ${bots}`);
-});
-client.on('guildMemberRemove', member => {
-    member.guild.channels.get('489485312217579520').setName(`Total Users: ${member.guild.memberCount}`);
-    let humans = member.guild.memberCount - member.guild.members.filter(m => m.user.bot).size
-    member.guild.channels.get('489485332547502104').setName(`Total Humans: ${humans}`);
-    let bots = member.guild.members.filter(m => m.user.bot).size
-    member.guild.channels.get('489485348079009792').setName(`Total Bots: ${bots}`);
-});
 
 
 
