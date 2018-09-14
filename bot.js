@@ -26,7 +26,7 @@ const clans = JSON.parse(fs.readFileSync("./ClanSystem/ClanSystem.json", 'UTF8')
 const system = JSON.parse(fs.readFileSync("./ClanSystem/ClanStats.json", 'UTF8'));
 const level = JSON.parse(fs.readFileSync("./ClanSystem/ClanLevels.json", 'UTF8'));
 
-hero.on('message',async message => {
+client.on('message',async message => {
   if(message.author.bot) return;
   if(message.channel.type === 'dm') return;
 
