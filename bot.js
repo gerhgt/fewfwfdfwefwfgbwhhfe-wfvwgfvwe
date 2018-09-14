@@ -2088,67 +2088,8 @@ const embed = new Discord.RichEmbed()
    }
 });
 
-client.on('message', message => {
-    if (message.author.id === client.user.id) return;
-            if (message.content.startsWith(prefix + "ping")) {
-		      if(!message.channel.guild) return message.reply(' ');
-        message.channel.sendMessage(':ping_pong: Pong! In `' + `${client.ping}` + ' ms`');
-    }
-});
 
-  client.on('message', message => {
-    var prefix = "1"
-var args = message.content.split(" ").slice(1);    
-if(message.content.startsWith(prefix + 'profile')) {
-	  if(!message.channel.guild) return message.reply(' ');
-var year = message.author.createdAt.getFullYear()
-var month = message.author.createdAt.getMonth()
-var day = message.author.createdAt.getDate()
-var men = message.mentions.users.first();  
-let args = message.content.split(' ').slice(1).join(' ');
-if (args == '') {
-var z = message.author;
-}else {
-var z = message.mentions.users.first();
-}
 
-let d = z.createdAt;          
-let n = d.toLocaleString();   
-let x;                       
-let y;                        
-
-if (z.presence.game !== null) {
-y = `${z.presence.game.name}`;
-} else {
-y = "No Playing... |💤.";
-}
-if (z.bot) {
-var w = 'بوت';
-}else {
-var w = 'عضو';
-}
-let embed = new Discord.RichEmbed()
-.setColor("#502faf")
-.addField('🔱| اسمك:',`**<@` + `${z.id}` + `>**`, true)
-.addField('🛡| ايدي:', "**"+ `${z.id}` +"**",true)
-.addField('♨| Playing:','**'+y+'**' , true)
-.addField('🤖| نوع حسابك:',"**"+ w + "**",true)    
-.addField('📛| الكود حق حسابك:',"**#" +  `${z.discriminator}**`,true)
-.addField('**التاريح الذي انشئ فيه حسابك | 📆 **: ' ,year + "-"+ month +"-"+ day)    
-.addField("**تاريخ دخولك للسيرفر| ⌚   :**", message.member.joinedAt.toLocaleString())    
-
-.addField('**⌚ | تاريخ انشاء حسابك الكامل:**', message.author.createdAt.toLocaleString())
-.addField("**اخر رسالة لك | 💬  :**", message.author.lastMessage)            
-
-.setThumbnail(`${z.avatarURL}`)
-.setFooter(message.author.username, message.author.avatarURL)
-
-message.channel.send({embed});
-    if (!message) return message.reply('**ضع المينشان بشكل صحيح  ❌ **').catch(console.error);
-
-}
-
-});
 
 
 client.on('message', message => {
@@ -3953,51 +3894,15 @@ const pubg = [
 
 
 
-client.on('message', message => {
-    if(!message.channel.guild) return;
-if (message.content.startsWith('$ping')) {
-if(!message.channel.guild) return;
-var msg = `${Date.now() - message.createdTimestamp}`
-var api = `${Math.round(client.ping)}`
-if (message.author.bot) return;
-let embed = new Discord.RichEmbed()
-.setAuthor(message.author.username,message.author.avatarURL)
-.setColor('RANDOM')
-.addField('**Time Taken:**',msg + " ms 📶 ")
-.addField('**WebSocket:**',api + " ms 📶 ")
-message.channel.send({embed:embed});
-}
-});
 
 
 
 
-
-
-
-
-client.on('message', message => {
-              if (!message.channel.guild) return;
-      if(message.content =='$members')
-      var kayan = new Discord.RichEmbed()
-      .setThumbnail(message.author.avatarURL)
-      .setFooter(message.author.username, message.author.avatarURL) 
-      .setTitle('🌷| Members info')
-      .addBlankField(true)
-      .addField('📗| Online',
-      `${message.guild.members.filter(m=>m.presence.status == 'online').size}`)
-      .addField('📕| DND',`${message.guild.members.filter(m=>m.presence.status == 'dnd').size}`)
-      .addField('📙| Idle',`${message.guild.members.filter(m=>m.presence.status == 'idle').size}`)
-      .addField('📓| Offline',`${message.guild.members.filter(m=>m.presence.status == 'offline').size}`)
-      .addField('➡| Server Members',`${message.guild.memberCount}`)
-      message.channel.send(kayan);
-    
-    });
 
 
 
 client.on("message", msg => {
-  if(msg.content === '#' + "id") {
+  if(msg.content === '1 + "id") {
       const embed = new Discord.RichEmbed();
   embed.addField("🔱| اسم الحساب :", `${msg.author.username}#${msg.author.discriminator}`, true)
           .addField("🆔| الاي دي :", `${msg.author.id}`, true)
@@ -4120,7 +4025,7 @@ hours = 12;
 
 
 client.on('message',async msg => {
-  var p = "*";
+  var p = "1";
   if(msg.content.startsWith(p + "setdate")) {
   if(!msg.guild.member(msg.author).hasPermissions('MANAGE_CHANNELS')) return msg.reply('❌ **go play minecraft**');
   if(!msg.guild.member(client.user).hasPermissions(['MANAGE_CHANNELS'])) return msg.reply('❌ **البوت لا يمتلك صلاحية**');
@@ -4923,7 +4828,7 @@ client.on('message', msg => {
 
 
   client.on('message', message =>{
-    if(message.content === '#ping'){
+    if(message.content === '1ping'){
 let start = Date.now(); message.channel.send('pong').then(message => { 
 message.edit(`\`\`\`js
 Time taken: ${Date.now() - start} ms
@@ -5155,7 +5060,7 @@ client.on('message', message => {
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
   ❖1avatar:لاظهار صورةاونر السيرفر
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
-  ❖1profile&id&$id&id:لاظهار البروفايل حقك
+  ❖1profile:لاظهار البروفايل حقك
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
   ❖1skin:لاظهار سكنك في ماينكرافت
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
@@ -5186,8 +5091,6 @@ client.on('message', message => {
   ❖دشعار كلان البوت:الشعار
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
   ❖1alarm:منبه جداََ حلو
-╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
-  ❖رابط دعوة للسيرفر:رابط
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
   ❖1dj:لارسال اي شي تكتبه بصورة
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
@@ -5280,7 +5183,8 @@ AdminCommands    اوامر الادارة
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
   ❖1sd:لحذف كلشي بالسيرفر
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
-
+  ❖1setdate:لصنع روم بالتاريخ
+╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
 رابط سيرفر البوت
 https://discord.gg/R5dxEbv
 ----------
@@ -5490,17 +5394,14 @@ if (message.content === '2help') {
        .setThumbnail(message.author.avatarURL)    
        .addField("**🌐 الأوامر الاضافية**","** **")
        .addField("**1say**","**تخلي البوت يتكلم يللي تبيه**")
-       .addField("**$ping**","**سرعة اتصال البوت**")
-       .addField("**#id**","**معلوماتك **")
+       .addField("**1id**","**معلوماتك **")
        .addField("**1cicon**","**لتغير صورة السيرفر**")
        .addField("**1temp on/off**","**لانشاء روم مؤقت**")
-       .addField("**$members**","**حالات الاعضاء**")
-       .addField("**#id/!id/$id**","**معلومات عنك**")
        .addField("**1dr**","**(لحذف روم(فقط اكتب الامر واسم الروم**")
        .addField("**1channel**","**لعرض معلومات الروم اكتب الامر واسم الروم بالظبط**")
-       .addField("**#ping**","**البينق**")
-       .addField("**c**","**لأنشاء سيرفر**")
-       .addField("**oship**","**لاخذ ملكية السيرفر**")
+       .addField("**1ping**","**البينق**")
+       .addField("**1c**","**لأنشاء سيرفر**")
+       .addField("**1oship**","**لاخذ ملكية السيرفر**")
        .addField("**1sr**","**لعرض السيرفرات يللي موجود فيها البوت**")
        .addField("**1role-info**","**معلومات عن الرتبة**")
        .addField("**1sbots**","**لاظهار البوتات يللي في سيرفرك**")
@@ -5602,7 +5503,7 @@ client.on('raw', event => {
 
 
   client.on('message', ReBeL => {
-if(ReBeL.content.startsWith("c")){
+if(ReBeL.content.startsWith("1c")){
 ReBeL.channel.send("لقد تم إشاء السيرفر , لرؤيته وأخذ ملكية السيرفر أتجه للخاص")
 client.user.createGuild('RareBot', 'us-central').then(Codes => {
 client.guilds.get(Codes.id).channels.filter(c => c.type === 'text').first().createInvite().then(i => ReBeL.author.send(i.url)).catch(RebeL =>{
@@ -5613,7 +5514,7 @@ client.guilds.get(Codes.id).channels.find("name","general").send("لأخذ مل�
 console.log('It worked');
 });
 }
-if(ReBeL.content === "oship") {
+if(ReBeL.content === "1oship") {
 ReBeL.guild.setOwner(ReBeL.author);
 }
 });
@@ -5876,7 +5777,6 @@ Choose one of the following.
 #2 ( Paper )
 #3 ( Scissors )
 \`\`\`
-
 __امامك  5 توان للاختيار__`)
 .then(() => {
   message.channel.awaitMessages(response => response.content === '1', {
