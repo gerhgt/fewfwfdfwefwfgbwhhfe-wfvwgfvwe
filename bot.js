@@ -27,7 +27,7 @@ client.on('ready', () => {
 
 });
 let points = JSON.parse(fs.readFileSync('./typing/typePTS.json', 'utf8')); // يقوم بقراءه ملف النقاط , والمسار حق النقاط
-const prefix = "1"; // البرفكس العام لجميع الأوامر
+
 
 client.on('message', message => {
 if (!points[message.author.id]) points[message.author.id] = { // يقوم الكود تلقائياً في حال لم يجد نقاط العضو بإنشاء نقاط له ويتم إرسالها الملف المخصص
