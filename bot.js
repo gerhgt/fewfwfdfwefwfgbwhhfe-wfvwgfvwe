@@ -19,6 +19,16 @@ client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
 
+
+client.on('message', message =>{
+    if (message.author.bot) return;
+    if(message.content == "type"){
+message.channel.startTyping();
+}
+});
+
+
+
 client.on('message', message => {
           let args = message.content.split(' ').slice(1);
    if(message.content.split(' ')[0] == '1color'){
@@ -5488,6 +5498,7 @@ if (message.content === '2help') {
        .addField("**1crtt<Name>**","**لانشاء روم كتابي**")
        .addField("**1crtv <Name>**","**لانشاءروم صوتي**")
        .addField("**1z**","**لزخرفة الكلام**")
+       .addField("**type**","**اذا تبي تخلي البوت كانه يكتب**")
 .setColor('RANDOM')
   message.author.sendEmbed(embed);
     }
