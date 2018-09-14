@@ -1,0 +1,103 @@
+[
+    {
+	
+	        "image": "./Logos/amazon.jpg",
+        "answers": ["amazon"]
+    },
+    {
+
+	        "image": "./Logos/discord.jpg",
+
+        "answers": ["discord"]
+    },
+    {
+
+	        "image": "./Logos/facebook.jpg",
+
+        "answers": ["facebook"]
+    },
+    {
+
+	        "image": "./Logos/gmail.jpg",
+
+        "answers": ["gmail"]
+    },
+    {
+
+	        "image": "./Logos/instagram.jpg",
+
+        "answers": ["instagram"]
+    },
+    {
+
+	        "Logos": "./Logos/itunes.jpg",
+
+        "answers": ["itunes"]
+    },
+    {
+
+	        "image": "./Logos/netflix.jpg",
+
+        "answers": ["netflix"]
+    },
+    {
+
+	        "image": "./Logos/paypal.jpg",
+
+        "answers": ["paypal"]
+    },
+    {
+
+	        "image": "./Logos/snapchat.jpg",
+
+        "answers": ["snapchat"]
+    },
+    {
+
+	
+
+
+	        "image": "./Logos/spotify.jpg",
+
+        "answers": ["spotify"]
+    },
+    {
+
+
+
+
+	        "image": "./Logos/steam.jpg",
+
+        "answers": ["steam"]
+    },
+    {
+
+
+
+
+	        "image": "./Logos/tumblr.jpg",
+
+        "answers": ["tumblr"]
+    },
+    {
+
+
+
+
+	        "image": "./Logos/twitter.jpg",
+
+        "answers": ["twitter"]
+    },
+    {
+
+
+
+
+	        "image": "./Logos/youtube.jpg",
+
+        "answers": ["youtube"]
+    },
+{
+
+}
+]
