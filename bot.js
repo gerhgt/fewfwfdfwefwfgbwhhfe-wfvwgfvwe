@@ -52,7 +52,7 @@ const codes = {
          if(message.content.startsWith(prefix + "emoji")) {
             let args = message.content.split(" ").slice(1);
     if (args.length < 1) {
-      message.channel.send('You must provide some text to emojify!');
+      message.channel.send('ضع الكلمة التي تريد ان يكتبها البوت بالايموجي');
   }
   
   message.channel.send(
@@ -5368,7 +5368,7 @@ client.on('message', message => {
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
   ❖1rps: لعبة حجرة ورقة مقص
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
-  ❖1emoji:لعبة الايموجي
+  ❖1emoji:اكتب الامر واي كلمة تبيها
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
   ❖1slap:اذا تبي تضرب شخص بالقلم على وجهه
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
