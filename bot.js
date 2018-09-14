@@ -21,7 +21,7 @@ client.on('ready', () => {
 
 
 
-const fs = require('fs');
+
 const clans = JSON.parse(fs.readFileSync("./ClanSystem/ClanSystem.json", 'UTF8'));
 const system = JSON.parse(fs.readFileSync("./ClanSystem/ClanStats.json", 'UTF8'));
 const level = JSON.parse(fs.readFileSync("./ClanSystem/ClanLevels.json", 'UTF8'));
