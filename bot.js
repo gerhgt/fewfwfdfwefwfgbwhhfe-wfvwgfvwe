@@ -44,7 +44,7 @@ const filter = response => { // في هذا السطر يقوم بصنع فلت�
 message.channel.send('**لديك 15 ثانية لكتابة الكلمة**').then(msg => {
 	let embed = new Discord.RichEmbed()
 	.setColor('#000000')
-	.setFooter("سرعة كتابة | لرؤية مجموع نقاطك اكتب $نقاطي |", 'https://c.top4top.net/p_814rjkod1.png')
+	.setFooter("سرعة كتابة | لرؤية مجموع نقاطك اكتب 1نقاطي |", 'https://c.top4top.net/p_814rjkod1.png')
 	.setDescription(`**قم بكتابة : ${item.type}**`) // ${item.type} = السؤال
 	
 	msg.channel.sendEmbed(embed).then(() => {
@@ -64,7 +64,7 @@ message.channel.send('**لديك 15 ثانية لكتابة الكلمة**').the
 }
 });
 client.on('message', message => {
-if (message.content.startsWith(prefix + 'mypoints')) {
+if (message.content.startsWith(prefix + 'نقاطي')) {
 	if(!message.channel.guild) return message.reply('**هذا الأمر للسيرفرات فقط**').then(m => m.delete(3000));
 	let userData = points[message.author.id];
 	let embed = new Discord.RichEmbed()
