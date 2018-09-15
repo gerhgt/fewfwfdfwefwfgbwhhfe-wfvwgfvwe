@@ -27,7 +27,7 @@ let points = JSON.parse(fs.readFileSync(`./point.json`, `utf8`));
 var shortNumber = require('short-number');
 
 
-let prefix = '1';
+
 //MATH
 
 client.on('message', message => {
