@@ -22,6 +22,8 @@ client.on('ready', () => {
 
 
 
+const Discord = require("discord.js");
+const client = new Discord.Client();
 
 let points = JSON.parse(fs.readFileSync(`./point.json`, `utf8`));
 var shortNumber = require('short-number');
@@ -41,7 +43,7 @@ if (!points[message.author.id]) points[message.author.id] = {
   wins: 0,
   loses: 0,
   };
-if (message.content.startsWith('رياضيات')) {
+if (message.content.startsWith(prefix + 'رياضيات')) {
 
 const type = require('./mathh.json');
 const item = type[Math.floor(Math.random() * type.length)];
@@ -61,7 +63,7 @@ msg.channel.send(embed).then(() => {
         message.channel.awaitMessages(filter, { maxMatches: 1, time: 10000, errors: ['time'] })
         .then((collected) => {
 		message.channel.send(`**${collected.first().author} مبروك لقد كسبت 15 نقطة 
-لمعرفة نقاطك الرجاء كتابة ^point**` , 'https://cdn.discordapp.com/avatars/424318770996314124/bfc297fb61c7aaa5fc63f99518ea1617.png?size=2048');
+لمعرفة نقاطك الرجاء كتابة 1point**` , 'https://cdn.discordapp.com/avatars/424318770996314124/bfc297fb61c7aaa5fc63f99518ea1617.png?size=2048');
 		console.log(`[Typing] ${collected.first().author} typed the word.`);
 			let userData = points[collected.first().author.id];
 userData.wins += 1 
@@ -82,7 +84,7 @@ points[message.author.id].game += 1;
 
 
 }
-fs.writeFile("./point.jsmn",JSON.stringify(points), function(err){
+fs.writeFile("./point.json",JSON.stringify(points), function(err){
     if (err) console.log(err);
   })
 });
@@ -132,7 +134,7 @@ try {
 	let embed = new Discord.RichEmbed()
     .setAuthor(`${message.author.tag}`, message.author.avatarURL)
 	.setColor('#000000')
-	.setDescription(`**DASH-BOT
+	.setDescription(`**RobotBot
 
 :white_check_mark: عدد الفوز : ${wins}
 :x: عدد الخسارة: ${loses}
@@ -163,7 +165,7 @@ client.on('message', message => {
 if (!points[message.author.id]) points[message.author.id] = { // يقوم الكود تلقائياً في حال لم يجد نقاط العضو بإنشاء نقاط له ويتم إرسالها الملف المخصص
 	points: 0,
   };
-if (message.content.startsWith(prefix + 'سرعة{
+if (message.content.startsWith(prefix + 'سرعة')){
 	if(!message.channel.guild) return message.reply('**هذا الأمر للسيرفرات فقط**').then(m => m.delete(3000));
 
 const type = require('./typing/type.json'); // في هذا السطر يقوم الكود بقراءة ملف الأسئلة
