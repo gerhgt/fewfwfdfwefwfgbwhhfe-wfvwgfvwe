@@ -135,7 +135,6 @@ try {
     .setAuthor(`${message.author.tag}`, message.author.avatarURL)
 	.setColor('#000000')
 	.setDescription(`**RobotBot
-
 :white_check_mark: عدد الفوز : ${wins}
 :x: عدد الخسارة: ${loses}
 :label:التقاط: ${pointss}
@@ -4069,7 +4068,7 @@ client.on('message', async message =>{
   let cmd = messageArray[0];
   let args = messageArray.slice(1);
   let sicon = message.author.displayAvatarURL;
-  if(cmd === `myid`) {
+  if(cmd === `1myid`) {
 	  if(!message.channel.guild) return message.reply(' ');
       var bots = new Discord.RichEmbed()
 
@@ -4719,7 +4718,7 @@ function لول(o,n,channel,role){
 
 
 client.on('message', message => {
-       if(message.content.startsWith('دعوة')){
+       if(message.content.startsWith('1دعوة')){
            if(!message.channel.guild) return message.channel.send("This Command is Just For Servers!")
            var embed = new Discord.RichEmbed()
            .setTitle("Invite RobotBot")
@@ -4731,7 +4730,7 @@ client.on('message', message => {
    });
 
 client.on('message', message => {
-       if(message.content.startsWith('inv')){
+       if(message.content.startsWith('1inv')){
            if(!message.channel.guild) return message.channel.send("This Command is Just For Servers!")
            var embed = new Discord.RichEmbed()
            .setTitle("Invite RobotBot")
@@ -5570,15 +5569,13 @@ client.on('message', message => {
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
   ❖1ms:لمشاهدة حالات الاعضاء في السيرفر
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
-  ❖myid:لاظهار الايدي حقك
+  ❖1myid:لاظهار الايدي حقك
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
   ❖1support:سيرفر البوت
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
   ❖1ask:(1ask hello)معلوماات عن الكلمة مثال
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
   ❖1find:للبحث عن عضو
-╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
-  ❖دشعار كلان البوت:الشعار
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
   ❖1alarm:منبه جداََ حلو
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
@@ -5590,6 +5587,9 @@ client.on('message', message => {
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
   ❖1profile:معلومات عنك
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
+  ❖1inv&لدعوة البوت الى سيرفرك:دعوة
+╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
+رابط سيرفر البوت
 رابط سيرفر البوت
 https://discord.gg/R5dxEbv
 ----------
