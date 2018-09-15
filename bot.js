@@ -22,8 +22,6 @@ client.on('ready', () => {
 
 
 
-const Discord = require("discord.js");
-const client = new Discord.Client();
 
 let points = JSON.parse(fs.readFileSync(`./point.json`, `utf8`));
 var shortNumber = require('short-number');
