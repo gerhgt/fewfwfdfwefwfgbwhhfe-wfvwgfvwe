@@ -22,7 +22,39 @@ client.on('ready', () => {
 
 
 
+client.on('message', message => {
+  if (message.author.bot) return;
+   if (message.content === prefix + "help-general") {            
 
+   
+      message.author.sendMessage(`**اوامر عامة**
+╔[❖═════════════════════════════❖]╗
+❖${prefix}**bot** :معلومات عن البوت
+❖${prefix}**invite** : لدعوة البوت
+❖${prefix}**profile** : البروفايل حقك
+❖${prefix}**1avatar <mention>** : صورتك او شخص ثاني
+❖${prefix}**server** : معلومات السيرفر
+❖${prefix}**suggest** : suggestsلاقتراح اي شي لازم يكون في روم اسمه 
+❖${prefix}**report <mention>** : reportsللابلاغ عن شخص سوي روم اسمه 
+❖${prefix}**1bans** : الاشخاص المبندين من السيرفر
+❖${prefix}**mute**
+❖${prefix}**unmute**
+❖${prefix}**top text**
+❖${prefix}**top voice**
+❖${prefix}**top inv**
+❖${prefix}**top**
+❖${prefix}**ct**
+❖${prefix}**cv**
+❖${prefix}**hackban**
+❖${prefix}**unhackban**
+❖${prefix}**user**
+❖${prefix}**id**
+__وشكرا__
+╚[❖═════════════════════════════❖]╝
+`);
+
+}
+});
 
 
 
