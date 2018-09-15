@@ -23,6 +23,136 @@ client.on('ready', () => {
 
 
 
+let points = JSON.parse(fs.readFileSync(`./point.json`, `utf8`));
+var shortNumber = require('short-number');
+
+
+let prefix = '1';
+//MATH
+
+client.on('message', message => {
+  if (message.author.bot) return;
+
+
+if(!message.channel.guild) return;
+
+if (!points[message.author.id]) points[message.author.id] = {
+	points: 0,
+  wins: 0,
+  loses: 0,
+  };
+if (message.content.startsWith('رياضيات')) {
+
+const type = require('./mathh.json');
+const item = type[Math.floor(Math.random() * type.length)];
+const filter = response => {
+    return item.answers.some(answer => answer.toLowerCase() === response.content.toLowerCase());
+};
+message.channel.send('**لديك 10  ثواني لتجيب**').then(msg => {
+
+   const embed = new Discord.RichEmbed()
+ .setColor("RANDOM")
+    .setAuthor(`${message.author.tag}`, message.author.avatarURL)
+ .setThumbnail(message.author.avatarURL)     
+ .addField(`**DASH-BOT**`,` **${item.type}**`)
+ .setFooter(`ستكسب 15 نقطة`)
+
+msg.channel.send(embed).then(() => {
+        message.channel.awaitMessages(filter, { maxMatches: 1, time: 10000, errors: ['time'] })
+        .then((collected) => {
+		message.channel.send(`**${collected.first().author} مبروك لقد كسبت 15 نقطة 
+لمعرفة نقاطك الرجاء كتابة ^point**` , 'https://cdn.discordapp.com/avatars/424318770996314124/bfc297fb61c7aaa5fc63f99518ea1617.png?size=2048');
+		console.log(`[Typing] ${collected.first().author} typed the word.`);
+			let userData = points[collected.first().author.id];
+userData.wins += 1 
+userData.points += 15; 
+
+          })
+
+          .catch(collected => {
+points[message.author.id].loses += 1;
+
+            message.channel.send(`:x: **حظ اوفر المرة القادمة ! لقد خسرت , انتهى الوقت**` , 'https://cdn.discordapp.com/avatars/424318770996314124/bfc297fb61c7aaa5fc63f99518ea1617.png?size=2048');
+			console.log('[Typing] Error: No one type the word.');
+
+		})
+	})
+    })
+points[message.author.id].game += 1; 
+
+
+}
+fs.writeFile("./point.jsmn",JSON.stringify(points), function(err){
+    if (err) console.log(err);
+  })
+});
+
+
+//points
+client.on('message', message => {
+
+if (!points[message.author.id]) points[message.author.id] = {
+	points: 0,
+  wins: 0,
+  loses: 0,
+  game: 0,
+
+  };
+  if (message.author.bot) return;
+
+
+if(!message.channel.guild) return;
+	let userData = points[message.author.id];
+
+if (message.content.startsWith(prefix + 'point')) {
+let pointss = userData.points
+try {
+                            pointss = shortNumber(pointss);
+                        } catch (error) {
+                            pointss = 0;
+                        }
+                        let wins = userData.wins
+try {
+                            wins = shortNumber(wins);
+                        } catch (error) {
+                            wins = 0;
+                        }
+                        let loses = userData.loses
+try {
+                            loses = shortNumber(loses);
+                        } catch (error) {
+                            loses  = 0;
+                        }
+                         let games = userData.game
+try {
+                            games = shortNumber(games);
+                        } catch (error) {
+                            games  = 0;
+                        }
+	let embed = new Discord.RichEmbed()
+    .setAuthor(`${message.author.tag}`, message.author.avatarURL)
+	.setColor('#000000')
+	.setDescription(`**DASH-BOT
+
+:white_check_mark: عدد الفوز : ${wins}
+:x: عدد الخسارة: ${loses}
+:label:التقاط: ${pointss}
+:video_game: عدد مرات اللعب: ${games}**` , 'https://cdn.discordapp.com/avatars/424318770996314124/bfc297fb61c7aaa5fc63f99518ea1617.png?size=2048');
+	message.channel.sendEmbed(embed)
+  }
+  fs.writeFile("./point.json", JSON.stringify(points), (err) => {
+    if (err) console.error(err)
+  })
+
+});
+
+
+
+
+client.login('NDYwMTU0MjQyNTE5NDAwNDQ4.DkjS2g.RNf1k6CoUDF3ThHy4b1YWVepXQg')
+
+
+
 client.on('ready', () => {
 
 });
@@ -33,7 +163,7 @@ client.on('message', message => {
 if (!points[message.author.id]) points[message.author.id] = { // يقوم الكود تلقائياً في حال لم يجد نقاط العضو بإنشاء نقاط له ويتم إرسالها الملف المخصص
 	points: 0,
   };
-if (message.content.startsWith(prefix + 'speed')) { // .سرعة
+if (message.content.startsWith(prefix + 'سرعة{
 	if(!message.channel.guild) return message.reply('**هذا الأمر للسيرفرات فقط**').then(m => m.delete(3000));
 
 const type = require('./typing/type.json'); // في هذا السطر يقوم الكود بقراءة ملف الأسئلة
@@ -5616,9 +5746,9 @@ client.on('message', message => {
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
   ❖لعبة احكام:حكم
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
-  ❖1speed:لبدا اللعبة
+  ❖لبدا اللعبة :1سرعة
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
-  ❖1mypoints:لعرض النقاط الخاصة بك
+  ❖نقاطك:1نقاطي
 ╔[❖=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=❖]╗
 });رابط سيرفر البوت
 https://discord.gg/R5dxEbv
