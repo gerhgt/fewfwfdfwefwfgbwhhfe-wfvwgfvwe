@@ -22,7 +22,7 @@ client.on('ready', () => {
 
 
 
-const prefix = '1'; 
+
 
 client.on('ready', () => {       //all role -  humans bots
 client.on('message', message => {
