@@ -23,7 +23,7 @@ client.on('ready', () => {
 
 
 
-let points = JSON.parse(fs.readFileSync(`./point.json`, `utf8`));
+
 var shortNumber = require('short-number');
 
 
