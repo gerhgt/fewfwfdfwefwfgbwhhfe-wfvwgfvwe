@@ -54,7 +54,7 @@ message.channel.send('**لديك 10  ثواني لتجيب**').then(msg => {
  .setColor("RANDOM")
     .setAuthor(`${message.author.tag}`, message.author.avatarURL)
  .setThumbnail(message.author.avatarURL)     
- .addField(`**DASH-BOT**`,` **${item.type}**`)
+ .addField(`**RobotBot**`,` **${item.type}**`)
  .setFooter(`ستكسب 15 نقطة`)
 
 msg.channel.send(embed).then(() => {
