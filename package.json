@@ -17,6 +17,7 @@
     "ffmpeg": "0.0.4",
     "ffmpeg-binaries": "^3.2.2-3",
     "fs": "0.0.2",
+    "short-number": "^1.1.0"
     "zalgolize": "^1.2.4",
     "get-youtube-id": "^1.0.0",
     "jimp": "^0.2.28",
