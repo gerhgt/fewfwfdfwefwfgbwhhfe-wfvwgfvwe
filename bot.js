@@ -6055,8 +6055,8 @@ client.on('message', message => {
 ❖${prefix}**settime** : لاظهار الوقت
 ❖${prefix}**setdate** : للاظهار التاريخ
 ❖${prefix}**date** : يرسلك التاريخ بالشات
-❖${prefix}**1cc <Number>** : الكلانات
-❖${prefix}**1ct** : لانشاء روم مع ميزات
+❖${prefix}**cc <Number>** : الكلانات
+❖${prefix}**ct** : لانشاء روم مع ميزات
 ❖${prefix}**croles** : لأنشاء رتب
 ❖${prefix}**crooms** : لأنشاء الغرف
 ❖${prefix}**sd** : لحذف كلشي بالسيرفر
