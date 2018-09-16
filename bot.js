@@ -6016,7 +6016,7 @@ client.on('message', message => {
 مُطَوِرّ اَلبُوت
 @D7oM.#7693
 رابط سيرفر البوت
-https://discord.gg/R5dxEbv
+https://discord.gg/SverhFA
 ╚[❖═════════════════════════════❖]╝
 `);
 
@@ -6078,7 +6078,7 @@ client.on('message', message => {
 مُطَوِرّ اَلبُوت
 @D7oM.#7693
 رابط سيرفر البوت
-https://discord.gg/R5dxEbv
+https://discord.gg/SverhFA
 ╚[❖═════════════════════════════❖]╝
 `);
 
@@ -6121,7 +6121,7 @@ client.on('message', message => {
 مُطَوِرّ اَلبُوت
 @D7oM.#7693
 رابط سيرفر البوت
-https://discord.gg/R5dxEbv
+https://discord.gg/SverhFA
 ╚[❖═════════════════════════════❖]╝
 `);
 
@@ -6155,7 +6155,7 @@ client.on('message', message => {
 ❖${prefix}**about** : لمعرفة معلومات الاتصال بالبوت
 @D7oM.#7693
 رابط سيرفر البوت
-https://discord.gg/R5dxEbv
+https://discord.gg/SverhFA
 ╚[❖═════════════════════════════❖]╝
 `);
 
@@ -6188,7 +6188,7 @@ client.on('message', message => {
 ❖${prefix}**** : 
 @D7oM.#7693
 رابط سيرفر البوت
-https://discord.gg/R5dxEbv
+https://discord.gg/SverhFA
 ╚[❖═════════════════════════════❖]╝
 `);
 
