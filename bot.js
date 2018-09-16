@@ -6037,8 +6037,8 @@ client.on('message', message => {
 ❖${prefix}**hchannel** : لاخفاء الروم 
 ❖${prefix}**schannel** : لاظهار الروم
 ❖${prefix}**move** : لسحب العضو اليك
-❖${prefix}**1clear** : لمسح الشات
-❖${prefix}**1clr (Number)** : لمسح الشات بالرقم
+❖${prefix}**clear** : لمسح الشات
+❖${prefix}**clr (Number)** : لمسح الشات بالرقم
 ❖${prefix}**users** : جميع الاعضاء يللي البوت بسيرفرهم
 ❖${prefix}**settime** : لاظهار الوقت
 ❖${prefix}**setdate** : للاظهار التاريخ
