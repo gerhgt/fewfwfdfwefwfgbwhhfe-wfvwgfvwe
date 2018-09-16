@@ -10,8 +10,6 @@ const ytdl = require('ytdl-core');
 
 const fs = require('fs');
 
-const shorten = require('isgd');
-
 const stripIndents = require('common-tags').stripIndents;
 
 const client = new Discord.Client({disableEveryone: true});
