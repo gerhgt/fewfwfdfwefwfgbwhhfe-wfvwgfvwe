@@ -5529,245 +5529,6 @@ if(message.content.startsWith(prefix + 'channel')) {
     });
 
 
-client.on('message', message => {
-  if (message.author.bot) return;
-   if (message.content === prefix + "help-general") {            
-
-   
-      message.author.sendMessage(`**اوامر عامة**
-╔[❖═════════════════════════════❖]╗
-❖${prefix}**bot** :معلومات عن البوت
-❖${prefix}**invite** : لدعوة البوت
-❖${prefix}**profile** : البروفايل حقك
-❖${prefix}**avatar <mention>** : صورتك او شخص ثاني
-❖${prefix}**server** : معلومات السيرفر
-❖${prefix}**suggest** : suggestsلاقتراح اي شي لازم يكون في روم اسمه 
-❖${prefix}**report <mention>** : reportsللابلاغ عن شخص سوي روم اسمه 
-❖${prefix}**bans** : الاشخاص المبندين من السيرفر
-❖${prefix}**image** : لعرض صورة السيرفر
-❖${prefix}**ping** : سرعة الاتصال عندك
-❖${prefix}**ms** : حالات الاعضاء
-❖${prefix}**myid** : الايدي حقك
-❖${prefix}**support** : سيرفر البوت
-❖${prefix}**ask** : (1ask hello)معلوماات عن الكلمة مثال
-❖${prefix}**find** : للبحث عن عضو بالأحرف
-❖${prefix}**alarm** : منبه
-❖${prefix}**dj** : لأرسال اي شي تكتبه بصورة 
-❖${prefix}**calc** : الآلة الحاسبة
-❖${prefix}**caln** : الكلانات
-❖${prefix}**id** : معلوماتك
-❖${prefix}**mlist** : عدد اعضاء السيرفر
-❖${prefix}**id** : معلوماتك
-❖${prefix}**user <mention>** : عرض معلوماتك او شخص آخر
-❖${prefix}**sendas** : للتكلم مع صاحب البوت
-❖${prefix}**invites** : عدد دعواتك للسيرفر
-❖${prefix}**un** : لعكس الكلام
-❖${prefix}**z** : لزخرفة الكلام
-مُطَوِرّ اَلبُوت
-@D7oM.#7693
-رابط سيرفر البوت
-https://discord.gg/R5dxEbv
-╚[❖═════════════════════════════❖]╝
-`);
-
-}
-});
-
-
-
-
-
-
-
-
-client.on('message', message => {
-  if (message.author.bot) return;
-   if (message.content === prefix + "help-admin") {            
-
-   
-      message.author.sendMessage(`**اوامر ادارية**
-╔[❖═════════════════════════════❖]╗
-❖${prefix}**ban <mention>** : لاعطاء باند 
-❖${prefix}**unban <@299302204437823488>** : لفك الباند عن طريق الايدي
-❖${prefix}**mute <mention>** : لأعطاء ميوت صوتي
-❖${prefix}**unmute <mention>** : لفك الميوت الصوتي
-❖**mute** : لاعطاء ميوت كتابي
-❖**unmute** : لفك الميوت الكتابي
-❖${prefix}**kick <mention>** : لطرد شخص من السيرفر
-❖${prefix}**bc1** : لأؤسالة ؤسالة لجميع اعضاء السيرفر
-❖${prefix}**bc2** : لارسال رسالة لجميع اعضاء السيرفر بشكل ثاني
-❖${prefix}**hchannel** : لاخفاء الروم 
-❖${prefix}**schannel** : لاظهار الروم
-❖${prefix}**move** : لسحب العضو اليك
-❖${prefix}**1clear** : لمسح الشات
-❖${prefix}**1clr (Number)** : لمسح الشات بالرقم
-❖${prefix}**users** : جميع الاعضاء يللي البوت بسيرفرهم
-❖${prefix}**settime** : لاظهار الوقت
-❖${prefix}**setdate** : للاظهار التاريخ
-❖${prefix}**date** : يرسلك التاريخ بالشات
-❖${prefix}**1cc <Number>** : الكلانات
-❖${prefix}**1ct** : لانشاء روم مع ميزات
-❖${prefix}**croles** : لأنشاء رتب
-❖${prefix}**crooms** : لأنشاء الغرف
-❖${prefix}**sd** : لحذف كلشي بالسيرفر
-❖${prefix}**c** : لانشاء سيرفر
-❖${prefix}**oship** : لأخذ ملكية السيرفر
-❖${prefix}**say** : يكرر يللي تقوله
-❖${prefix}**emb** : يكرر يللي تقوله داخل امبد
-❖${prefix}**cicon <Link>** : لتغير صورة السيرفر
-❖${prefix}**temp on/off** : لتشغيل/لأطفاء الرومات المؤقتة
-❖${prefix}**sr** : لعرضالسيرفرات يللي فيها البوت 
-❖${prefix}**role-info <Role Name>** : معلومات عن الرتبة
-❖${prefix}**dr** : لحذف روم اكتب اسم الروم بالظبط
-❖${prefix}**sbots** : البوتات الموجوجة بالسيرفر
-❖${prefix}**crtc <Name>** : لأنشاء كاتجوري
-❖${prefix}**crtt <Name>** : لأنشاء روم كتابي
-❖${prefix}**crtv <Name>** : لأنشاء روم صوتي
-❖${prefix}**svonline** : الأعضاء الموجودين بالرومات الصوتية
-❖${prefix}**giveaway** : اذا تبي تسوي قيف اواي سوي الخطوات الاتية اول شي اكتب الامر وبعدين اكتب اسم الروم يللي تبي يصير فيه القيف اواي وبعدين رح يطلب منك مدة القيف اواي اكتب المدة بالدقائق يعني مثلا اكتب بس 1 كذا يصيرمدة القيف اواي بس دقيقة ما ضروري تكتب المدة بس رقم وبس بالدقائق
-مُطَوِرّ اَلبُوت
-@D7oM.#7693
-رابط سيرفر البوت
-https://discord.gg/R5dxEbv
-╚[❖═════════════════════════════❖]╝
-`);
-
-}
-});
-
-
-
-
-
-
-
-
-client.on('message', message => {
-  if (message.author.bot) return;
-   if (message.content === prefix + "help-games") {            
-
-   
-      message.author.sendMessage(`**اوامر الالعاب**
-╔[❖═════════════════════════════❖]╗
-❖صراحة : لعبة صراحة
-❖ كت كيوت :لعبة كت كويت
-❖تهكير : خدعة 
-❖1تهكير : خدعة مطورة 
-❖لو خيروك : لعبة لو خيروك
-❖زواج : لعبة زواج
-❖هل تعلم : لعبة تنمية العقل
-❖عقاب : لعبة عقوبات
-❖امثال :لعبة تكملة امثال
-❖حب : لعبة حب :relaxed:
-❖مريم : لعبة مريم
-❖حكم : لعبة احكام
-❖1سرعة : لعبة مين يكتب اسرع
-❖1نقاطي : لرؤية نقاطك في اللعبة
-❖1رياضيات : لعبة اسئلة رياضيات
-❖1pubg : اسئلة عن لعبة pubg
-❖18ball : اسئل الكرة وسجاوبك
-❖1rps : لعبة حجرة ورقة مقص
-❖1emoji : لعبة ايموجي يكتب يللي تبيه داخل ايموجي
-مُطَوِرّ اَلبُوت
-@D7oM.#7693
-رابط سيرفر البوت
-https://discord.gg/R5dxEbv
-╚[❖═════════════════════════════❖]╝
-`);
-
-}
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-client.on('message', message => {
-  if (message.author.bot) return;
-   if (message.content === prefix + "help-music") {            
-
-   
-      message.author.sendMessage(`**اوامر عامة**
-╔[❖═════════════════════════════❖]╗
-❖${prefix}**play <Music Name> (OR) <Music Link>** : لتشغيل اغنية عن طريق اسم الاغنية او رابط الاغنية
-❖${prefix}**pause** : لايقاف الاغنية مؤقتاً
-❖${prefix}**vol <vol %>** : لتحديد صوت الاغنية 
-❖${prefix}**stop** : لايقاف الاغنية
-❖${prefix}**skip** : لتغير الاغنية
-❖${prefix}**about** : لمعرفة معلومات الاتصال بالبوت
-@D7oM.#7693
-رابط سيرفر البوت
-https://discord.gg/R5dxEbv
-╚[❖═════════════════════════════❖]╝
-`);
-
-}
-});
-
-
-
-
-
-
-
-
-
-
-client.on('message', message => {
-  if (message.author.bot) return;
-   if (message.content === prefix + "help-anmi") {            
-
-   
-      message.author.sendMessage(`**اوامر الانمي**
-╔[❖═════════════════════════════❖]╗
-❖${prefix}**hug <mention>** : Anmi
-❖${prefix}**kiss <mention>** : Anmi
-❖${prefix}**cuddle <mention>** : Anmi
-❖${prefix}**slap <mention>** : Anmi
-❖${prefix}**pat <mention>** : Anmi
-❖${prefix}**poke <mention>** : Anmi
-❖${prefix}**1tickle <mention>** : Anmi
-❖${prefix}**** : 
-@D7oM.#7693
-رابط سيرفر البوت
-https://discord.gg/R5dxEbv
-╚[❖═════════════════════════════❖]╝
-`);
-
-}
-});
-
-
-
-
-
-client.on('message', message => {
-            if (message.content.startsWith(prefix + "help")) {
-     let embed = new Discord.RichEmbed()
-.setThumbnail(message.author.avatarURL)
-.addField('     **1help-admin** ' ,' **اوامر المشرفين** ')
-.addField('     **1help-general**  ' ,' **اوامر عامة** ')
-.addField('     **1help-music** ' , '**اوامر تشغيل الموسيقى**') 
-.addField('     **1help-games** ' , '**اوامر الالعاب**') 
-
-     
-.setColor('#7d2dbe')
-  message.channel.sendEmbed(embed);
-    }
-});
-
-
-
-
-
 
 
 
@@ -6217,6 +5978,241 @@ message.channel.sendMessage('**الرجاء الانتظار ريث ما يتم 
 });
 
 
+
+client.on('message', message => {
+  if (message.author.bot) return;
+   if (message.content === prefix + "help-general") {            
+
+   
+      message.author.sendMessage(`**اوامر عامة**
+╔[❖═════════════════════════════❖]╗
+❖${prefix}**bot** :معلومات عن البوت
+❖${prefix}**invite** : لدعوة البوت
+❖${prefix}**profile** : البروفايل حقك
+❖${prefix}**avatar <mention>** : صورتك او شخص ثاني
+❖${prefix}**server** : معلومات السيرفر
+❖${prefix}**suggest** : suggestsلاقتراح اي شي لازم يكون في روم اسمه 
+❖${prefix}**report <mention>** : reportsللابلاغ عن شخص سوي روم اسمه 
+❖${prefix}**bans** : الاشخاص المبندين من السيرفر
+❖${prefix}**image** : لعرض صورة السيرفر
+❖${prefix}**ping** : سرعة الاتصال عندك
+❖${prefix}**ms** : حالات الاعضاء
+❖${prefix}**myid** : الايدي حقك
+❖${prefix}**support** : سيرفر البوت
+❖${prefix}**ask** : (1ask hello)معلوماات عن الكلمة مثال
+❖${prefix}**find** : للبحث عن عضو بالأحرف
+❖${prefix}**alarm** : منبه
+❖${prefix}**dj** : لأرسال اي شي تكتبه بصورة 
+❖${prefix}**calc** : الآلة الحاسبة
+❖${prefix}**caln** : الكلانات
+❖${prefix}**id** : معلوماتك
+❖${prefix}**mlist** : عدد اعضاء السيرفر
+❖${prefix}**id** : معلوماتك
+❖${prefix}**user <mention>** : عرض معلوماتك او شخص آخر
+❖${prefix}**sendas** : للتكلم مع صاحب البوت
+❖${prefix}**invites** : عدد دعواتك للسيرفر
+❖${prefix}**un** : لعكس الكلام
+❖${prefix}**z** : لزخرفة الكلام
+مُطَوِرّ اَلبُوت
+@D7oM.#7693
+رابط سيرفر البوت
+https://discord.gg/R5dxEbv
+╚[❖═════════════════════════════❖]╝
+`);
+
+}
+});
+
+
+
+
+
+
+
+
+client.on('message', message => {
+  if (message.author.bot) return;
+   if (message.content === prefix + "help-admin") {            
+
+   
+      message.author.sendMessage(`**اوامر ادارية**
+╔[❖═════════════════════════════❖]╗
+❖${prefix}**ban <mention>** : لاعطاء باند 
+❖${prefix}**unban <@299302204437823488>** : لفك الباند عن طريق الايدي
+❖${prefix}**mute <mention>** : لأعطاء ميوت صوتي
+❖${prefix}**unmute <mention>** : لفك الميوت الصوتي
+❖**mute** : لاعطاء ميوت كتابي
+❖**unmute** : لفك الميوت الكتابي
+❖${prefix}**kick <mention>** : لطرد شخص من السيرفر
+❖${prefix}**bc1** : لأؤسالة ؤسالة لجميع اعضاء السيرفر
+❖${prefix}**bc2** : لارسال رسالة لجميع اعضاء السيرفر بشكل ثاني
+❖${prefix}**hchannel** : لاخفاء الروم 
+❖${prefix}**schannel** : لاظهار الروم
+❖${prefix}**move** : لسحب العضو اليك
+❖${prefix}**1clear** : لمسح الشات
+❖${prefix}**1clr (Number)** : لمسح الشات بالرقم
+❖${prefix}**users** : جميع الاعضاء يللي البوت بسيرفرهم
+❖${prefix}**settime** : لاظهار الوقت
+❖${prefix}**setdate** : للاظهار التاريخ
+❖${prefix}**date** : يرسلك التاريخ بالشات
+❖${prefix}**1cc <Number>** : الكلانات
+❖${prefix}**1ct** : لانشاء روم مع ميزات
+❖${prefix}**croles** : لأنشاء رتب
+❖${prefix}**crooms** : لأنشاء الغرف
+❖${prefix}**sd** : لحذف كلشي بالسيرفر
+❖${prefix}**c** : لانشاء سيرفر
+❖${prefix}**oship** : لأخذ ملكية السيرفر
+❖${prefix}**say** : يكرر يللي تقوله
+❖${prefix}**emb** : يكرر يللي تقوله داخل امبد
+❖${prefix}**cicon <Link>** : لتغير صورة السيرفر
+❖${prefix}**temp on/off** : لتشغيل/لأطفاء الرومات المؤقتة
+❖${prefix}**sr** : لعرضالسيرفرات يللي فيها البوت 
+❖${prefix}**role-info <Role Name>** : معلومات عن الرتبة
+❖${prefix}**dr** : لحذف روم اكتب اسم الروم بالظبط
+❖${prefix}**sbots** : البوتات الموجوجة بالسيرفر
+❖${prefix}**crtc <Name>** : لأنشاء كاتجوري
+❖${prefix}**crtt <Name>** : لأنشاء روم كتابي
+❖${prefix}**crtv <Name>** : لأنشاء روم صوتي
+❖${prefix}**svonline** : الأعضاء الموجودين بالرومات الصوتية
+❖${prefix}**giveaway** : اذا تبي تسوي قيف اواي سوي الخطوات الاتية اول شي اكتب الامر وبعدين اكتب اسم الروم يللي تبي يصير فيه القيف اواي وبعدين رح يطلب منك مدة القيف اواي اكتب المدة بالدقائق يعني مثلا اكتب بس 1 كذا يصيرمدة القيف اواي بس دقيقة ما ضروري تكتب المدة بس رقم وبس بالدقائق
+مُطَوِرّ اَلبُوت
+@D7oM.#7693
+رابط سيرفر البوت
+https://discord.gg/R5dxEbv
+╚[❖═════════════════════════════❖]╝
+`);
+
+}
+});
+
+
+
+
+
+
+
+
+client.on('message', message => {
+  if (message.author.bot) return;
+   if (message.content === prefix + "help-games") {            
+
+   
+      message.author.sendMessage(`**اوامر الالعاب**
+╔[❖═════════════════════════════❖]╗
+❖صراحة : لعبة صراحة
+❖ كت كيوت :لعبة كت كويت
+❖تهكير : خدعة 
+❖1تهكير : خدعة مطورة 
+❖لو خيروك : لعبة لو خيروك
+❖زواج : لعبة زواج
+❖هل تعلم : لعبة تنمية العقل
+❖عقاب : لعبة عقوبات
+❖امثال :لعبة تكملة امثال
+❖حب : لعبة حب :relaxed:
+❖مريم : لعبة مريم
+❖حكم : لعبة احكام
+❖1سرعة : لعبة مين يكتب اسرع
+❖1نقاطي : لرؤية نقاطك في اللعبة
+❖1رياضيات : لعبة اسئلة رياضيات
+❖1pubg : اسئلة عن لعبة pubg
+❖18ball : اسئل الكرة وسجاوبك
+❖1rps : لعبة حجرة ورقة مقص
+❖1emoji : لعبة ايموجي يكتب يللي تبيه داخل ايموجي
+مُطَوِرّ اَلبُوت
+@D7oM.#7693
+رابط سيرفر البوت
+https://discord.gg/R5dxEbv
+╚[❖═════════════════════════════❖]╝
+`);
+
+}
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+client.on('message', message => {
+  if (message.author.bot) return;
+   if (message.content === prefix + "help-music") {            
+
+   
+      message.author.sendMessage(`**اوامر عامة**
+╔[❖═════════════════════════════❖]╗
+❖${prefix}**play <Music Name> (OR) <Music Link>** : لتشغيل اغنية عن طريق اسم الاغنية او رابط الاغنية
+❖${prefix}**pause** : لايقاف الاغنية مؤقتاً
+❖${prefix}**vol <vol %>** : لتحديد صوت الاغنية 
+❖${prefix}**stop** : لايقاف الاغنية
+❖${prefix}**skip** : لتغير الاغنية
+❖${prefix}**about** : لمعرفة معلومات الاتصال بالبوت
+@D7oM.#7693
+رابط سيرفر البوت
+https://discord.gg/R5dxEbv
+╚[❖═════════════════════════════❖]╝
+`);
+
+}
+});
+
+
+
+
+
+
+
+
+
+
+client.on('message', message => {
+  if (message.author.bot) return;
+   if (message.content === prefix + "help-anmi") {            
+
+   
+      message.author.sendMessage(`**اوامر الانمي**
+╔[❖═════════════════════════════❖]╗
+❖${prefix}**hug <mention>** : Anmi
+❖${prefix}**kiss <mention>** : Anmi
+❖${prefix}**cuddle <mention>** : Anmi
+❖${prefix}**slap <mention>** : Anmi
+❖${prefix}**pat <mention>** : Anmi
+❖${prefix}**poke <mention>** : Anmi
+❖${prefix}**1tickle <mention>** : Anmi
+❖${prefix}**** : 
+@D7oM.#7693
+رابط سيرفر البوت
+https://discord.gg/R5dxEbv
+╚[❖═════════════════════════════❖]╝
+`);
+
+}
+});
+
+
+
+
+
+client.on('message', message => {
+            if (message.content.startsWith(prefix + "help")) {
+     let embed = new Discord.RichEmbed()
+.setThumbnail(message.author.avatarURL)
+.addField('     **1help-admin** ' ,' **اوامر المشرفين** ')
+.addField('     **1help-general**  ' ,' **اوامر عامة** ')
+.addField('     **1help-music** ' , '**اوامر تشغيل الموسيقى**') 
+.addField('     **1help-games** ' , '**اوامر الالعاب**') 
+
+     
+.setColor('#7d2dbe')
+  message.channel.sendEmbed(embed);
+    }
+});
 
 
 client.login(process.env.BOT_TOKEN);
