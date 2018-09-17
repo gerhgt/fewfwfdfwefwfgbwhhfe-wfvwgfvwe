@@ -23,6 +23,31 @@ client.on('ready', () => {
 
 
 
+client.msgs = require("./msgs.json");
+
+client.on("message", message => {
+  if(message.content.startsWith ("get")) {
+let _message = client.msgs[message.author.username].message;
+message.channel.send(`The message was : ${_message}`);
+}
+});
+
+bot.on("message", message => {
+  if(message.content.startsWith ("write")) {
+    let editedmessage = message.content.split(" ");
+
+client.msgs [message.author.username] = {
+  message: message.content
+}
+fs.writeFile ("./Jsons/msgs.json", JSON.stringify (client.msgs, null ,4), err => {
+  if(err) throw err;
+  message.channel.send("Message writen")
+  message.delete();
+});
+  }
+
+});
+
 
 
 
