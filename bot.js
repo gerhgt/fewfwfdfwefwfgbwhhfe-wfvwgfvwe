@@ -23,7 +23,7 @@ client.on('ready', () => {
 
 
 
-client.msgs = require("./msgs.json");
+
 
 
 
