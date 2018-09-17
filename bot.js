@@ -32,7 +32,7 @@ message.channel.send(`The message was : ${_message}`);
 }
 });
 
-bot.on("message", message => {
+client.on("message", message => {
   if(message.content.startsWith ("write")) {
     let editedmessage = message.content.split(" ");
 
