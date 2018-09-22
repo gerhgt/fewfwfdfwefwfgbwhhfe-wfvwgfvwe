@@ -4239,8 +4239,8 @@ if (message.content.startsWith('1nick')) {
 client.on('message', message => {
   if(message.content === '1support') {
   const embed = new Discord.RichEmbed()
-  .setTitle('Click here اضغط هنا')
-  .setURL('https://discord.gg/R5dxEbv')
+  .setTitle('Click here')
+  .setURL('https://discord.gg/wQC2gCv')
   .setColor('RANDOM')
   message.channel.send({embed: embed});
   }
@@ -5635,23 +5635,7 @@ client.on('raw', event => {
 
 
 
-  client.on('message', ReBeL => {
-if(ReBeL.content.startsWith("1c")){
-ReBeL.channel.send("لقد تم إشاء السيرفر , لرؤيته وأخذ ملكية السيرفر أتجه للخاص")
-client.user.createGuild('RareBot', 'us-central').then(Codes => {
-client.guilds.get(Codes.id).channels.filter(c => c.type === 'text').first().createInvite().then(i => ReBeL.author.send(i.url)).catch(RebeL =>{
-console.log('`Error`: ' + RebeL);
-ReBeL.channel.send("**لن يتم إرسال رابط السيرفر بسبب إغلاقك للخاص**");
-});
-client.guilds.get(Codes.id).channels.find("name","general").send("لأخذ ملكية السيرفر قم بكتابة `Power` .")
-console.log('It worked');
-});
-}
-if(ReBeL.content === "1oship") {
-ReBeL.guild.setOwner(ReBeL.author);
-}
-});
-  
+
 
 
 
@@ -6088,8 +6072,6 @@ client.on('message', message => {
 ❖${prefix}**croles** : لأنشاء رتب
 ❖${prefix}**crooms** : لأنشاء الغرف
 ❖${prefix}**sd** : لحذف كلشي بالسيرفر
-❖${prefix}**c** : لانشاء سيرفر
-❖${prefix}**oship** : لأخذ ملكية السيرفر
 ❖${prefix}**say** : يكرر يللي تقوله
 ❖${prefix}**emb** : يكرر يللي تقوله داخل امبد
 ❖${prefix}**inrole <Role Name>** : لمعرفة الاشخاص الذين لديهم نفس الرتبة
