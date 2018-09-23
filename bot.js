@@ -40,59 +40,14 @@ client.oN("message", message => {
 });
 
 
-client.on('message', message => {
-let perm = message.guild.member(message.author).hasPermission('ADMINISTRATOR') || message.guild.member(message.author).hasPermission('BAN_MEMBERS')
-if (!perm) return message.reply(':x: | **You don\'t have `BAN_MEMBERS` permission to use this command**.')
-if(message.content.startsWith(prefix + 'softban')) {
-let member = message.mentions.members.first();
-  let reason = message.content.split(" ").slice(3).join(" ");
-  if (member.displayName) {
-    member.ban(reason)
-    message.channel.send(`Alright, I softbanned ${member.displayName}!`).then(m => m.delete(5000))
-    message.guild.unban(member.id)
-  } else {
-    member.ban(reason)
-    message.channel.send(`Alright, I just softbanned ${member.username}!`).then(m => m.delete(5000))
-    message.guild.unban(member.id)
-  }
-}})
 
 
 
-client.on('message', message => {
-let perm = message.guild.member(message.author).hasPermission('ADMINISTRATOR') || message.guild.member(message.author).hasPermission('BAN_MEMBERS')
-if (!perm) return message.reply(':x: | **You don\'t have `BAN_MEMBERS` permission to use this command**.')
-if(message.content.startsWith(prefix + 'hackban')) {
-  let nourid = message.content.split(" ").slice(3).join(" ");
-  client.fetchUser(nourid).then(id => {
-    message.guild.ban(id).catch(err => {
-      message.channel.send("Error 404, failed to ban this user :( -> " +id)
-      console.log(err)
-    })
-    message.channel.send(`I banned the user ${id} successfully.`)
-  }).catch(() => {
-    message.channel.send(`Theres no user with the ID of ${nourid}, please try again. :face_palm:`)
-  })
-  }});
 
 
 
-client.on('message', message => {
-let perm = message.guild.member(message.author).hasPermission('ADMINISTRATOR') || message.guild.member(message.author).hasPermission('BAN_MEMBERS')
-if (!perm) return message.reply(':x: | **You don\'t have `BAN_MEMBERS` permission to use this command**.')
-if(message.content.startsWith(prefix + 'unhackban')) {
-  let nourid = message.content.split(" ").slice(3).join(" ");
-  let nour = bot.fetchUser(nourid)
-  .then(user => {
-    message.guild.unban(user.id)
-    .then(() => {
-      message.channel.send(`Alright, I unhackbanned ${user}.`)
-    }).catch(err => {
-        message.channel.send(`Failed to unban :( ${user}`)
-    })
-  }).catch(() => message.channel.send("Theres no user with the this ID :face_palm:"))
-}
-  })
+
+
 
 
 client.on('message', message => {
@@ -6445,24 +6400,7 @@ https://discord.gg/SverhFA
 
 
 
-client.on('message', message => {
-  if (message.author.bot) return;
-   if (message.content === prefix + "help-other") {            
 
-   
-      message.author.sendMessage(`**اوامر اخرى**
-╔[❖═════════════════════════════❖]╗
-❖${prefix}**hackban <@ID>** : باند ايبي مايقدر يدخل  للسيرفر من حساب ثاني
-❖${prefix}**unhackban <@ID>** : لفك ايبي باند يصير يقدر للسيرفر
-❖${prefix}**softban <@ID>** : يعطيه باند 5 ثواني وينفك
-@D7oM.#7693
-رابط سيرفر البوت
-https://discord.gg/SverhFA
-╚[❖═════════════════════════════❖]╝
-`);
-
-}
-});
 
 
 
@@ -6474,7 +6412,7 @@ client.on('message', message => {
 .addField('     **1help-general**  ' ,' **اوامر عامة** ')
 .addField('     **1help-music** ' , '**اوامر تشغيل الموسيقى**') 
 .addField('     **1help-games** ' , '**اوامر الالعاب**') 
-.addField('     **1help-other** ' , '**آخر**') 
+
 
      
 .setColor('#7d2dbe')
