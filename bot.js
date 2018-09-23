@@ -16,7 +16,7 @@ const stripIndents = require('common-tags').stripIndents;
 
 const client = new Discord.Client({disableEveryone: true});
 const prefix = '1';
-const BOT_TOKEN = "NDYwMTU0MjQyNTE5NDAwNDQ4.DkjS2g.RNf1k6CoUDF3ThHy4b1YWVepXQg";
+const BOT_TOKEN = "NDYwMTU0MjQyNTE5NDAwNDQ4.DomMLw.LBEvhXJro8UCUbZs6I8ne-ugOhU";
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
@@ -3295,7 +3295,7 @@ const getYoutubeID = require('get-youtube-id');
 const fetchVideoInfo = require('youtube-info');
 
 const yt_api_key = "AIzaSyDeoIH0u1e72AtfpwSKKOSy3IPp2UHzqi4";
-const discord_token = "NDYwMTU0MjQyNTE5NDAwNDQ4.DkjS2g.RNf1k6CoUDF3ThHy4b1YWVepXQg";
+const discord_token = "NDYwMTU0MjQyNTE5NDAwNDQ4.DomMLw.LBEvhXJro8UCUbZs6I8ne-ugOhU";
 client.login(discord_token);
 client.on('ready', function() {
     console.log(`i am ready ${client.user.username}`);
