@@ -5738,51 +5738,6 @@ client.on('message',async message => {
 
 
 
-client.on("ready", async () => {
-    if(client.users.size > 1) {
-        client.user.setActivity(`With ${client.users.size} Member`);
-        console.log(`${client.user.username} With ${client.users.size} Member`)
-    } else {
-        client.user.setActivity(`With ${client.users.size} Member`);
-        console.log(`${client.user.username} With ${client.users.size} Member`)
-    }
-    client.user.setStatus("online");
-});
-
-client.on("guildCreate", guild => {
-    console.log("Joined a new guild: " + guild.name);
-    if(client.users.size > 1) {
-        client.user.setActivity(`With ${client.users.size} Member`);
-    } else {
-        client.user.setActivity(`With ${client.users.size} Member`);
-    }
-});
-
-client.on("guildDelete", guild => {
-    console.log("Left a guild: " + guild.name);
-    if(client.users.size > 1) {
-        client.user.setActivity(`With ${client.users.size} Member`);
-    } else {
-        client.user.setActivity(`With ${client.users.size} Member`);
-    }
-});
-
-client.on("message", async () => {
-  
-})
-
-
-
-
-
-
-
-
-
-
-
-
-
 client.on('message', message => {
   if(message.content === 'عقاب') {
     if(!message.channel.guild) return message.reply('**الامر هاذا فقد للسيرفرات**');
