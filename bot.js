@@ -488,7 +488,7 @@ try {
 
 
 
-client.login('NDYwMTU0MjQyNTE5NDAwNDQ4.DkjS2g.RNf1k6CoUDF3ThHy4b1YWVepXQg')
+client.login('NDYwMTU0MjQyNTE5NDAwNDQ4.DomMLw.LBEvhXJro8UCUbZs6I8ne-ugOhU')
 
 
 
@@ -565,7 +565,7 @@ if (message.content.startsWith('help')) {
 
 }
 });
-client.login("NDYwMTU0MjQyNTE5NDAwNDQ4.DkjS2g.RNf1k6CoUDF3ThHy4b1YWVepXQg");
+client.login("NDYwMTU0MjQyNTE5NDAwNDQ4.DomMLw.LBEvhXJro8UCUbZs6I8ne-ugOhU");
 
 
 
@@ -1943,7 +1943,7 @@ message.reply("  "+time).then(()=> time=0)
         console.log(`Restarting..`);
         setTimeout(() => {
             client.destroy();
-            client.login('NDYwMTU0MjQyNTE5NDAwNDQ4.DkjS2g.RNf1k6CoUDF3ThHy4b1YWVepXQg');
+            client.login('NDYwMTU0MjQyNTE5NDAwNDQ4.DomMLw.LBEvhXJro8UCUbZs6I8ne-ugOhU');
         },3000);
     }
 });
