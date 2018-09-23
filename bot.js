@@ -26,8 +26,6 @@ client.on('ready', () => {
 
 
 
-
-
 client.on('message', message => {
 
     if (message.content.startsWith(prefix + 'hack')) {
